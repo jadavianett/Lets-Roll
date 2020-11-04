@@ -7,14 +7,24 @@ import Signup from "./pages/Signup";
 import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
+import AppBar from "./components/AppBar";
+import Navbar from "./components/Navbar/Navbar";
+import M from "materialize-css";
 
 function App() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".sidenav");
+    var instances = M.Sidenav.init(elems, {});
+  });
+
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <h1> Hi </h1>
-        </header>
+        <AppBar />
+        {/* <Navbar /> */}
+        {/* <header className="App-header">
+          <h1>(header) Welcome to Selenium.</h1>
+        </header> */}
         <Route exact path="/" component={Login} />
         <Route exact path="/addnewplace" component={AddNewPlace} />
         <Route exact path="/allplaces" component={AllPlaces} />
