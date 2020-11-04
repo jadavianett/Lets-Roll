@@ -16,10 +16,6 @@ function App() {
     <Router>
       <div className="App">
         <AppBar />
-        {/* <Navbar /> */}
-        {/* <header className="App-header">
-          <h1>(header) Welcome to Selenium.</h1>
-        </header> */}
         <Route exact path="/" component={Login} />
         <Route exact path="/addnewplace" component={AddNewPlace} />
         <Route exact path="/allplaces" component={AllPlaces} />
