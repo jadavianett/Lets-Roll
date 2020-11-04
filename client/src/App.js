@@ -8,15 +8,10 @@ import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
 import AppBar from "./components/AppBar";
-import Navbar from "./components/Navbar/Navbar";
-import M from "materialize-css";
+// import Navbar from "./components/Navbar/Navbar";
+// import M from "materialize-css";
 
 function App() {
-  document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
-    var instances = M.Sidenav.init(elems, {});
-  });
-
   return (
     <Router>
       <div className="App">
