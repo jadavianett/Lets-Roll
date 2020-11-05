@@ -11,6 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("client/build"));
 
+const UserController = require("./controllers/userController");
+const PlaceController = require("./controllers/placeController");
+// const AuthController = require("./controllers/authController");
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -33,6 +37,11 @@ app.get("/api/config", (req, res) => {
     success: true,
   });
 });
+
+// app.use(AuthController);
+app.use("/api/user", UserController);
+app.use("/api/places", PlaceController);
+
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
