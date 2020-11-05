@@ -1,0 +1,36 @@
+({
+  "name": "Historic Fourth Ward Skate Park",
+  "location": "830 Willoughby Way NE, Atlanta, GA 30312",
+  "notes": "",
+  "type": "Skate park"
+},
+{
+  "name": "McKoy Skate Park",
+  "location": "1000 Adams St, Decatur, GA 30030",
+  "notes": "",
+  "type": "Skate park"
+},
+{
+  "name": "Riverdale Skatepark",
+  "location": "904 Wilson Rd, Riverdale, GA 30296",
+  "notes": "",
+  "type": "Skate park"
+},
+{
+  "name": "Brook Run Skate Park",
+  "location": "4770 N Peachtree Rd, Dunwoody, GA 30338",
+  "notes": "",
+  "type": "Skate park"
+},
+{
+  "name": "Kennesaw Skatepark",
+  "location": "3140 Old 41 Hwy NW, Kennesaw, GA 30144",
+  "notes": "",
+  "type": "Skate park"
+},
+{
+  "name": "Pinckney Skatepark",
+  "location": "4758 S Old Peachtree Rd, Norcross, GA 30071",
+  "notes": "",
+  "type": "Skate park"
+})
