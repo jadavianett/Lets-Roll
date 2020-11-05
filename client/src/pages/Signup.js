@@ -1,10 +1,17 @@
-import SignupComponent from "../components/Signup/SignupComponent";
 
+import Input from "../components/Input";
+import DatePicker from "../components/DatePicker";
 
 function Signup () {
     return (
         <div>
-           <SignupComponent />
+           <h1> CREATE NEW USER</h1>
+           <form>
+               <Input label="Enter Username"/>
+               <Input label="Enter Password Here"/>
+               <DatePicker />
+
+           </form>
         </div>
     )
 }
