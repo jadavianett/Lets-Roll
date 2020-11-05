@@ -2,12 +2,12 @@ import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
 import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 
 function Signup() {
   return (
-    <div className="row">
-      <div className="col s2"></div>
-      <div className="col s8">
+    <>
+      <Container>
         <h1>This is the signup page.</h1>
         <form
           onSubmit={(e) => {
@@ -24,9 +24,8 @@ function Signup() {
             Submit
           </Button>
         </form>
-      </div>
-      <div className="col s2"></div>
-    </div>
+      </Container>
+    </>
   );
 }
 
