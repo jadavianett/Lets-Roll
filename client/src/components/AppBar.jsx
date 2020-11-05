@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +30,7 @@ function MenuAppBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -76,23 +76,29 @@ function MenuAppBar(props) {
                   open={open}
                   onClose={() => setAnchorEl(null)}
                 >
-                  <MenuItem onClick={() => handleClose("/page1")}>
-                    Page 1
+                  <MenuItem onClick={() => handleClose("/allplaces")}>
+                    All Skate Places
                   </MenuItem>
-                  <MenuItem onClick={() => handleClose("/page2")}>
-                    Page 2
+                  <MenuItem onClick={() => handleClose("/viewmyplaces")}>
+                    My Places
                   </MenuItem>
-                  <MenuItem onClick={() => handleClose("/page3")}>
-                    Page 3
+                  <MenuItem onClick={() => handleClose("/tutorials")}>
+                    Tutorials
                   </MenuItem>
                 </Menu>
               </>
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained">Page 1</Button>
-                  <Button variant="contained">Page 2</Button>
-                  <Button variant="contained">Page 3</Button>
+                  <Link to="/allplaces">
+                    <Button variant="contained">All Skate Places</Button>
+                  </Link>
+                  <Link to="/viewmyplaces">
+                    <Button variant="contained">My Places</Button>
+                  </Link>
+                  <Link to="/tutorials">
+                    <Button variant="contained">Tutorials</Button>
+                  </Link>
                 </ButtonGroup>
               </>
             )}

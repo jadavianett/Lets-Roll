@@ -8,8 +8,6 @@ import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
 import AppBar from "./components/AppBar";
-// import Navbar from "./components/Navbar/Navbar";
-// import M from "materialize-css";
 
 function App() {
   return (
