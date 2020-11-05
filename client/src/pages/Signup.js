@@ -3,8 +3,10 @@ import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import { React, useState } from "react";
 
 function Signup() {
+  const [username, setUsername] = useState("hiii");
   return (
     <>
       <Container>
@@ -15,7 +17,12 @@ function Signup() {
             console.log("submitted");
           }}
         >
-          <TextInput label="Enter a username" />
+          <TextInput
+            label="Enter a username"
+            onChange={() => {
+              setUsername("changed");
+            }}
+          />
           <TextInput label="Enter a password" />
           <DatePicker label="When did you start skating?" />
           <CheckboxesGroup />
