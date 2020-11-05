@@ -26,6 +26,12 @@ const UserSchema = new Schema({
     // skills:{
     //     type: String
     // }
+    places: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Place",
+        },
+      ]
 });
 
 const User = mongoose.model("User", UserSchema);
