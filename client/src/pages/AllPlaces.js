@@ -1,14 +1,14 @@
-import Card from "../components/Places/Card";
+import AllPlacesCard from "../components/Places/AllPlacesCard";
 function AllPlaces () {
     return (
         <div>
             <h1>This is the all skate places page.</h1>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            <AllPlacesCard/>
+            <AllPlacesCard/>
+            <AllPlacesCard/>
+            <AllPlacesCard/>
+            <AllPlacesCard/>
+            <AllPlacesCard/>
         </div>
     )
 }
