@@ -1,10 +1,12 @@
 import TextInput from "../components/TextInput";
+import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
 
-import Button from "../components/Buttons";
+import { withRouter, Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div>
+    <Container>
       <div className> </div>
       <h1>LETS ROLL</h1>
 
@@ -13,15 +15,17 @@ function Login() {
       <TextInput label="ENTER USERNAME HERE"/> 
       <TextInput label="ENTER PASSWORD HERE"/> 
 
-      <Button text="LOG IN" />
+      <Button variant="contained">LOG IN</Button>
 
-      <h4> DONT HAVE AN ACCOUNT? SIGN UP HERE</h4>
+      <h4> DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4>
 
-      <Button text="VIEW SKATE PLACES WITHOUT SIGNING IN" />
+      <Link to = "/allplaces"><Button variant="contained">
+                VIEW SKATE PLACES WITHOUT LOGGING IN
+            </Button></Link>
 
 
 
-    </div>
+            </Container>
   );
 }
 
