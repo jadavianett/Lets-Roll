@@ -17,7 +17,7 @@ function Login() {
 
       <Button variant="contained">LOG IN</Button>
 
-      <h4> DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4>
+    <Link to = "/signup"><h4>DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4></Link>
 
       <Link to = "/allplaces"><Button variant="contained">
                 VIEW SKATE PLACES WITHOUT LOGGING IN
