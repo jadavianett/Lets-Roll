@@ -46,7 +46,7 @@ function MenuAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            Let's Roll
+            <Link to="/">Let's Roll</Link>
           </Typography>
 
           <div>
