@@ -25,10 +25,11 @@ const UserSchema = new Schema({
     skateSince: {
         type: Date
     },
-    // skills:{
-    //     type: String
-    // }, 
-
+    skills:
+      {
+        type: Object
+      }
+    ,
     places: [
         {
           type: Schema.Types.ObjectId,

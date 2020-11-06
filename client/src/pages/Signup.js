@@ -9,10 +9,27 @@ import API from "../Utils/API";
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState(""); 
-  const [skills,setSkills] =useState([]);
  
   const [location, setLocation] = useState(""); 
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [skills, setSkills] = useState({
+    crossover: false,
+    crazyLegs: false,
+    dribbling: false,
+    transitions: false, 
+    grapevine: false,
+    shootTheDuck: false, 
+    waltzJump: false,
+    mohawkTurn: false,
+    heelToeSpins: false,
+    
+  });
+
+  const handleChange = (event) => {
+    setSkills({ ...skills, [event.target.name]: event.target.checked });
+  };
+  const { crossover, crazyLegs, dribbling, transitions, grapevine, shootTheDuck, waltzJump, mohawkTurn, heelToeSpins } = skills;
+  const error = [crossover, crazyLegs, dribbling, transitions, grapevine, shootTheDuck, waltzJump, mohawkTurn, heelToeSpins].filter((v) => v).length !== 2;
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -23,13 +40,15 @@ function Signup() {
   const handleSubmit = e => {
     e.preventDefault();
     console.log("Here")
+  
 
   
 
     API.createUser({
       username, 
       password,
-      selectedDate
+      selectedDate,
+      skills,
     }).then((res)=> {
       console.log(res.data);
   
@@ -66,7 +85,7 @@ function Signup() {
           <TextInput label="Enter a username" name="username" value={username} onChange={onChangeUser}/>
           <TextInput label="Enter a password"  name="password" value={password} onChange={onChangeUser} />
           <DatePicker label="When did you start skating?" name="skateDate" handleDateChange={handleDateChange} selectedDate={selectedDate} />
-          <CheckboxesGroup />
+          <CheckboxesGroup name={skills} handleChange={handleChange} />
           <TextInput label="Your Location" name="location" value={location} onChange={onChangeUser} />
           <Button type="submit" size="large" variant="contained">
             Submit
