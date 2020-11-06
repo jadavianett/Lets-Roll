@@ -16,21 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    crossover: false,
-    crazyLegs: false,
-    dribbling: false,
-  });
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
-  const { crossover, crazyLegs, dribbling } = state;
-  const error = [crossover, crazyLegs, dribbling].filter((v) => v).length !== 2;
-
+  
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
@@ -39,8 +27,8 @@ export default function CheckboxesGroup() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={crossover}
-                onChange={handleChange}
+                checked={props.crossover}
+                onChange={props.handleChange}
                 name="crossover"
               />
             }
@@ -49,8 +37,8 @@ export default function CheckboxesGroup() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={crazyLegs}
-                onChange={handleChange}
+                checked={props.crazyLegs}
+                onChange={props.handleChange}
                 name="crazyLegs"
               />
             }
@@ -59,18 +47,78 @@ export default function CheckboxesGroup() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={dribbling}
-                onChange={handleChange}
+                checked={props.dribbling}
+                onChange={props.handleChange}
                 name="dribbling"
               />
             }
             label="Dribbling"
           />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.transitions}
+                onChange={props.handleChange}
+                name="transitions"
+              />
+            }
+            label="Transitions"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.grapevine}
+                onChange={props.handleChange}
+                name="grapevine"
+              />
+            }
+            label="Grapevine"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.shootTheDuck}
+                onChange={props.handleChange}
+                name="shootTheDuck"
+              />
+            }
+            label="Shoot The Duck"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.waltzJump}
+                onChange={props.handleChange}
+                name="waltzJump"
+              />
+            }
+            label="Waltz Jump"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.mohawkTurn}
+                onChange={props.handleChange}
+                name="mohawkTurn"
+              />
+            }
+            label="Mohawk Turn"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={props.heelToeSpins}
+                onChange={props.handleChange}
+                name="heelToeSpins"
+              />
+            }
+            label="Heel Toe Spins"
+          />
         </FormGroup>
       </FormControl>
       <FormControl
         required
-        error={error}
+        error={props.error}
         component="fieldset"
         className={classes.formControl}
       ></FormControl>
