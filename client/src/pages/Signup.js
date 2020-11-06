@@ -6,7 +6,8 @@ import Container from "@material-ui/core/Container";
 import { React, useState } from "react";
 
 function Signup() {
-  const [username, setUsername] = useState("hiii");
+  const [username, setUsername] = useState("de");
+  const [password, setPassword] = useState("fault");
   return (
     <>
       <Container>
@@ -17,13 +18,20 @@ function Signup() {
             console.log("submitted");
           }}
         >
-          <TextInput
+          <input
             label="Enter a username"
-            onChange={() => {
-              setUsername("changed");
+            name="username"
+            onChange={(e) => {
+              setUsername(e.target.value);
             }}
           />
-          <TextInput label="Enter a password" />
+          <input
+            label="Enter a password"
+            name="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
           <DatePicker label="When did you start skating?" />
           <CheckboxesGroup />
           <TextInput label="Your Location" />
