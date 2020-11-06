@@ -8,8 +8,8 @@ export default {
       return axios.get("/api/user");
     },
     //create a new User 
-    createUser: function (){
-        return axios.post("/api/user")
+    createUser: function (userData){
+        return axios.post("/api/user",userData)
     },
 
     updateUser: function (id){
