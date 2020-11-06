@@ -16,21 +16,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    crossover: false,
-    crazyLegs: false,
-    dribbling: false,
-  });
+  // const [state, setState] = React.useState({
+  //   crossover: false,
+  //   crazyLegs: false,
+  //   dribbling: false,
+  //   transitions: false, 
+  //   grapevine: false,
+  //   shootTheDuck: false, 
+  //   waltzJump: false,
+  //   mohawkTurn: false,
+  //   heelToeSpins: false,
+  // });
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // };
 
-  const { crossover, crazyLegs, dribbling } = state;
-  const error = [crossover, crazyLegs, dribbling].filter((v) => v).length !== 2;
-
+  // const { crossover, crazyLegs, dribbling, transitions, grapevine, shootTheDuck, waltzJump, mohawkTurn, heelToeSpins } = state;
+  // const error = [crossover, crazyLegs, dribbling, transitions, grapevine, shootTheDuck, waltzJump, mohawkTurn, heelToeSpins].filter((v) => v).length !== 2;
+const skillList = ["crossover", "crazyLegs", "dribbling", "transitions", "grapevine", "shootTheDuck", "waltzJump", "mohawkTurn", "heelToeSpins"]
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
@@ -39,38 +45,18 @@ export default function CheckboxesGroup() {
           <FormControlLabel
             control={
               <Checkbox
-                checked={crossover}
-                onChange={handleChange}
+                checked={props.crossover}
+                onChange={props.handleChange}
                 name="crossover"
               />
             }
             label="Crossover"
           />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={crazyLegs}
-                onChange={handleChange}
-                name="crazyLegs"
-              />
-            }
-            label="Crazy Legs"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={dribbling}
-                onChange={handleChange}
-                name="dribbling"
-              />
-            }
-            label="Dribbling"
-          />
         </FormGroup>
       </FormControl>
       <FormControl
         required
-        error={error}
+        error={props.error}
         component="fieldset"
         className={classes.formControl}
       ></FormControl>
