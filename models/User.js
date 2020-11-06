@@ -25,13 +25,11 @@ const UserSchema = new Schema({
     skateSince: {
         type: Date
     },
-    state: 
+    state:
       {
         type: Object
       }
-    
-    , 
-
+    ,
     places: [
         {
           type: Schema.Types.ObjectId,
