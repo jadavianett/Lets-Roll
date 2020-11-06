@@ -20,7 +20,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  
+  console.log(req.body,"reqbody ")
   db.User.create(req.body).then((newUser) => {
+   
     res.json(newUser);
   });
 });
