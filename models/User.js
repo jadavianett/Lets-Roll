@@ -25,9 +25,12 @@ const UserSchema = new Schema({
     skateSince: {
         type: Date
     },
-    // skills:{
-    //     type: String
-    // }, 
+    state: 
+      {
+        type: Object
+      }
+    
+    , 
 
     places: [
         {
