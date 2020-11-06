@@ -4,6 +4,7 @@ import CheckboxesGroup from "../components/CheckboxesGroup";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import { React, useState } from "react";
+import API from "../Utils/API";
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -20,25 +21,40 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Here")
 
-    console.log("username is " + username);
-    console.log("password is " + password);
-    // console.log("skateStart" + selectedDate );
-    console.log("location" + location);
+  
+
+    API.createUser({
+      username, 
+      password,
+      selectedDate
+    }).then((res)=> {
+      console.log(res.data);
+  
+    }).catch((err)=> {
+      return err
+    })
+
   };
 
   const onChangeUser = (e) => {
     let value = e.target.value;
     // console.log(e.target.name, "what is it")
 
-    if (e.target.name == "username") {
-      setUsername({
-        username: value,
-      });
-    } else if (e.target.name == "password") {
-      setPassword({
-        password: value,
-      });
+  const onChangeUser = e => {
+
+    let value = e.target.value; 
+    
+
+    if(e.target.name == "username") {
+      setUsername(
+         value
+      );
+    } else if(e.target.name == "password") {
+      setPassword(
+         value
+      );
     }
   };
 
