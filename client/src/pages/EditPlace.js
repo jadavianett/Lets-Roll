@@ -24,11 +24,19 @@ function EditPlace() {
       .catch((err) => {
         throw err;
       });
-  }, []);
+  }, [id]);
 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log("clicked");
+    console.log("clicked save");
+    //API call to "put" a place, updatePlace
+    API.updatePlace(id, { name: name, location: location, type: type })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        throw err;
+      });
   };
 
   const onChangeInfo = (e) => {

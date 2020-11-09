@@ -33,13 +33,13 @@ export default {
   },
 
   //Update Place
-  updatePlace: function (id) {
-    return axios.put("/api/places" + id);
+  updatePlace: function (id, updatedPlace) {
+    return axios.put("/api/places/" + id, updatedPlace);
   },
 
   //Delete Place
   deletePlace: function (id) {
-    return axios.delete("/api/places" + id);
+    return axios.delete("/api/places/" + id);
   },
 
   // // Deletes the post with the given id

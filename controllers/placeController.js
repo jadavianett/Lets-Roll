@@ -110,6 +110,7 @@ router.put("/:id", (req, res) => {
   const updatedPlace = {
     name: req.body.name,
     location: req.body.location,
+    type: req.body.type,
   };
   // Restrict updates where the creatorId is equal to the user-provided token _id.
   db.Place.findOneAndUpdate(
@@ -128,7 +129,7 @@ router.put("/:id", (req, res) => {
       } else {
         res.json({
           error: false,
-          data: updatedBook,
+          data: updatedPlace,
           message: "Successfully updated place.",
         });
       }
