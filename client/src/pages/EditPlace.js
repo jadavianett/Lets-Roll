@@ -39,6 +39,17 @@ function EditPlace() {
       });
   };
 
+  const handleDelete = (e) => {
+    console.log("clicked delete");
+    API.deletePlace(id)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
   const onChangeInfo = (e) => {
     let value = e.target.value;
 
@@ -80,6 +91,18 @@ function EditPlace() {
       >
         Save Place
       </Button>
+      <br />
+      <br />
+      <p>
+        <Button
+          size="large"
+          variant="contained"
+          color="secondary"
+          onClick={handleDelete}
+        >
+          DELETE PLACE
+        </Button>
+      </p>
     </div>
   );
 }
