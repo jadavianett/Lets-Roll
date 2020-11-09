@@ -42,19 +42,19 @@ function AddNewPlace () {
         let name = e.target.value; 
         
     
-        if(e.target.name == "name") {
+        if(e.target.name === "name") {
           setName(
              name
           );
-        } else if(e.target.name == "location") {
+        } else if(e.target.name === "location") {
           setLocation(
              name
           );
-        }else if (e.target.name == "notes") {
+        }else if (e.target.name === "notes") {
             setNotes(
                 name
             )
-        } else if (e.target.name == "type") {
+        } else if (e.target.name === "type") {
             setType(
                 name
             )
