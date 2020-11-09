@@ -11,7 +11,6 @@ function AllPlaces() {
     API.getPlaces().then((res)=> {
       console.log(res.data)
       setPlaces(res.data);
-      // console.log(places); ???? NOT DISPLAYING
     }).catch ((err)=> {
       throw err
     })
@@ -24,15 +23,11 @@ function AllPlaces() {
     <div>
       <h1>This is the all skate places page.</h1>
   
-      <AllPlacesCard
-        image="https://via.placeholder.com/345x140.png"
-        placeName="Skate Place Name"
-        location="place location"
-      />
       {places.map(place=> <AllPlacesCard
         image="https://via.placeholder.com/345x140.png"
         placeName={place.name}
         location={place.location}
+        type={place.type}
       />)}
     </div>
   );
