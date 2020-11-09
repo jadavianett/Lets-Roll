@@ -10,6 +10,7 @@ import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
 import AppBar from "./components/AppBar";
+import EditPlace from "./pages/EditPlace";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/tutorials" component={Tutorials} />
         <Route exact path="/userdashboard" component={UserDashboard} />
         <Route exact path="/viewmyplaces" component={ViewMyPlaces} />
+        <Route exact path="/editplace/:id" component={EditPlace} />
       </div>
     </Router>
   );

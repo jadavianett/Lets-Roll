@@ -23,7 +23,7 @@ export default function NativeSelects(props) {
         <InputLabel htmlFor="outlined-age-native-simple">Type</InputLabel>
         <Select
           native
-          value={props.type}
+          value={props.value}
           onChange={props.onChange}
           label="Type"
           inputProps={{
@@ -35,7 +35,7 @@ export default function NativeSelects(props) {
           <option value={"Skate Park"}>Skate Park</option>
           <option value={"Outdoor rink"}>Outdoor rink</option>
           <option value={"Beltline"}>Beltline</option>
-          <option value={"Trial"}>Trail</option>
+          <option value={"Trail"}>Trail</option>
           <option value={"Greenway"}>Greenway</option>
           <option value={"Park"}>Park</option>
           <option value={"Other"}>Other</option>
