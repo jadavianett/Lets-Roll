@@ -16,7 +16,7 @@ export default function BasicTextFields(props) {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label={props.label} variant="outlined" name={props.name} onChange={props.onChange}/>
+      <TextField id="outlined-basic" label={props.label} variant="outlined" name={props.name} onChange={props.onChange} placeholder={props.placeholder}/>
     </form>
   );
 }
