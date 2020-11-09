@@ -33,7 +33,7 @@ function AddNewPlace () {
           }).then((res) => {
               console.log(res.data)
           }).catch ((err) => {
-              err
+              throw err
           })
       };
 
@@ -67,7 +67,7 @@ function AddNewPlace () {
             <h1>ADD A NEW SKATE PLACE</h1>
             <TextInput name="name" placeholder="NAME" handleChange={onChangeInfo}/>
             <TextInput name="location" placeholder="ADDRESS" handleChange={onChangeInfo} />
-            <TextInput name="notes" placeholder="HEPFUL TIPS" handleChange={onChangeInfo} />
+            <TextInput name="notes" placeholder="HELPFUL TIPS" handleChange={onChangeInfo} />
             <Select name={"type"} handleChange={onChangeInfo} value={type} />
             <Button type="submit" size="large" variant="contained" onClick={handleSave}>
             Save Place
