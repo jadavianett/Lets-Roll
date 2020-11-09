@@ -42,7 +42,6 @@ app.get("/api/config", (req, res) => {
 app.use("/api/user", UserController);
 app.use("/api/places", PlaceController);
 
-
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
