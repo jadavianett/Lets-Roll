@@ -35,6 +35,9 @@ export default function MediaCard(props) {
           <Typography variant="body2" color="textSecondary" component="p">
             {props.location}
           </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.type}
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
