@@ -1,10 +1,8 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -19,22 +17,18 @@ const useStyles = makeStyles((theme) => ({
 export default function NativeSelects(props) {
   const classes = useStyles();
 
-
   return (
     <div>
-    
-  
-    
       <FormControl variant="outlined" className={classes.formControl}>
         <InputLabel htmlFor="outlined-age-native-simple">Type</InputLabel>
         <Select
           native
           value={props.type}
-          onChange={props.onChangeInfo}
+          onChange={props.onChange}
           label="Type"
           inputProps={{
-            name: 'type',
-            id: 'outlined-age-native-simple',
+            name: "type",
+            id: "outlined-age-native-simple",
           }}
         >
           <option aria-label="None" value="" />
@@ -45,10 +39,8 @@ export default function NativeSelects(props) {
           <option value={"Greenway"}>Greenway</option>
           <option value={"Park"}>Park</option>
           <option value={"Other"}>Other</option>
-          
         </Select>
       </FormControl>
-      
     </div>
   );
 }

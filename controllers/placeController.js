@@ -73,7 +73,8 @@ router.post("/", (req, res) => {
   //       console.log(decoded);
   const newPlace = {
     name: req.body.name,
-    location: req.body.location,    
+    location: req.body.location,
+    type: req.body.type,
     // creatorId: decoded._id,
   };
   db.Place.create(newPlace).then((newPlace) => {
@@ -108,7 +109,7 @@ router.put("/:id", (req, res) => {
   //   console.log(decoded);
   const updatedPlace = {
     name: req.body.name,
-    location: req.body.location
+    location: req.body.location,
   };
   // Restrict updates where the creatorId is equal to the user-provided token _id.
   db.Place.findOneAndUpdate(

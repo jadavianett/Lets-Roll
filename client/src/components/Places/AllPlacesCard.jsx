@@ -30,7 +30,7 @@ export default function MediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.placeName}
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.location}
