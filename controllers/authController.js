@@ -94,12 +94,8 @@ router.post("/api/login", (req, res) => {
                   email: foundUser.email,
                   username: foundUser.username, 
                   skills: foundUser.skills
-
-                  
-                  // firstName: foundUser.firstName,
-                  // lastName: foundUser.lastName,
                 },
-                "secert"
+                "secret"
               );
               res.json({
                 error: false,

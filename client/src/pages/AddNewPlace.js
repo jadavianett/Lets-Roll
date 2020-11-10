@@ -1,25 +1,41 @@
 import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
-import { React, useState } from "react";
+import { React, useContext, useState,useEffect} from "react";
 import API from "../Utils/API";
+import AuthContext from "../context/AuthContext";
+import jwt_decode from "jwt-decode";
 
 function AddNewPlace() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   //   const [notes, setNotes] = useState("");
+  // logged-in user
+  const [user, setUser] = useState({})
+
+  const { jwt } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (jwt) {
+      var decoded = jwt_decode(jwt);
+      console.log(decoded);
+      setUser(decoded);
+      console.log(decoded.username);
+    }
+  }, [jwt]);
 
   const handleSave = (e) => {
     e.preventDefault();
     console.log("clicked");
 
     API.createPlace({
-      name,
-      location,
+      name: name,
+      location: location,
       //   notes,
-      type,
-    })
+      type: type
+      //creatorId: user._id
+    },jwt)
       .then((res) => {
         console.log(res.data);
       })

@@ -53,35 +53,36 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  //   console.log(req.headers);
-  //   if (!req.headers.authorization) {
-  //     return res.status(401).json({
-  //       error: true,
-  //       data: null,
-  //       message: "Unauthorized.",
-  //     });
-  //   }
-  //   jwt.verify(req.headers.authorization, process.env.SECRET, (err, decoded) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.status(401).json({
-  //         error: true,
-  //         data: null,
-  //         message: "Invalid token.",
-  //       });
-  //     } else {
-  //       console.log(decoded);
+   console.log("create new place");
+    console.log(req.headers);
+    if (!req.headers.authorization) {
+      return res.status(401).json({
+        error: true,
+        data: null,
+        message: "Unauthorized.",
+      });
+    }
+    jwt.verify(req.headers.authorization, "secret", (err, decoded) => {
+      if (err) {
+        console.log(err);
+        return res.status(401).json({
+          error: true,
+          data: null,
+          message: "Invalid token.",
+        });
+      } else {
+        console.log(decoded);
   const newPlace = {
     name: req.body.name,
     location: req.body.location,
     type: req.body.type,
-    // creatorId: decoded._id,
+     creatorId: decoded._id
   };
   db.Place.create(newPlace).then((newPlace) => {
     res.json(newPlace);
   });
-  // }
-  //   });
+   }
+     });
 });
 
 router.put("/:id", (req, res) => {

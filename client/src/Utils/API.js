@@ -32,8 +32,10 @@ export default {
   },
 
   //Create a Place
-  createPlace: function (placeData) {
-    return axios.post("/api/places", placeData);
+  createPlace: function (placeData,token) {
+    return axios.post("/api/places", placeData,{ headers: {
+      'Authorization': `${token}` 
+    }});
   },
 
   //Update Place
