@@ -1,4 +1,5 @@
 import React from "react";
+import "./AppBar.css";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -46,7 +47,9 @@ function MenuAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/">Let's Roll</Link>
+            <Link to="/" id="logo-link">
+              <span id="lets-roll-logo">LET'S ROLL</span>
+            </Link>
           </Typography>
 
           <div>
@@ -90,15 +93,23 @@ function MenuAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Link to="/allplaces">
-                    <Button variant="contained">All Skate Places</Button>
-                  </Link>
-                  <Link to="/viewmyplaces">
-                    <Button variant="contained">My Places</Button>
-                  </Link>
-                  <Link to="/tutorials">
-                    <Button variant="contained">Tutorials</Button>
-                  </Link>
+                  <Button variant="contained">
+                    <Link to="/allplaces" className="no-link-style">
+                      All Skate Places
+                    </Link>
+                  </Button>
+
+                  <Button variant="contained">
+                    <Link to="/viewmyplaces" className="no-link-style">
+                      My Places
+                    </Link>
+                  </Button>
+
+                  <Button variant="contained">
+                    <Link to="/tutorials" className="no-link-style">
+                      Tutorials
+                    </Link>
+                  </Button>
                 </ButtonGroup>
               </>
             )}

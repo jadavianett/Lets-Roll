@@ -18,102 +18,108 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CheckboxesGroup(props) {
   const classes = useStyles();
-  
+
   return (
-    <div className={classes.root}>
-      <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Your skills</FormLabel>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.crossover}
-                onChange={props.handleChange}
-                name="crossover"
+    <>
+      <FormControl component="fieldset" id="renameMe">
+        <FormGroup id="checkbox-div-2">
+          <div id="skill-columns">
+            <div className="skill-column">
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.crossover}
+                    onChange={props.handleChange}
+                    name="crossover"
+                  />
+                }
+                label="Crossover"
               />
-            }
-            label="Crossover"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.crazyLegs}
-                onChange={props.handleChange}
-                name="crazyLegs"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.crazyLegs}
+                    onChange={props.handleChange}
+                    name="crazyLegs"
+                  />
+                }
+                label="Crazy Legs"
               />
-            }
-            label="Crazy Legs"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.dribbling}
-                onChange={props.handleChange}
-                name="dribbling"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.dribbling}
+                    onChange={props.handleChange}
+                    name="dribbling"
+                  />
+                }
+                label="Dribbling"
               />
-            }
-            label="Dribbling"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.transitions}
-                onChange={props.handleChange}
-                name="transitions"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.transitions}
+                    onChange={props.handleChange}
+                    name="transitions"
+                  />
+                }
+                label="Transitions"
               />
-            }
-            label="Transitions"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.grapevine}
-                onChange={props.handleChange}
-                name="grapevine"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.grapevine}
+                    onChange={props.handleChange}
+                    name="grapevine"
+                  />
+                }
+                label="Grapevine"
               />
-            }
-            label="Grapevine"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.shootTheDuck}
-                onChange={props.handleChange}
-                name="shootTheDuck"
+            </div>
+            {/* end column 1 */}
+            <div className="skill-column">
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.shootTheDuck}
+                    onChange={props.handleChange}
+                    name="shootTheDuck"
+                  />
+                }
+                label="Shoot The Duck"
               />
-            }
-            label="Shoot The Duck"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.waltzJump}
-                onChange={props.handleChange}
-                name="waltzJump"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.waltzJump}
+                    onChange={props.handleChange}
+                    name="waltzJump"
+                  />
+                }
+                label="Waltz Jump"
               />
-            }
-            label="Waltz Jump"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.mohawkTurn}
-                onChange={props.handleChange}
-                name="mohawkTurn"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.mohawkTurn}
+                    onChange={props.handleChange}
+                    name="mohawkTurn"
+                  />
+                }
+                label="Mohawk Turn"
               />
-            }
-            label="Mohawk Turn"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={props.heelToeSpins}
-                onChange={props.handleChange}
-                name="heelToeSpins"
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.heelToeSpins}
+                    onChange={props.handleChange}
+                    name="heelToeSpins"
+                  />
+                }
+                label="Heel Toe Spins"
               />
-            }
-            label="Heel Toe Spins"
-          />
+            </div>
+          </div>
         </FormGroup>
       </FormControl>
       <FormControl
@@ -122,6 +128,6 @@ export default function CheckboxesGroup(props) {
         component="fieldset"
         className={classes.formControl}
       ></FormControl>
-    </div>
+    </>
   );
 }

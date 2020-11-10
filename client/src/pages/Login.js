@@ -1,3 +1,4 @@
+import "./Login.css";
 import AuthContext from "../context/AuthContext";
 import TextInput from "../components/TextInput";
 import Container from "@material-ui/core/Container";
@@ -7,14 +8,11 @@ import { withRouter, Link } from "react-router-dom";
 import { React, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
-
 function Login() {
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {jwt, setJwt} = useContext(AuthContext);
+  const { jwt, setJwt } = useContext(AuthContext);
   const history = useHistory();
-
-
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,8 +23,8 @@ function Login() {
       .then((response) => {
         console.log(response.data.data);
         setJwt(response.data.data);
-       
-      history.push("/userdashboard");
+
+        history.push("/userdashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -34,44 +32,56 @@ function Login() {
   };
 
   return (
-    <Container>
-      <div className> </div>
-      <h1>LETS ROLL</h1>
+    // <Container>
+    <>
+      <div className="page-wrapper-with-nav">
+        <div id="login-wrapper">
+          <h1>Log In and Let's Roll!</h1>
+          <br />
+          <TextInput
+            label="Email"
+            name="email"
+            value={emailAddress}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <TextInput
+            label="Password"
+            name="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
 
-      <h4> JOIN THE SK8 COMMUNITY</h4>
+          <Button variant="contained" type="submit" onClick={handleLogin}>
+            LOG IN
+          </Button>
+          <br />
+          <br />
+          <br />
+          <br />
 
-      <TextInput
-        label="ENTER EMAIL HERE"
-        name="email"
-        value={emailAddress}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <TextInput
-        label="ENTER PASSWORD HERE"
-        name="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-  
-
-      <Button variant="contained" type="submit" onClick={handleLogin}>
-        LOG IN
-      </Button>
-
-      <Link to="/signup">
-        <h4>DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4>
-      </Link>
-
-      <Link to="/allplaces">
-        <Button variant="contained">
-          VIEW SKATE PLACES WITHOUT LOGGING IN
-        </Button>
-      </Link>
-    </Container>
+          <p>Don't have an account?</p>
+          <br />
+          <Button variant="contained">
+            <Link to="/signup" className="no-link-style">
+              SIGN UP HERE
+            </Link>
+          </Button>
+          <br />
+          <br />
+          <br />
+          <br />
+          <p>
+            You may also&nbsp;
+            <Link to="/allplaces">view skate places without logging in.</Link>
+          </p>
+        </div>
+      </div>
+      {/* </Container>  */}
+    </>
   );
 }
 
