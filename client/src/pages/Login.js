@@ -6,7 +6,6 @@ import { withRouter, Link } from "react-router-dom";
 import { React, useState } from "react";
 
 function Login() {
-
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,14 +13,14 @@ function Login() {
     e.preventDefault();
     console.log("Login clicked");
 
-    axios.post("/api/login",{emailAddress, password})
-    .then((response) =>{
-      console.log(response.data);
-    })
-    .catch((err) =>{
-      console.log(err);
-    });
-
+    axios
+      .post("/api/login", { emailAddress, password })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -31,8 +30,22 @@ function Login() {
 
       <h4> JOIN THE SK8 COMMUNITY</h4>
 
-      <TextInput label="ENTER EMAIL HERE" name="email" value={emailAddress} onChange={(e)=>{setEmail(e.target.value)}}/>
-      <TextInput label="ENTER PASSWORD HERE" name="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
+      <TextInput
+        label="ENTER EMAIL HERE"
+        name="email"
+        value={emailAddress}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+      />
+      <TextInput
+        label="ENTER PASSWORD HERE"
+        name="password"
+        value={password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+      />
 
       <Button variant="contained" type="submit" onClick={handleLogin}>
         LOG IN
