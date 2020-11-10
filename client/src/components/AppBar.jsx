@@ -44,7 +44,7 @@ function MenuAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" id="nav-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link to="/" id="logo-link">

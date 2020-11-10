@@ -1,16 +1,11 @@
-#all-places-wrapper {
+#my-places-wrapper {
   text-align: center;
   /* border: 1px dashed hotpink; */
   padding: 20px;
   /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+    box-shadow: 5px 5px 15px 5px #a0a0a0; */
   border-radius: 10px;
   margin-top: 50px;
-}
-
-.centerMe {
-  margin: auto;
-  /* border: 2px dashed green; */
 }
 
 .wide-card {
@@ -21,16 +16,5 @@
   display: grid;
   place-items: center;
   /* -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 5px 5px 15px 5px #000000; */
-}
-
-.card-media {
-  /* border: 2px dashed hotpink; */
-  /* min-height: 300px; */
-  /* object-fit: contain; */
-}
-
-.view-more-info {
-  color: white;
-  text-decoration: none;
+    box-shadow: 5px 5px 15px 5px #000000; */
 }

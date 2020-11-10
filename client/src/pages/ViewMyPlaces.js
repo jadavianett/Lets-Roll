@@ -1,3 +1,4 @@
+import "./ViewMyPlaces.css";
 import MyPlacesCard from "../components/Places/MyPlacesCard";
 import AuthContext from "../context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
@@ -22,35 +23,32 @@ function ViewMyPlaces() {
       .then((res) => {
         console.log(res.data);
         console.log("user id" + user._id);
-        var placesWithId = res.data.filter( x => x.creatorId  === user._id)
+        var placesWithId = res.data.filter((x) => x.creatorId === user._id);
         console.log(placesWithId);
         setPlaces(res.data);
       })
       .catch((err) => {
         throw err;
       });
-  },[]);
+  }, []);
 
   return (
-    <div>
-      <h1>This is the view all my places page.</h1>
-      <MyPlacesCard />
-      <MyPlacesCard />
-      <MyPlacesCard />
-      <MyPlacesCard />
-      <MyPlacesCard />
-      <MyPlacesCard />
-      {places.map((place) => (
-        <MyPlacesCard
-          image="https://via.placeholder.com/345x140.png"
-          name={place.name}
-          location={place.location}
-          type={place.type}
-          id={place._id}
-        />
-      ))}
-
-    </div>
+    <>
+      <div className="page-wrapper-with-nav">
+        <div id="my-places-wrapper">
+          <h1>My Skate Places</h1>
+          {places.map((place) => (
+            <MyPlacesCard
+              image="https://via.placeholder.com/345x140.png"
+              name={place.name}
+              location={place.location}
+              type={place.type}
+              id={place._id}
+            />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
