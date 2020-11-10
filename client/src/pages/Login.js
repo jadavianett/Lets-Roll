@@ -5,6 +5,13 @@ import Button from "@material-ui/core/Button";
 import { withRouter, Link } from "react-router-dom";
 
 function Login() {
+
+
+  const handleLogin = (e) =>{
+   e.preventDefault();
+   console.log("Login clicked");
+  };
+
   return (
     <Container>
       <div className> </div>
@@ -12,20 +19,23 @@ function Login() {
 
       <h4> JOIN THE SK8 COMMUNITY</h4>
 
-      <TextInput label="ENTER USERNAME HERE"/> 
-      <TextInput label="ENTER PASSWORD HERE"/> 
+      <TextInput label="ENTER USERNAME HERE" />
+      <TextInput label="ENTER PASSWORD HERE" />
 
-      <Button variant="contained">LOG IN</Button>
+      <Button variant="contained"
+      type="submit"
+      onClick={handleLogin}>LOG IN</Button>
 
-    <Link to = "/signup"><h4>DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4></Link>
+      <Link to="/signup">
+        <h4>DON'T HAVE AN ACCOUNT? SIGN UP HERE</h4>
+      </Link>
 
-      <Link to = "/allplaces"><Button variant="contained">
-                VIEW SKATE PLACES WITHOUT LOGGING IN
-            </Button></Link>
-
-
-
-            </Container>
+      <Link to="/allplaces">
+        <Button variant="contained">
+          VIEW SKATE PLACES WITHOUT LOGGING IN
+        </Button>
+      </Link>
+    </Container>
   );
 }
 
