@@ -5,41 +5,52 @@ import AuthContext from "../context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 
-function UserDashboard () {
-    const [user, setUser] = useState({})
+function UserDashboard() {
+  const [user, setUser] = useState({});
 
-const {jwt} = useContext(AuthContext);
-useEffect(()=>{
+  const { jwt } = useContext(AuthContext);
+  useEffect(() => {
+    if (jwt) {
+      var decoded = jwt_decode(jwt);
+      console.log(decoded);
+      setUser(decoded);
+      console.log(decoded.username);
+    }
+  }, [jwt]);
 
-if(jwt){
-    var decoded = jwt_decode(jwt);
-    console.log(decoded);
-    setUser(decoded)
-    console.log(decoded.username)
-}
+  // console.log("decoded data" + decoded);
 
-},[jwt])
-
-
-
-// console.log("decoded data" + decoded);
-
-    return (
-        <Container>
-            <h1>Welcome {user.username}!</h1>
-            <p> What would you like to do?</p>
-            <p><Link to = "/allplaces"><Button variant="contained">
-                VIEW ALL SKATE PLACES 
-            </Button></Link></p>
-            <p><Link to = "/viewmyplaces"><Button variant="contained">
-                VIEW MY SKATE PLACES
-            </Button></Link></p>
-            <p><Link to = "/tutorials"><Button variant="contained">
-                VIEW TUTORIALS
-            </Button></Link></p>
-            </Container>
-        
-    )
+  return (
+    <Container>
+      <h1>Welcome {user.username}!</h1>
+      <p> What would you like to do?</p>
+      <p>
+        <Link to="/allplaces">
+          <Button variant="contained">VIEW ALL SKATE PLACES</Button>
+        </Link>
+      </p>
+      <p>
+        <Link to="/viewmyplaces">
+          <Button variant="contained">VIEW MY SKATE PLACES</Button>
+        </Link>
+      </p>
+      <p>
+        <Link to="/tutorials">
+          <Button variant="contained">VIEW TUTORIALS</Button>
+        </Link>
+      </p>
+      <p>
+        <Link to="/addnewplace">
+          <Button variant="contained">ADD NEW SKATE PLACE</Button>
+        </Link>
+      </p>
+      <p>
+        <Link to="/logout">
+          <Button variant="contained">LOG OUT</Button>
+        </Link>
+      </p>
+    </Container>
+  );
 }
 
 export default UserDashboard;

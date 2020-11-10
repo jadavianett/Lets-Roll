@@ -24,6 +24,7 @@ function Signup() {
     waltzJump: false,
     mohawkTurn: false,
     heelToeSpins: false,
+    spinJump: false,
   });
 
   const handleChange = (event) => {
@@ -39,6 +40,7 @@ function Signup() {
     waltzJump,
     mohawkTurn,
     heelToeSpins,
+    spinJump,
   } = skills;
   const error =
     [
@@ -51,6 +53,7 @@ function Signup() {
       waltzJump,
       mohawkTurn,
       heelToeSpins,
+      spinJump,
     ].filter((v) => v).length !== 2;
 
   const handleDateChange = (date) => {
@@ -94,6 +97,7 @@ function Signup() {
       <div className="page-wrapper-with-nav">
         <div id="signup-wrapper">
           <h1>Sign up below to get rollin'.</h1>
+          <br />
           <form onSubmit={handleSubmit}>
             <TextInput
               label="Enter a new username"
@@ -107,6 +111,7 @@ function Signup() {
               value={password}
               onChange={onChangeUser}
             />
+            <br />
             <label for="skateDate">When did you start skating?</label>
             <DatePicker
               label="When did you start skating?"
@@ -117,15 +122,19 @@ function Signup() {
             <br />
             <br />
             <p>Your skills:</p>
+            <br />
             <CheckboxesGroup name={skills} handleChange={handleChange} />
+
+            <p>Where do you skate?</p>
             <TextInput
               label="Your Location"
               name="location"
               value={location}
               onChange={onChangeUser}
             />
+            <br />
             <Button type="submit" size="large" variant="contained">
-              Submit
+              Sign Up
             </Button>
           </form>
         </div>
