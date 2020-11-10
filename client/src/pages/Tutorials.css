@@ -1,0 +1,19 @@
+iframe {
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+    box-shadow: 5px 5px 15px 5px #a0a0a0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#video-div {
+    text-align: center
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center; 
+}
