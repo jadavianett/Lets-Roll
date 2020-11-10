@@ -118,16 +118,26 @@ export default function CheckboxesGroup(props) {
                 }
                 label="Heel Toe Spins"
               />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={props.spinJump}
+                    onChange={props.handleChange}
+                    name="spinJump"
+                  />
+                }
+                label="360 Jumps"
+              />
             </div>
           </div>
         </FormGroup>
       </FormControl>
-      <FormControl
+      {/* <FormControl
         required
         error={props.error}
         component="fieldset"
         className={classes.formControl}
-      ></FormControl>
+      ></FormControl> */}
     </>
   );
 }
