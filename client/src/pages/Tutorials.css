@@ -1,14 +1,20 @@
 iframe {
   padding: 20px;
   margin: 20px;
+  /* min-width: 560px; */
+  min-height: 315px;
   -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
   box-shadow: 5px 5px 15px 5px #a0a0a0;
   border-radius: 10px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  /* border: 1px dashed blue; */
 }
 
-#video-div {
+#videos-div {
   text-align: center;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: column;
 }
 
 #tutorials-wrapper {
