@@ -5,7 +5,7 @@
 #lets-roll-logo {
   /* border: 2px solid red; */
   font-family: "Monoton", cursive;
-  color: white;
+  color: #ddd9db;
   text-decoration: none;
   font-size: 30pt;
 }
@@ -19,5 +19,5 @@
 }
 
 #nav-color {
-  background-color: #614051;
+  background-color: #523544;
 }

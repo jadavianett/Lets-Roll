@@ -23,7 +23,7 @@ export default function MediaCard(props) {
 
   return (
     <Card className="wide-card">
-      <CardActionArea>
+      <CardActionArea className="target">
         {/* <CardMedia
           image={props.image}
           title="Placeholder"

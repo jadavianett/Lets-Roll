@@ -12,11 +12,12 @@
 }
 
 .page-wrapper-with-nav {
-  /* align-items: center; */
-  /* text-align: center; */
+  /* background-color: yellow; 217 214 213*/
+
+  background-color: white;
+  background-repeat: repeat-y;
   display: grid;
   place-items: center;
-  /* border: 2px dashed red; */
   min-height: calc(100vh - 64px);
 }
 
