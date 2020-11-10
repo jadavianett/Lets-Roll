@@ -2,6 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
+
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -38,6 +42,7 @@ app.get("/api/config", (req, res) => {
   });
 });
 
+app.use(bodyParser.json());
 app.use(AuthController);
 app.use("/api/user", UserController);
 app.use("/api/places", PlaceController);

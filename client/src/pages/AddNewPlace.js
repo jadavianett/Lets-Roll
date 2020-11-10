@@ -33,9 +33,9 @@ function AddNewPlace() {
       name: name,
       location: location,
       //   notes,
-      type: type,
-      creatorId: user._id
-    })
+      type: type
+      //creatorId: user._id
+    },jwt)
       .then((res) => {
         console.log(res.data);
       })
