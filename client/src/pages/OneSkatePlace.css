@@ -1,0 +1,16 @@
+#one-place-wrapper {
+  text-align: center;
+  padding: 50px;
+  /* border: 2px dashed pink; */
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border-radius: 10px;
+  width: 70%;
+}
+
+.wide-paper {
+  margin: 15px auto;
+  width: 80%;
+  padding: 20px;
+  /* border: 1px dashed blue; */
+}
