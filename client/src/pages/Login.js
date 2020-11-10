@@ -32,6 +32,7 @@ function Login() {
   };
 
   return (
+<<<<<<< HEAD
     // <Container>
     <>
       <div className="page-wrapper-with-nav">
@@ -54,6 +55,35 @@ function Login() {
               setPassword(e.target.value);
             }}
           />
+=======
+    <Container>
+      <div className> </div>
+      <h1>LETS ROLL</h1>
+
+      <h4> JOIN THE SK8 COMMUNITY</h4>
+
+      <TextInput
+        label="ENTER EMAIL HERE"
+        name="email"
+        value={emailAddress}
+        onChange={(e) => {
+          setEmail(e.target.value);
+        }}
+      />
+      <TextInput
+        label="ENTER PASSWORD HERE"
+        name="password"
+        value={password}
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+      />
+  
+
+      <Button variant="contained" type="submit" onClick={handleLogin}>
+        LOG IN
+      </Button>
+>>>>>>> 42e13d1a9487cffd63d436b543d880f988dd0be2
 
           <Button variant="contained" type="submit" onClick={handleLogin}>
             LOG IN

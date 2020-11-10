@@ -10,6 +10,7 @@ import API from "../Utils/API";
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const [location, setLocation] = useState("");
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -61,14 +62,15 @@ function Signup() {
     e.preventDefault();
     console.log("Here");
 
-    API.createUser({
+    API.signupUser({
       username,
+      email,
       password,
       selectedDate,
       skills,
     })
       .then((res) => {
-        console.log(res.data);
+        console.log("signup" + res.data);
       })
       .catch((err) => {
         return err;
@@ -82,6 +84,8 @@ function Signup() {
       setUsername(value);
     } else if (e.target.name == "password") {
       setPassword(value);
+    } else if (e.target.name == "email") {
+      setEmail(value);
     }
   };
 

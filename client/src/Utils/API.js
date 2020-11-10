@@ -10,6 +10,10 @@ export default {
   createUser: function (userData) {
     return axios.post("/api/user", userData);
   },
+  signupUser: function (userData) {
+    return axios.post("/api/signup", userData);
+  },
+
 
   updateUser: function (id) {
     return axios.put("/api/user/" + id);
