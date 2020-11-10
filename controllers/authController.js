@@ -57,7 +57,9 @@ router.post("/api/signup", (req, res) => {
 
 router.post("/api/login", (req, res) => {
   // Pull user provided email address and password from the body.
+  console.log(req.body);
   const { emailAddress, password } = req.body;
+  console.log(emailAddress);
   // See if there is a matching user in the database.
   db.User.findOne({ emailAddress: emailAddress })
     .then((foundUser) => {
