@@ -1,3 +1,7 @@
 #login-wrapper {
   text-align: center;
+  padding: 50px;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  border-radius: 10px;
 }

@@ -1,0 +1,17 @@
+#dash-wrapper {
+  box-sizing: border-box;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#dash-links {
+  /* border: 2px dashed blue; */
+}
+
+.full-width {
+  width: 100%;
+  margin: 10px 0px;
+}
