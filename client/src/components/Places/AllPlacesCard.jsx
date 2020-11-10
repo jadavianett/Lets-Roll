@@ -24,11 +24,17 @@ export default function MediaCard(props) {
   return (
     <Card className="wide-card">
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
+        {/* <CardMedia
           image={props.image}
           title="Placeholder"
-        />
+          className="card-media"
+        /> */}
+        {/* <div > */}
+        <img
+          className="card-media"
+          src="https://via.placeholder.com/300x200.png"
+        ></img>
+        {/* </div> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
@@ -42,8 +48,10 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          <Link to={`/oneskateplace/${props.id}`}>View More Info</Link>
+        <Button size="small" color="primary" variant="contained">
+          <Link className="view-more-info" to={`/oneskateplace/${props.id}`}>
+            View More Info
+          </Link>
         </Button>
       </CardActions>
     </Card>

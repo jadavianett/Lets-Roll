@@ -3,6 +3,14 @@
   font-family: sans-serif;
 }
 
+.monoton {
+  font-family: "Monoton", cursive;
+}
+
+.archivo {
+  font-family: "Archivo", sans-serif;
+}
+
 .page-wrapper-with-nav {
   /* align-items: center; */
   /* text-align: center; */

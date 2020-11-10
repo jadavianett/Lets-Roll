@@ -22,13 +22,15 @@ function AllPlaces() {
     <>
       <div className="page-wrapper-with-nav">
         <div id="all-places-wrapper">
-          <h1>This is the all skate places page.</h1>
-          <p>Search filters</p>
+          <h1>All Skate Places</h1>
+          <br />
+          <br />
+          <p>(Search filters to go here)</p>
           <div className="centerMe">
             {places.map((place) => (
               // <div className="wide-card">
               <AllPlacesCard
-                image="https://via.placeholder.com/345x140.png"
+                image="https://via.placeholder.com/345x300.png"
                 name={place.name}
                 location={place.location}
                 type={place.type}
