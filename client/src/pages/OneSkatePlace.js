@@ -1,8 +1,24 @@
 import Paper from "../components/Paper";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import { withRouter, Link } from "react-router-dom";
+import { useEffect} from "react";
+import { withRouter, Link, useParams } from "react-router-dom";
+import API from "../Utils/API";
+
 function OneSkatePlace() {
+  const { id } = useParams();
+  
+  useEffect(() => {
+    //code Here
+    API.getPlace(id)
+      .then((res) => {
+        console.log("one skate place" + res.data);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }, [id]);
+
   return (
     <Container>
       <h1>This is one skate place page.</h1>
