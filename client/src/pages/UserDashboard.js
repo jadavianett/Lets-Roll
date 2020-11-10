@@ -1,7 +1,26 @@
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import { withRouter, Link } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
+import React, { useContext, useEffect } from "react";
+import jwt_decode from "jwt-decode";
+
 function UserDashboard () {
+
+const {jwt} = useContext(AuthContext);
+useEffect(()=>{
+
+if(jwt){
+    var decoded = jwt_decode(jwt);
+    console.log(decoded);
+}
+
+},[jwt])
+
+
+
+// console.log("decoded data" + decoded);
+
     return (
         <Container>
             <h1>Welcome User!</h1>

@@ -3,14 +3,14 @@ import TextInput from "../components/TextInput";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { React, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 function Login() {
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setJwt } = useContext(AuthContext);
+  const { jwt, setJwt } = useContext(AuthContext);
   const history = useHistory();
 
   const handleLogin = (e) => {
@@ -20,8 +20,9 @@ function Login() {
     axios
       .post("/api/login", { emailAddress, password })
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.data);
         setJwt(response.data.data);
+
         history.push("/userdashboard");
       })
       .catch((err) => {
