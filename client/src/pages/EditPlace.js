@@ -16,7 +16,7 @@ function EditPlace() {
     //code Here
     API.getPlace(id)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         setName(res.data.name);
         setLocation(res.data.location);
         setType(res.data.type);
