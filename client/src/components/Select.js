@@ -33,7 +33,7 @@ export default function NativeSelects(props) {
         >
           <option aria-label="None" value="" />
           <option value={"Skate Park"}>Skate Park</option>
-          <option value={"Outdoor rink"}>Outdoor rink</option>
+          <option value={"Outdoor Rink"}>Outdoor Rink</option>
           <option value={"Beltline"}>Beltline</option>
           <option value={"Trail"}>Trail</option>
           <option value={"Greenway"}>Greenway</option>

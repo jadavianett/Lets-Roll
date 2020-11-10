@@ -12,52 +12,52 @@ let simpleSeeds = [
   {
     name: "Historic Fourth Ward Skate Park",
     location: "830 Willoughby Way NE, Atlanta, GA 30312",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "McKoy Skate Park",
     location: "1000 Adams St, Decatur, GA 30030",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Riverdale Skatepark",
     location: "904 Wilson Rd, Riverdale, GA 30296",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Brook Run Skate Park",
     location: "4770 N Peachtree Rd, Dunwoody, GA 30338",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Kennesaw Skatepark",
     location: "3140 Old 41 Hwy NW, Kennesaw, GA 30144",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Pinckney Skatepark",
     location: "4758 S Old Peachtree Rd, Norcross, GA 30071",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Hapeville Skate Park",
     location: "532-500 Marina St, Hapeville, GA 30354",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "JB Williams Park",
     location: "4935 Five Forks Trickum Rd SW, Lilburn, GA 30047",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Pinckney Skatepark",
     location: "4758 S Old Peachtree Rd, Norcross, GA 30071",
-    type: "Skate park",
+    type: "Skate Park",
   },
   {
     name: "Union Hill Park",
     location: "1590 Little Pine Trail, Alpharetta, GA 30005",
-    type: "Outdoor rink",
+    type: "Outdoor Rink",
   },
   {
     name: "East Side Beltline",

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -42,11 +43,9 @@ export default function MediaCard(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          View More Info
+        <Link to={`/oneskateplace/${props.id}`} >View More Info</Link>
         </Button>
-        {/* <Button size="small" color="primary">
-          Learn More
-        </Button> */}
+        
       </CardActions>
     </Card>
   );

@@ -16,7 +16,7 @@ function EditPlace() {
     //code Here
     API.getPlace(id)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         setName(res.data.name);
         setLocation(res.data.location);
         setType(res.data.type);
@@ -67,7 +67,7 @@ function EditPlace() {
 
   return (
     <div>
-      <h1>Edit Skate Place</h1>
+      <h1>Edit {name}</h1>
       <label for="name">Name</label>
       <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
       <label for="location">Location</label>

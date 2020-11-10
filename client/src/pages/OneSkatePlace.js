@@ -1,12 +1,30 @@
 import Paper from "../components/Paper";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
-import { withRouter, Link } from "react-router-dom";
+import { useEffect, useState} from "react";
+import { Link, useParams } from "react-router-dom";
+import API from "../Utils/API";
+
 function OneSkatePlace() {
+  const { id } = useParams();
+  const [place, setPlace] = useState({})
+  
+  useEffect(() => {
+    
+    API.getPlace(id)
+      .then((res) => {
+        console.log("one skate place" + res.data);
+ setPlace(res.data);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }, [id]);
+
   return (
     <Container>
       <h1>This is one skate place page.</h1>
-      <h1>Place Name</h1>
+      <h1>{place.name}</h1>
       <img
         src="https://via.placeholder.com/300x300.png"
         alt="placeholder"
