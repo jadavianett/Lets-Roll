@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -22,7 +22,7 @@ export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card className="wide-card">
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -43,9 +43,8 @@ export default function MediaCard(props) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-        <Link to={`/oneskateplace/${props.id}`} >View More Info</Link>
+          <Link to={`/oneskateplace/${props.id}`}>View More Info</Link>
         </Button>
-        
       </CardActions>
     </Card>
   );

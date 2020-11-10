@@ -1,0 +1,23 @@
+#all-places-wrapper {
+  text-align: center;
+  /* border: 1px dashed hotpink; */
+  padding: 50px;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.centerMe {
+  margin: auto;
+  border: 2px dashed green;
+}
+
+.wide-card {
+  border: 2px solid hotpink;
+  width: 70%;
+  margin: auto;
+  /* padding: 10px; */
+  display: grid;
+  place-items: center;
+}
