@@ -1,6 +1,6 @@
 #signup-wrapper {
   text-align: center;
-  border: 1px dashed hotpink;
+  /* border: 1px dashed hotpink; */
 }
 
 #renameMe {
@@ -12,6 +12,7 @@
   /* background-color: black; */
   margin: auto;
   width: 100%;
+  padding-bottom: 30px;
 }
 
 #skill-columns {
