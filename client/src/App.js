@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <Route exact path="/addnewplace" component={AddNewPlace} />
         <Route exact path="/allplaces" component={AllPlaces} />
-        <Route exact path="/oneskateplace" component={OneSkatePlace} />
+        <Route exact path="/oneskateplace/:id" component={OneSkatePlace} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/tutorials" component={Tutorials} />
         <Route exact path="/userdashboard" component={UserDashboard} />
