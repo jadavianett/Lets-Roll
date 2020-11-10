@@ -8,10 +8,10 @@ const db = require("../models");
 // Sign UP
 
 router.post("/api/signup", (req, res) => {
-  const { emailAddress, password } = req.body;
-     console.log(emailAddress);
+  const { email, password, username, location, skills, skateDate } = req.body;
+     console.log(email);
      console.log(password);
-  if (!emailAddress.trim() || !password.trim()) {
+  if (!email.trim() || !password.trim()) {
     res.status(400);
   } else {
     bcrypt
@@ -19,16 +19,26 @@ router.post("/api/signup", (req, res) => {
       .then((hashedPassword) => {
         console.log(hashedPassword);
         db.User.create({
-          emailAddress: emailAddress,
+          email: email,
+          username: username,
           password: hashedPassword,
+          location: location, 
+          skills: skills, 
+          skateDate: skateDate
         })
           .then((newUser) => {
             const token = jwt.sign(
               {
                 _id: newUser._id,
-                emailAddress: newUser.emailAddress,
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
+                email: newUser.email,
+                username:username, 
+                location: location, 
+                skills: skills, 
+                skateDate: skateDate
+                
+                
+                // firstName: newUser.firstName,
+                // lastName: newUser.lastName,
               },
               "seleniumisawesome"
             );
@@ -59,9 +69,9 @@ router.post("/api/login", (req, res) => {
   // Pull user provided email address and password from the body.
   console.log(req.body);
   const { emailAddress, password } = req.body;
-  console.log(emailAddress);
+  console.log("email" + emailAddress);
   // See if there is a matching user in the database.
-  db.User.findOne({ emailAddress: emailAddress })
+  db.User.findOne({ email: emailAddress })
     .then((foundUser) => {
       if (foundUser) {
         console.log(foundUser);
@@ -81,7 +91,11 @@ router.post("/api/login", (req, res) => {
               const token = jwt.sign(
                 {
                   _id: foundUser._id,
-                  emailAddress: foundUser.emailAddress,
+                  email: foundUser.email,
+                  username: foundUser.username, 
+                  skills: foundUser.skills
+
+                  
                   // firstName: foundUser.firstName,
                   // lastName: foundUser.lastName,
                 },
