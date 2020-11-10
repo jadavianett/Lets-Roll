@@ -93,15 +93,23 @@ function MenuAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Link to="/allplaces">
-                    <Button variant="contained">All Skate Places</Button>
-                  </Link>
-                  <Link to="/viewmyplaces">
-                    <Button variant="contained">My Places</Button>
-                  </Link>
-                  <Link to="/tutorials">
-                    <Button variant="contained">Tutorials</Button>
-                  </Link>
+                  <Button variant="contained">
+                    <Link to="/allplaces" className="no-link-style">
+                      All Skate Places
+                    </Link>
+                  </Button>
+
+                  <Button variant="contained">
+                    <Link to="/viewmyplaces" className="no-link-style">
+                      My Places
+                    </Link>
+                  </Button>
+
+                  <Button variant="contained">
+                    <Link to="/tutorials" className="no-link-style">
+                      Tutorials
+                    </Link>
+                  </Button>
                 </ButtonGroup>
               </>
             )}

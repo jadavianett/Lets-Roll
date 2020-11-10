@@ -1,0 +1,12 @@
+.page-wrapper {
+  /* align-items: center; */
+  /* text-align: center; */
+  display: grid;
+  place-items: center;
+  /* border: 2px dashed red; */
+  height: calc(100vh - 64px);
+}
+
+#login-wrapper {
+  text-align: center;
+}

@@ -2,3 +2,7 @@
   margin: 0px;
   font-family: sans-serif;
 }
+
+.no-link-style {
+  text-decoration: none;
+}

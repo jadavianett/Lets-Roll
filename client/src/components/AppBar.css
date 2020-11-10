@@ -2,6 +2,14 @@
   font-family: "Monoton", cursive;
 }
 
+.archivo {
+  font-family: "Archivo", sans-serif;
+}
+
+* {
+  font-family: "Archivo", sans-serif;
+}
+
 #lets-roll-logo {
   /* border: 2px solid red; */
   font-family: "Monoton", cursive;
@@ -11,5 +19,9 @@
 }
 
 #logo-link {
+  text-decoration: none;
+}
+
+.no-link-style {
   text-decoration: none;
 }
