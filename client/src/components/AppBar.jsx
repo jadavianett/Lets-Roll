@@ -1,4 +1,5 @@
 import React from "react";
+import "./AppBar.css";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -46,7 +47,9 @@ function MenuAppBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/">Let's Roll</Link>
+            <Link to="/" id="logo-link">
+              <span id="lets-roll-logo">Let's Roll</span>
+            </Link>
           </Typography>
 
           <div>
