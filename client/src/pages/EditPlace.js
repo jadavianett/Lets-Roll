@@ -67,7 +67,7 @@ function EditPlace() {
 
   return (
     <div>
-      <h1>Edit Skate Place</h1>
+      <h1>Edit {name}</h1>
       <label for="name">Name</label>
       <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
       <label for="location">Location</label>
