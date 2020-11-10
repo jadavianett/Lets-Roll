@@ -9,15 +9,15 @@ const db = require("../models");
 
 router.post("/api/signup", (req, res) => {
   const { emailAddress, password } = req.body;
-  //   console.log(emailAddress);
-  //   console.log(password);
+     console.log(emailAddress);
+     console.log(password);
   if (!emailAddress.trim() || !password.trim()) {
     res.status(400);
   } else {
     bcrypt
       .hash(password, 10)
       .then((hashedPassword) => {
-        // console.log(hashedPassword);
+        console.log(hashedPassword);
         db.User.create({
           emailAddress: emailAddress,
           password: hashedPassword,
@@ -30,7 +30,7 @@ router.post("/api/signup", (req, res) => {
                 firstName: newUser.firstName,
                 lastName: newUser.lastName,
               },
-              process.env.SECRET
+              "seleniumisawesome"
             );
             res.json({
               error: false,
@@ -69,22 +69,23 @@ router.post("/api/login", (req, res) => {
         console.log("Plain text password from user", password);
         // If there is a matching user, compare the plaintext password with the stored, hashed password.
         bcrypt
-          .compare(password, foundUser.password)
+          .compare( password,foundUser.password)
           .then(function (result) {
             // result == true
             console.log("The passwords match: ", result);
             if (result) {
+              console.log("Result true: password matches");
               // If the passwords match, send back success.
               // TODO: send a jwt back as data instead. DONE
               // TODO: lock down the token with a time frame
               const token = jwt.sign(
                 {
-                  _id: newUser._id,
+                  _id: foundUser._id,
                   emailAddress: foundUser.emailAddress,
-                  firstName: foundUser.firstName,
-                  lastName: foundUser.lastName,
+                  // firstName: foundUser.firstName,
+                  // lastName: foundUser.lastName,
                 },
-                process.env.SECRET
+                "secert"
               );
               res.json({
                 error: false,
