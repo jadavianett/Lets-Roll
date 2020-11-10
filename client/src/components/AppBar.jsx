@@ -31,7 +31,7 @@ function MenuAppBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -88,6 +88,12 @@ function MenuAppBar(props) {
                   <MenuItem onClick={() => handleClose("/tutorials")}>
                     Tutorials
                   </MenuItem>
+                  <MenuItem onClick={() => handleClose("/addnewplace")}>
+                    Add a Skate Place
+                  </MenuItem>
+                  <MenuItem onClick={() => handleClose("/logout")}>
+                    Log Out
+                  </MenuItem>
                 </Menu>
               </>
             ) : (
@@ -108,6 +114,16 @@ function MenuAppBar(props) {
                   <Button variant="contained">
                     <Link to="/tutorials" className="no-link-style">
                       Tutorials
+                    </Link>
+                  </Button>
+                  <Button variant="contained">
+                    <Link to="/addnewplace" className="no-link-style">
+                      Add new skate place
+                    </Link>
+                  </Button>
+                  <Button variant="contained">
+                    <Link to="/logout" className="no-link-style">
+                      Log Out
                     </Link>
                   </Button>
                 </ButtonGroup>
