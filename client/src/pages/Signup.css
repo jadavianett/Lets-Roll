@@ -1,0 +1,33 @@
+#signup-wrapper {
+  text-align: center;
+  border: 1px dashed hotpink;
+}
+
+#renameMe {
+  /* background-color: gray; */
+  width: 100%;
+}
+
+#checkbox-div-2 {
+  /* background-color: black; */
+  margin: auto;
+  width: 100%;
+}
+
+#skill-columns {
+  /* border: 1px solid pink; */
+  width: 100%;
+  margin: auto;
+  /* display: flex; */
+}
+
+.skill-column {
+  box-sizing: border-box;
+  /* border: 2px dashed blue; */
+  display: inline-flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  /* align-items: center; */
+  padding-left: 28px;
+}

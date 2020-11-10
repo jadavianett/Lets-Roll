@@ -1,3 +1,4 @@
+import "./Signup.css";
 import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
@@ -86,39 +87,45 @@ function Signup() {
 
   return (
     <>
-      <Container>
-        <h1>This is the signup page.</h1>
-        <form onSubmit={handleSubmit}>
-          <TextInput
-            label="Enter a username"
-            name="username"
-            value={username}
-            onChange={onChangeUser}
-          />
-          <TextInput
-            label="Enter a password"
-            name="password"
-            value={password}
-            onChange={onChangeUser}
-          />
-          <DatePicker
-            label="When did you start skating?"
-            name="skateDate"
-            handleDateChange={handleDateChange}
-            selectedDate={selectedDate}
-          />
-          <CheckboxesGroup name={skills} handleChange={handleChange} />
-          <TextInput
-            label="Your Location"
-            name="location"
-            value={location}
-            onChange={onChangeUser}
-          />
-          <Button type="submit" size="large" variant="contained">
-            Submit
-          </Button>
-        </form>
-      </Container>
+      <div className="page-wrapper-with-nav">
+        <div id="signup-wrapper">
+          <h1>Sign up below to get rollin'.</h1>
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              label="Enter a new username"
+              name="username"
+              value={username}
+              onChange={onChangeUser}
+            />
+            <TextInput
+              label="Enter a new password"
+              name="password"
+              value={password}
+              onChange={onChangeUser}
+            />
+            <label for="skateDate">When did you start skating?</label>
+            <DatePicker
+              label="When did you start skating?"
+              name="skateDate"
+              handleDateChange={handleDateChange}
+              selectedDate={selectedDate}
+            />
+            <br />
+            <br />
+            <p>Your skills:</p>
+            <CheckboxesGroup name={skills} handleChange={handleChange} />
+            <TextInput
+              label="Your Location"
+              name="location"
+              value={location}
+              onChange={onChangeUser}
+            />
+            <Button type="submit" size="large" variant="contained">
+              Submit
+            </Button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }

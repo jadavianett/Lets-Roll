@@ -48,7 +48,7 @@ function MenuAppBar(props) {
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link to="/" id="logo-link">
-              <span id="lets-roll-logo">Let's Roll</span>
+              <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
 

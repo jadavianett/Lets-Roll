@@ -3,6 +3,15 @@
   font-family: sans-serif;
 }
 
+.page-wrapper-with-nav {
+  /* align-items: center; */
+  /* text-align: center; */
+  display: grid;
+  place-items: center;
+  /* border: 2px dashed red; */
+  height: calc(100vh - 64px);
+}
+
 .no-link-style {
   text-decoration: none;
 }

@@ -34,7 +34,7 @@ function Login() {
   return (
     // <Container>
     <>
-      <div className="page-wrapper">
+      <div className="page-wrapper-with-nav">
         <div id="login-wrapper">
           <h1>Log In and Let's Roll!</h1>
           <br />
