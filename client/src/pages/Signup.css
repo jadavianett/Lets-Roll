@@ -1,9 +1,15 @@
 #signup-wrapper {
   text-align: center;
   /* border: 1px dashed hotpink; */
+  padding: 50px;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-#renameMe {
+#checkbox-div-1 {
   /* background-color: gray; */
   width: 100%;
 }

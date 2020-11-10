@@ -21,7 +21,7 @@ export default function CheckboxesGroup(props) {
 
   return (
     <>
-      <FormControl component="fieldset" id="renameMe">
+      <FormControl component="fieldset" id="checkbox-div-1">
         <FormGroup id="checkbox-div-2">
           <div id="skill-columns">
             <div className="skill-column">
