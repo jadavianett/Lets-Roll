@@ -25,6 +25,10 @@ function AllPlaces() {
   const indexOfFirstPlace = indexOfLastPlace - placesPerPage;
   const currentPlaces = places.slice(indexOfFirstPlace, indexOfLastPlace);
 
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <>
       <div className="page-wrapper-with-nav">
@@ -46,7 +50,11 @@ function AllPlaces() {
               // </div>
             ))}
           </div>
-          <Pagination />
+          <Pagination
+            placesPerPage={placesPerPage}
+            totalPlaces={places.length}
+            paginate={paginate}
+          />
         </div>
       </div>
     </>
