@@ -6,7 +6,6 @@ import API from "../Utils/API";
 
 function AllPlaces() {
   const [places, setPlaces] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [placesPerPage, setPlacesPerPage] = useState(5);
 
@@ -37,6 +36,13 @@ function AllPlaces() {
           <br />
           <br />
           <p>(Search filters to go here)</p>
+          <br />
+          <Pagination
+            placesPerPage={placesPerPage}
+            totalPlaces={places.length}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
           <div className="centerMe">
             {currentPlaces.map((place) => (
               // <div className="wide-card">
