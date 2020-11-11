@@ -8,7 +8,7 @@ const db = require("../models");
 // Sign UP
 
 router.post("/api/signup", (req, res) => {
-  const { email, password, username, location, skills, skateDate } = req.body;
+  const { email, password, username, location, skills, skateSince } = req.body;
      console.log(email);
      console.log(password);
   if (!email.trim() || !password.trim()) {
@@ -24,7 +24,7 @@ router.post("/api/signup", (req, res) => {
           password: hashedPassword,
           location: location, 
           skills: skills, 
-          skateDate: skateDate
+          skateSince: skateSince
         })
           .then((newUser) => {
             const token = jwt.sign(
@@ -34,7 +34,7 @@ router.post("/api/signup", (req, res) => {
                 username:username, 
                 location: location, 
                 skills: skills, 
-                skateDate: skateDate
+                skateSince: skateSince
                 
                 
                 // firstName: newUser.firstName,
@@ -93,7 +93,9 @@ router.post("/api/login", (req, res) => {
                   _id: foundUser._id,
                   email: foundUser.email,
                   username: foundUser.username, 
-                  skills: foundUser.skills
+                  skills: foundUser.skills, 
+                  location: foundUser.location, 
+                  skateSince: foundUser.skateSince
                 },
                 "secret"
               );
