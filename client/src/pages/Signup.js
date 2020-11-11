@@ -2,7 +2,8 @@ import "./Signup.css";
 import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
-import Button from "@material-ui/core/Button";
+import {Button, FormGroup} from "@material-ui/core";
+import Snackbar from "../components/SnackBar";
 import { React, useState, useContext } from "react";
 import API from "../Utils/API";
 import { useHistory } from "react-router-dom";
@@ -14,6 +15,9 @@ function Signup() {
   const [email, setEmail] = useState("");
   const { jwt, setJwt } = useContext(AuthContext);
   const history = useHistory();
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [buttonVal, setButtonVal] = useState("");
 
 
   const [location, setLocation] = useState("");
@@ -31,6 +35,14 @@ function Signup() {
     spinJump: false,
   });
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+    
+  };
   const handleChange = (event) => {
     setSkills({ ...skills, [event.target.name]: event.target.checked });
   };
@@ -67,24 +79,50 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Here");
-    console.log("selectedDate", selectedDate)
-    API.signupUser({
-      username,
-      email,
-      password,
-      skateSince: selectedDate,
-      location,
-      skills,
-    })
-      .then((res) => {
-        console.log("signup" + res.data);
-        setJwt(res.data.data)
-        history.push("/userdashboard");
+    // console.log("Here");
+    // console.log("selectedDate", selectedDate)
+    if(username === "") {
+      // console.log("inside loop username")
+      setOpen(true);
+      setMessage('Invalid Username.')
+      setButtonVal('Try Again')
+
+    } else if (email === ""){
+      // console.log("inside loop email")
+      setOpen(true);
+      setMessage('Invalid Email.')
+      setButtonVal('Try Again')
+
+    } else if(password === ""){
+      // console.log("inside loop password")
+      setOpen(true);
+      setMessage('Invalid Password.')
+      setButtonVal('Try Again')
+    } else {
+      // console.log("inside loop good to go")
+      setOpen(true); 
+      setMessage('Login successful');
+      setButtonVal('woo');
+
+      API.signupUser({
+        username,
+        email,
+        password,
+        skateSince: selectedDate,
+        location,
+        skills,
       })
-      .catch((err) => {
-        return err;
-      });
+        .then((res) => {
+          console.log("signup" + res.data);
+          setJwt(res.data.data)
+          history.push("/userdashboard");
+        })
+        .catch((err) => {
+          return err;
+        });
+
+    }
+    
   };
 
   // const onChangeUser = (e) => {
@@ -106,6 +144,7 @@ function Signup() {
         <div id="signup-wrapper">
           <h1>Sign up below to get rollin'.</h1>
           <br />
+          <FormGroup>
           <form onSubmit={handleSubmit}>
             <TextInput
               label="Enter a new username"
@@ -155,11 +194,18 @@ function Signup() {
                 setLocation(e.target.value);
               }}
             />
+            <Snackbar 
+          onClose={handleClose}
+          open={open}
+          message={message}
+          value={buttonVal}
+          />
             <br />
             <Button type="submit" size="large" variant="contained">
               Sign Up
             </Button>
           </form>
+          </FormGroup> 
         </div>
       </div>
     </>
