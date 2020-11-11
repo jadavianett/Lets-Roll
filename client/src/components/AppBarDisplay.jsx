@@ -7,13 +7,13 @@ function AppBarDisplay({ isLoggedIn }) {
   if (isLoggedIn) {
     return (
       <>
-        <h1>User app bar</h1>
+        <UserAppBar />
       </>
     );
   } else {
     return (
       <>
-        <h1>Guest app bar</h1>
+        <GuestAppBar />
       </>
     );
   }

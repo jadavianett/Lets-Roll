@@ -40,7 +40,7 @@ function App() {
       <Router>
         <div className="App">
           {/* <UserAppBar /> */}
-          <GuestAppBar />
+          {/* <GuestAppBar /> */}
           <AppBarDisplay isLoggedIn={isLoggedIn} />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
