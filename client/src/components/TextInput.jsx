@@ -17,6 +17,7 @@ export default function BasicTextFields(props) {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <TextField
+        type={props.type}
         id="outlined-basic"
         label={props.label}
         variant="outlined"
