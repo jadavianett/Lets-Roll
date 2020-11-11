@@ -16,12 +16,21 @@ import { useState } from "react";
 
 function App() {
   const [jwt, setJwt] = useState("");
+  let isLoggedIn;
+
+  if (jwt != "") {
+    isLoggedIn = true;
+  } else {
+    isLoggedIn = false;
+  }
+
+  // console.log(isLoggedIn);
 
   return (
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          <AppBar />
+          <AppBar isLoggedIn={isLoggedIn} />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/addnewplace" component={AddNewPlace} />
