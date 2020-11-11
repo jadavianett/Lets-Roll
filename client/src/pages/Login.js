@@ -114,9 +114,9 @@ function Login() {
           </FormGroup>
           <br />
           <br />
+          <hr />
           <br />
           <br />
-
           <p>Don't have an account?</p>
           <br />
           <Button variant="contained">
@@ -127,7 +127,7 @@ function Login() {
           <br />
           <br />
           <br />
-          <br />
+
           <p>
             You may also&nbsp;
             <Link to="/allplaces">view skate places without logging in.</Link>
