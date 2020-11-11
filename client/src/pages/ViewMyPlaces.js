@@ -10,6 +10,7 @@ function ViewMyPlaces() {
   const [userId, setUserId] = useState("");
 
   const [places, setPlaces] = useState([]);
+  //for display
   const [myPlaces, setMyPlaces] = useState([]);
   const { jwt } = useContext(AuthContext);
 

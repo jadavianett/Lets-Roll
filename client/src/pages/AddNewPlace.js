@@ -3,15 +3,18 @@ import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
 import { React, useContext, useState, useEffect } from "react";
+
+import { useHistory } from "react-router-dom";
 import API from "../Utils/API";
 import AuthContext from "../context/AuthContext";
 import jwt_decode from "jwt-decode";
 
 function AddNewPlace() {
+  const history = useHistory();
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
-  //   const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState([]);
   // logged-in user
   const [user, setUser] = useState({});
 
@@ -34,7 +37,7 @@ function AddNewPlace() {
       {
         name: name,
         location: location,
-        //   notes,
+        notes: notes,
         type: type,
         //creatorId: user._id
       },
@@ -42,6 +45,7 @@ function AddNewPlace() {
     )
       .then((res) => {
         console.log(res.data);
+        history.push("/viewmyplaces");
       })
       .catch((err) => {
         throw err;
@@ -55,8 +59,8 @@ function AddNewPlace() {
       setName(value);
     } else if (e.target.name === "location") {
       setLocation(value);
-      // } else if (e.target.name === "notes") {
-      //   setNotes(value);
+      } else if (e.target.name === "notes") {
+        setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
       //   console.log("State changed: place type");
@@ -76,14 +80,13 @@ function AddNewPlace() {
             placeholder="Location"
             onChange={onChangeInfo}
           />
-          {/* <TextInput
-        name="notes"
-        placeholder="NOTES"
-        onChange={onChangeInfo}
-      /> */}
+          <textarea name="notes" placeholder="Helpful tips on this place?" onChange={onChangeInfo} />
+
+        
           <Select name="type" onChange={onChangeInfo} value={type} />
           <br />
           <br />
+         
           <Button
             type="submit"
             size="large"
@@ -92,6 +95,7 @@ function AddNewPlace() {
           >
             Save Place
           </Button>
+          
         </div>
       </div>
     </>
