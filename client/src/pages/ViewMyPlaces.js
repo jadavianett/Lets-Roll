@@ -50,11 +50,12 @@ function ViewMyPlaces() {
       <div className="page-wrapper-with-nav">
         <div id="my-places-wrapper">
           <h1>My Skate Places</h1>
-          {places.map((place) => (
+          {myPlaces.map((place) => (
             <MyPlacesCard
               image="https://via.placeholder.com/345x140.png"
               name={place.name}
               location={place.location}
+              notes={place.notes}
               type={place.type}
               id={place._id}
             />
