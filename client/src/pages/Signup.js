@@ -79,7 +79,7 @@ function Signup() {
     })
       .then((res) => {
         console.log("signup" + res.data);
-        setJwt()
+        setJwt(res.data.data)
         history.push("/userdashboard");
       })
       .catch((err) => {
