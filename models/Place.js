@@ -13,9 +13,9 @@ const PlaceSchema = new Schema({
     required: "Location is required",
   },
   notes: {
-    type: String,
-    trim: true,
-  },
+    type: Array,
+    trim: true
+},
   type: {
     type: String,
     trim: true,

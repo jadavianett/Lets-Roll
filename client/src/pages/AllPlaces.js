@@ -34,6 +34,7 @@ function AllPlaces() {
                 location={place.location}
                 type={place.type}
                 id={place._id}
+                notes={place.notes}
               />
               // </div>
             ))}
