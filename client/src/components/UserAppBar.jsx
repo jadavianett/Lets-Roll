@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MenuAppBar(props) {
+function UserAppBar(props) {
   const { history } = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,6 +42,12 @@ function MenuAppBar(props) {
     setAnchorEl(null);
   };
 
+  if (props.isLoggedIn) {
+    console.log("lOGGED IN true");
+  } else {
+    console.log("NOT logged in");
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static" id="nav-color">
@@ -57,7 +63,7 @@ function MenuAppBar(props) {
               <>
                 <IconButton
                   edge="start"
-                  className={classes.menuButton}
+                  // className={classes.menuButton}
                   color="inherit"
                   aria-label="menu"
                   onClick={handleMenu}
@@ -116,11 +122,13 @@ function MenuAppBar(props) {
                       Tutorials
                     </Link>
                   </Button>
+
                   <Button variant="contained">
                     <Link to="/addnewplace" className="no-link-style">
                       Add new skate place
                     </Link>
                   </Button>
+
                   <Button variant="contained">
                     <Link to="/logout" className="no-link-style">
                       Log Out
@@ -136,4 +144,4 @@ function MenuAppBar(props) {
   );
 }
 
-export default withRouter(MenuAppBar);
+export default withRouter(UserAppBar);

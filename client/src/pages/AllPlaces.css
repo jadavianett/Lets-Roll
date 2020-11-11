@@ -38,3 +38,8 @@
   color: white;
   text-decoration: none;
 }
+
+.no-hover-style:hover {
+  cursor: default;
+  background-color: white;
+}
