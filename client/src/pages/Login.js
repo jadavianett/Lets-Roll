@@ -102,6 +102,7 @@ function Login() {
           value={buttonVal}
           />
           <TextInput
+            type="password"
             label="Password"
             name="password"
             value={password}
