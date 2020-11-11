@@ -1,3 +1,4 @@
+import "./EditPlace.css";
 import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
@@ -66,44 +67,54 @@ function EditPlace() {
   };
 
   return (
-    <div>
-      <h1>Edit {name}</h1>
-      <label for="name">Name</label>
-      <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
-      <label for="location">Location</label>
-      <TextInput
-        name="location"
-        placeholder={location}
-        onChange={onChangeInfo}
-      />
-      {/* <TextInput
+    <>
+      <div className="page-wrapper-with-nav">
+        <div id="edit-place-wrapper">
+          <h2>Edit Place:</h2>
+          <br />
+          <h1>{name}</h1>
+          <br />
+          <br />
+          <label for="name">Name</label>
+          <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
+          <label for="location">Location</label>
+          <TextInput
+            name="location"
+            placeholder={location}
+            onChange={onChangeInfo}
+          />
+          {/* <TextInput
         name="notes"
         placeholder="NOTES"
         onChange={onChangeInfo}
       /> */}
-      <label for="type">Skate Place Type</label>
-      <Select name="type" onChange={onChangeInfo} value={type} />
-      <Button
-        type="submit"
-        size="large"
-        variant="contained"
-        onClick={handleSave}
-      >
-        Save Place
-      </Button>
-      <br />
-      <br />
-      <p>
-        <Button
-          size="large"
-          variant="contained"
-          color="secondary"
-          onClick={handleDelete}
-        >
-          DELETE PLACE
-        </Button>
-      </p>
-    </div>
+          <label for="type">Skate Place Type</label>
+          <Select name="type" onChange={onChangeInfo} value={type} />
+          <br />
+          <br />
+
+          <Button
+            type="submit"
+            size="large"
+            variant="contained"
+            onClick={handleSave}
+          >
+            Save Changes
+          </Button>
+          <br />
+          <br />
+
+          <Button
+            size="large"
+            variant="contained"
+            color="secondary"
+            onClick={handleDelete}
+          >
+            DELETE PLACE
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -13,5 +13,10 @@
 
 .full-width {
   width: 100%;
-  margin: 10px 0px;
+  /* margin-bottom: 100px; */
+}
+
+.btm-margin {
+  /* border: 1px dashed red; */
+  margin-bottom: 20px;
 }

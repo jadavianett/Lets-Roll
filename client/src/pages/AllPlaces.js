@@ -1,21 +1,32 @@
 import "./AllPlaces.css";
 import AllPlacesCard from "../components/Places/AllPlacesCard";
+import Pagination from "../components/Pagination";
 import { useEffect, useState } from "react";
 import API from "../Utils/API";
 
 function AllPlaces() {
   const [places, setPlaces] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [placesPerPage, setPlacesPerPage] = useState(5);
 
   useEffect(() => {
     API.getPlaces()
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setPlaces(res.data);
       })
       .catch((err) => {
         throw err;
       });
   }, []);
+
+  const indexOfLastPlace = currentPage * placesPerPage;
+  const indexOfFirstPlace = indexOfLastPlace - placesPerPage;
+  const currentPlaces = places.slice(indexOfFirstPlace, indexOfLastPlace);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <>
@@ -25,8 +36,15 @@ function AllPlaces() {
           <br />
           <br />
           <p>(Search filters to go here)</p>
+          <br />
+          <Pagination
+            placesPerPage={placesPerPage}
+            totalPlaces={places.length}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
           <div className="centerMe">
-            {places.map((place) => (
+            {currentPlaces.map((place) => (
               // <div className="wide-card">
               <AllPlacesCard
                 image="https://via.placeholder.com/345x300.png"
@@ -39,6 +57,12 @@ function AllPlaces() {
               // </div>
             ))}
           </div>
+          <Pagination
+            placesPerPage={placesPerPage}
+            totalPlaces={places.length}
+            paginate={paginate}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     </>

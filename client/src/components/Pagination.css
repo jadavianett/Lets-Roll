@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+  justify-content: center;
+}
+
+.page-number {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0px 3px;
+  font-size: 0.875rem;
+}
+
+.page-number:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+
+.current-page {
+  background-color: #dddddd;
+}
