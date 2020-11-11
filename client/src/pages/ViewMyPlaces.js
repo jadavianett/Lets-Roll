@@ -1,5 +1,6 @@
-import "./ViewMyPlaces.css";
-import MyPlacesCard from "../components/Places/MyPlacesCard";
+// import "./ViewMyPlaces.css";
+import "./Pages.css";
+import MyPlacesCard from "../components/MyPlacesCard";
 import AuthContext from "../context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
@@ -47,18 +48,20 @@ function ViewMyPlaces() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="my-places-wrapper">
+      <div className="body-wrapper">
+        <div className="places-wrapper">
           <h1>My Skate Places</h1>
           {myPlaces.map((place) => (
-            <MyPlacesCard
-              image="https://via.placeholder.com/345x140.png"
-              name={place.name}
-              location={place.location}
-              notes={place.notes}
-              type={place.type}
-              id={place._id}
-            />
+            <div className="card-div-3">
+              <MyPlacesCard
+                image="https://via.placeholder.com/345x140.png"
+                name={place.name}
+                location={place.location}
+                notes={place.notes}
+                type={place.type}
+                id={place._id}
+              />
+            </div>
           ))}
         </div>
       </div>

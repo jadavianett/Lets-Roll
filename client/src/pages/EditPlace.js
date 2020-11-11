@@ -1,9 +1,10 @@
-import "./EditPlace.css";
+// import "./EditPlace.css";
+import "./Pages.css";
 import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
 import { React, useState, useEffect } from "react";
-import { useParams, Link, useHistory  } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import API from "../Utils/API";
 
 function EditPlace() {
@@ -34,7 +35,12 @@ function EditPlace() {
     e.preventDefault();
     console.log("clicked save");
     //API call to "put" a place, updatePlace
-    API.updatePlace(id, { name: name, location: location, type: type, notes: notes,})
+    API.updatePlace(id, {
+      name: name,
+      location: location,
+      type: type,
+      notes: notes,
+    })
       .then((res) => {
         console.log(res.data);
         history.push("/viewmyplaces");
@@ -63,8 +69,8 @@ function EditPlace() {
       setName(value);
     } else if (e.target.name === "location") {
       setLocation(value);
-      } else if (e.target.name === "notes") {
-        setNotes(value);
+    } else if (e.target.name === "notes") {
+      setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
       //   console.log("State changed: place type");
@@ -73,8 +79,8 @@ function EditPlace() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="edit-place-wrapper">
+      <div className="body-wrapper">
+        <div className="content-wrapper">
           <h2>Edit Place:</h2>
           <br />
           <h1>{name}</h1>
@@ -89,24 +95,21 @@ function EditPlace() {
             onChange={onChangeInfo}
           />
           <label for="notes">Notes</label>
-          <TextInput
-        name="notes"
-        placeholder={notes}
-        onChange={onChangeInfo}
-      />
+          <TextInput name="notes" placeholder={notes} onChange={onChangeInfo} />
           <label for="type">Skate Place Type</label>
           <Select name="type" onChange={onChangeInfo} value={type} />
           <br />
           <br />
 
-          <Link to="/viewmyplaces"><Button
-            type="submit"
-            size="large"
-            variant="contained"
-            onClick={handleSave}
-          >
-            Save Changes
-          </Button>
+          <Link to="/viewmyplaces">
+            <Button
+              type="submit"
+              size="large"
+              variant="contained"
+              onClick={handleSave}
+            >
+              Save Changes
+            </Button>
           </Link>
           <br />
           <br />

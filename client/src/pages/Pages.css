@@ -1,0 +1,131 @@
+/* ALL PAGES */
+.content-wrapper {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 50px;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border-radius: 10px;
+  min-width: 50vw;
+}
+
+/* ALL PLACES*/
+/* ================================================================ */
+.places-wrapper {
+  margin: auto;
+  text-align: center;
+  /* border: 1px dashed hotpink; */
+  border-radius: 10px;
+  margin-top: 50px;
+  min-width: 50vw;
+}
+
+.card-div-1 {
+  /* border: 2px solid hotpink; */
+  max-width: 70vw;
+  margin: 30px auto;
+  padding: 30px 0px;
+  text-align: center;
+}
+.card-div-3 {
+  max-width: 70vw;
+  /* border: 2px solid hotpink; */
+  padding: 30px 0px;
+  text-align: center;
+}
+
+.view-more-info {
+  color: white;
+  text-decoration: none;
+}
+
+.card-padding {
+  /* border: 2px solid yellow; */
+  padding: 30px 0px;
+}
+
+/* ================================================================ */
+
+/* SIGNUP */
+/* ================================================================ */
+#signup-wrapper {
+  text-align: center;
+  /* border: 1px dashed hotpink; */
+  padding: 50px;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#checkbox-div-1 {
+  /* background-color: gray; */
+  width: 100%;
+}
+
+#checkbox-div-2 {
+  /* background-color: black; */
+  margin: auto;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+#skill-columns {
+  /* border: 1px solid pink; */
+  width: 100%;
+  margin: auto;
+  /* display: flex; */
+}
+
+.skill-column {
+  box-sizing: border-box;
+  /* border: 2px dashed blue; */
+  display: inline-flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  /* align-items: center; */
+  padding-left: 28px;
+}
+/* ================================================================ */
+
+/* TUTORIALS*/
+/* ================================================================ */
+iframe {
+  padding: 20px;
+  margin: 20px;
+  /* min-width: 560px; */
+  min-height: 315px;
+  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  border-radius: 10px;
+  /* margin-bottom: 30px; */
+  /* border: 1px dashed blue; */
+}
+
+#videos-div {
+  text-align: center;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: column;
+}
+
+#tutorials-wrapper {
+  /* border: 2px dashed green; */
+  text-align: center;
+  padding: 50px;
+}
+
+/* ================================================================ */
+
+/* USER DASHBOARD */
+.full-width {
+  width: 70%;
+  /* margin-bottom: 100px; */
+}
+
+.btm-margin {
+  /* border: 1px dashed red; */
+  margin-bottom: 20px;
+}

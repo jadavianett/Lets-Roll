@@ -22,8 +22,8 @@ export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className="wide-card">
-      <CardActionArea className="no-hover-style">
+    <Card className="card-div-1">
+      <CardActionArea className="card-div-2">
         {/* <CardMedia
           image={props.image}
           title="Placeholder"
@@ -35,7 +35,7 @@ export default function MediaCard(props) {
           src="https://via.placeholder.com/300x200.png"
         ></img>
         {/* </div> */}
-        <CardContent className="card-text">
+        <CardContent className="margin-auto">
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
           </Typography>
@@ -46,14 +46,12 @@ export default function MediaCard(props) {
             Place type: {props.type}
           </Typography>
         </CardContent>
-      </CardActionArea>
-      <CardActions>
         <Button size="small" color="primary" variant="contained">
           <Link className="view-more-info" to={`/oneskateplace/${props.id}`}>
             View More Info
           </Link>
         </Button>
-      </CardActions>
+      </CardActionArea>
     </Card>
   );
 }

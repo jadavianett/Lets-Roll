@@ -1,4 +1,4 @@
-import "./Userdashboard.css";
+import "./Pages.css";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
@@ -18,12 +18,10 @@ function UserDashboard() {
     }
   }, [jwt]);
 
-  // console.log("decoded data" + decoded);
-
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="dash-wrapper">
+      <div className="body-wrapper">
+        <div className="content-wrapper">
           <h1>Welcome {user.username}!</h1>
           <br />
           <br />
@@ -38,13 +36,6 @@ function UserDashboard() {
               </Link>
             </p>
             <p class="btm-margin">
-              <Link to="/viewmyplaces">
-                <Button variant="contained" className="full-width">
-                  VIEW MY SKATE PLACES
-                </Button>
-              </Link>
-            </p>
-            <p class="btm-margin">
               <Link to="/tutorials">
                 <Button variant="contained" className="full-width">
                   VIEW TUTORIALS
@@ -55,6 +46,13 @@ function UserDashboard() {
               <Link to="/addnewplace">
                 <Button variant="contained" className="full-width">
                   ADD NEW SKATE PLACE
+                </Button>
+              </Link>
+            </p>{" "}
+            <p class="btm-margin">
+              <Link to="/viewmyplaces">
+                <Button variant="contained" className="full-width">
+                  VIEW MY SKATE PLACES
                 </Button>
               </Link>
             </p>

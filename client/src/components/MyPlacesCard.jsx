@@ -22,9 +22,8 @@ export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
-    <Card className="wide-card">
+    <Card className="card-padding">
       <CardActionArea>
-       
         <img
           className="card-media"
           src="https://via.placeholder.com/300x200.png"
@@ -44,13 +43,11 @@ export default function MediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Link to={`/editplace/${props.id}`}>
+      <Link to={`/editplace/${props.id}`}>
         <Button size="small" color="primary">
           Edit Place
         </Button>
-        </Link>
-      </CardActions>
+      </Link>
     </Card>
   );
 }

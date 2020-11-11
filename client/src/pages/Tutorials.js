@@ -1,10 +1,9 @@
-import { Container } from "@material-ui/core";
-import "./Tutorials.css";
+import "./Pages.css";
 
 function Tutorials() {
   return (
     <>
-      <div className="page-wrapper-with-nav">
+      <div className="body-wrapper">
         <div id="tutorials-wrapper">
           <h1>Tutorials</h1>
           <br />
@@ -12,7 +11,7 @@ function Tutorials() {
 
           <p>
             Here are some tutorials recommended by the Let's Roll team to help
-            you sharpen your skills!
+            you sharpen your quad skating skills!
           </p>
           <br />
           <br />

@@ -1,4 +1,4 @@
-import "./OneSkatePlace.css";
+import "./Pages.css";
 import Paper from "../components/Paper";
 import Button from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
@@ -23,8 +23,8 @@ function OneSkatePlace() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="one-place-wrapper">
+      <div className="body-wrapper">
+        <div className="content-wrapper">
           <h1>{place.name}</h1>
           <h2>{place.location}</h2>
           <br />
