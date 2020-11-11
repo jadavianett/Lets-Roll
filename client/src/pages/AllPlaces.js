@@ -30,7 +30,7 @@ function AllPlaces() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
+      <div className="body-wrapper">
         <div className="places-wrapper">
           <h1>All Skate Places</h1>
           <br />
@@ -63,6 +63,8 @@ function AllPlaces() {
             paginate={paginate}
             currentPage={currentPage}
           />
+          <br />
+          <br />
         </div>
       </div>
     </>
