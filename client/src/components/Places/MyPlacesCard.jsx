@@ -17,34 +17,33 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles();
 
   return (
     <Card className="wide-card">
       <CardActionArea>
-        {/* <CardMedia
-          className={classes.media}
-          image="https://via.placeholder.com/345x140.png/"
-          title="Placeholder"
-        /> */}
+       
         <img
           className="card-media"
           src="https://via.placeholder.com/300x200.png"
         ></img>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Skate Place
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            This is a good skate place!
+            {props.location}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.type}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.notes}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          View More Info
-        </Button>
         <Button size="small" color="primary">
           Edit Place
         </Button>
