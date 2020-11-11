@@ -40,8 +40,6 @@ function App() {
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          {/* <UserAppBar /> */}
-          {/* <GuestAppBar /> */}
           <AppBarDisplay isLoggedIn={isLoggedIn} />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
