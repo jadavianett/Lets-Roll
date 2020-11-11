@@ -3,13 +3,15 @@ import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
 import { React, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useHistory  } from "react-router-dom";
 import API from "../Utils/API";
 
 function EditPlace() {
+  const history = useHistory();
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
+  const [notes, setNotes] = useState([]);
   //   const [notes, setNotes] = useState("");
   const { id } = useParams();
 
@@ -21,6 +23,7 @@ function EditPlace() {
         setName(res.data.name);
         setLocation(res.data.location);
         setType(res.data.type);
+        setNotes(res.data.notes);
       })
       .catch((err) => {
         throw err;
@@ -31,9 +34,10 @@ function EditPlace() {
     e.preventDefault();
     console.log("clicked save");
     //API call to "put" a place, updatePlace
-    API.updatePlace(id, { name: name, location: location, type: type })
+    API.updatePlace(id, { name: name, location: location, type: type, notes: notes,})
       .then((res) => {
         console.log(res.data);
+        history.push("/viewmyplaces");
       })
       .catch((err) => {
         throw err;
@@ -45,6 +49,7 @@ function EditPlace() {
     API.deletePlace(id)
       .then((res) => {
         console.log(res.data);
+        history.push("/viewmyplaces");
       })
       .catch((err) => {
         throw err;
@@ -58,8 +63,8 @@ function EditPlace() {
       setName(value);
     } else if (e.target.name === "location") {
       setLocation(value);
-      // } else if (e.target.name === "notes") {
-      //   setNotes(value);
+      } else if (e.target.name === "notes") {
+        setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
       //   console.log("State changed: place type");
@@ -83,17 +88,18 @@ function EditPlace() {
             placeholder={location}
             onChange={onChangeInfo}
           />
-          {/* <TextInput
+          <label for="notes">Notes</label>
+          <TextInput
         name="notes"
-        placeholder="NOTES"
+        placeholder={notes}
         onChange={onChangeInfo}
-      /> */}
+      />
           <label for="type">Skate Place Type</label>
           <Select name="type" onChange={onChangeInfo} value={type} />
           <br />
           <br />
 
-          <Button
+          <Link to="/viewmyplaces"><Button
             type="submit"
             size="large"
             variant="contained"
@@ -101,6 +107,7 @@ function EditPlace() {
           >
             Save Changes
           </Button>
+          </Link>
           <br />
           <br />
 
