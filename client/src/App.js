@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
+import Logout from "./pages/Logout";
 import AppBar from "./components/AppBar";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
@@ -37,6 +38,7 @@ function App() {
           <AppBar />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/logout" component={Logout} />
           <Route exact path="/addnewplace" component={AddNewPlace} />
           <Route exact path="/allplaces" component={AllPlaces} />
           <Route exact path="/oneskateplace/:id" component={OneSkatePlace} />
