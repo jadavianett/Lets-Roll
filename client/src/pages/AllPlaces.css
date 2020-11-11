@@ -24,10 +24,14 @@
   box-shadow: 5px 5px 15px 5px #000000; */
 }
 
-.card-media {
+.card-img {
   /* border: 2px dashed hotpink; */
   /* min-height: 300px; */
   /* object-fit: contain; */
+}
+.card-text {
+  /* border: 2px solid green; */
+  width: 70vw;
 }
 
 .view-more-info {

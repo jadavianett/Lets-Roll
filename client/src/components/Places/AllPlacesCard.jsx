@@ -31,11 +31,11 @@ export default function MediaCard(props) {
         /> */}
         {/* <div > */}
         <img
-          className="card-media"
+          className="card-img"
           src="https://via.placeholder.com/300x200.png"
         ></img>
         {/* </div> */}
-        <CardContent>
+        <CardContent className="card-text">
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
           </Typography>
