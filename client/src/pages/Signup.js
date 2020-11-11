@@ -3,7 +3,6 @@ import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
 import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
 import { React, useState } from "react";
 import API from "../Utils/API";
 
@@ -83,11 +82,11 @@ function Signup() {
   const onChangeUser = (e) => {
     let value = e.target.value;
 
-    if (e.target.name == "username") {
+    if (e.target.name === "username") {
       setUsername(value);
-    } else if (e.target.name == "password") {
+    } else if (e.target.name === "password") {
       setPassword(value);
-    } else if (e.target.name == "email") {
+    } else if (e.target.name === "email") {
       setEmail(value);
     }
   };

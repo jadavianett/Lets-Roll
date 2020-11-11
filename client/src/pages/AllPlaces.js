@@ -1,6 +1,5 @@
 import "./AllPlaces.css";
 import AllPlacesCard from "../components/Places/AllPlacesCard";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import API from "../Utils/API";
 
