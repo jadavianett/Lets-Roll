@@ -30,28 +30,28 @@ function UserDashboard() {
           <p> What would you like to do?</p>
           <br />
           <div id="dash-links">
-            <p>
+            <p class="btm-margin">
               <Link to="/allplaces">
                 <Button variant="contained" className="full-width">
                   VIEW ALL SKATE PLACES
                 </Button>
               </Link>
             </p>
-            <p>
+            <p class="btm-margin">
               <Link to="/viewmyplaces">
                 <Button variant="contained" className="full-width">
                   VIEW MY SKATE PLACES
                 </Button>
               </Link>
             </p>
-            <p>
+            <p class="btm-margin">
               <Link to="/tutorials">
                 <Button variant="contained" className="full-width">
                   VIEW TUTORIALS
                 </Button>
               </Link>
             </p>
-            <p>
+            <p class="btm-margin">
               <Link to="/addnewplace">
                 <Button variant="contained" className="full-width">
                   ADD NEW SKATE PLACE
