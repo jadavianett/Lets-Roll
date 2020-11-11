@@ -9,7 +9,9 @@ import Signup from "./pages/Signup";
 import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import ViewMyPlaces from "./pages/ViewMyPlaces";
-import AppBar from "./components/AppBar";
+import AppBarDisplay from "./components/AppBarDisplay";
+import UserAppBar from "./components/UserAppBar";
+import GuestAppBar from "./components/GuestAppBar";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useContext, useEffect } from "react";
@@ -37,7 +39,9 @@ function App() {
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          <AppBar isLoggedIn={isLoggedIn} />
+          {/* <UserAppBar /> */}
+          <GuestAppBar />
+          <AppBarDisplay isLoggedIn={isLoggedIn} />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/addnewplace" component={AddNewPlace} />

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MenuAppBar(props) {
+function UserAppBar(props) {
   const { history } = props;
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -63,7 +63,7 @@ function MenuAppBar(props) {
               <>
                 <IconButton
                   edge="start"
-                  className={classes.menuButton}
+                  // className={classes.menuButton}
                   color="inherit"
                   aria-label="menu"
                   onClick={handleMenu}
@@ -104,50 +104,37 @@ function MenuAppBar(props) {
               </>
             ) : (
               <>
-                {/* <ButtonGroup> */}
+                <ButtonGroup>
+                  <Button variant="contained">
+                    <Link to="/allplaces" className="no-link-style">
+                      All Skate Places
+                    </Link>
+                  </Button>
 
-                <Button variant="contained">
-                  <Link to="/allplaces" className="no-link-style">
-                    All Skate Places
-                  </Link>
-                </Button>
-                <span className={props.isLoggedIn ? "active" : "hidden"}>
                   <Button variant="contained">
                     <Link to="/viewmyplaces" className="no-link-style">
                       My Places
                     </Link>
                   </Button>
-                </span>
 
-                <Button variant="contained">
-                  <Link to="/tutorials" className="no-link-style">
-                    Tutorials
-                  </Link>
-                </Button>
+                  <Button variant="contained">
+                    <Link to="/tutorials" className="no-link-style">
+                      Tutorials
+                    </Link>
+                  </Button>
 
-                <span className={props.isLoggedIn ? "active" : "hidden"}>
                   <Button variant="contained">
                     <Link to="/addnewplace" className="no-link-style">
                       Add new skate place
                     </Link>
                   </Button>
-                </span>
 
-                <span className={props.isLoggedIn ? "active" : "hidden"}>
                   <Button variant="contained">
                     <Link to="/logout" className="no-link-style">
                       Log Out
                     </Link>
                   </Button>
-                </span>
-
-                <span className={props.isLoggedIn ? "hidden" : "active"}>
-                  <Button variant="contained">
-                    <Link to="/login" className="no-link-style">
-                      Log In
-                    </Link>
-                  </Button>
-                </span>
+                </ButtonGroup>
               </>
             )}
           </div>
@@ -157,4 +144,4 @@ function MenuAppBar(props) {
   );
 }
 
-export default withRouter(MenuAppBar);
+export default withRouter(UserAppBar);
