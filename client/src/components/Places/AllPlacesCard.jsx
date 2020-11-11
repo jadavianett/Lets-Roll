@@ -23,7 +23,7 @@ export default function MediaCard(props) {
 
   return (
     <Card className="wide-card">
-      <CardActionArea className="target">
+      <CardActionArea className="no-hover-style">
         {/* <CardMedia
           image={props.image}
           title="Placeholder"
@@ -39,11 +39,11 @@ export default function MediaCard(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {props.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body1" component="p">
             {props.location}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.type}
+          <Typography variant="body1" color="textSecondary" component="p">
+            Place type: {props.type}
           </Typography>
         </CardContent>
       </CardActionArea>

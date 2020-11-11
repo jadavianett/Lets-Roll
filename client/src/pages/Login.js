@@ -60,21 +60,24 @@ function Login() {
       setButtonVal('Try Again')
 
     } else {
-      setOpen(true); 
-      setMessage('Login successful');
-      setButtonVal('woo')
-
 
       axios
       .post("/api/login", { emailAddress, password })
       .then((response) => {
         console.log(response.data.data);
+
         setJwt(response.data.data);
         sessionStorage.setItem("jwt", response.data.data);
+        setOpen(true); 
+        setMessage('Login successful');
+        setButtonVal('woo')
         history.push("/userdashboard");
       })
       .catch((err) => {
         console.log(err);
+        setOpen(true);
+        setMessage('Invalid User')
+        setButtonVal('Try Again')
       })
     };
   };
