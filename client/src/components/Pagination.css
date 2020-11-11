@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  /* border: 1px solid red; */
+  padding: 0px;
+  /* margin: auto; */
+  /* text-align: center; */
+  justify-content: center;
+}
+
+.page-number {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0px 3px;
+  font-size: 0.875rem;
+}
+
+.page-number:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
