@@ -3,13 +3,18 @@ import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
 import Button from "@material-ui/core/Button";
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import API from "../Utils/API";
+import { useHistory } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const { jwt, setJwt } = useContext(AuthContext);
+  const history = useHistory();
+
 
   const [location, setLocation] = useState("");
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -63,33 +68,37 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Here");
-
+    console.log("selectedDate", selectedDate)
     API.signupUser({
       username,
       email,
       password,
-      selectedDate,
+      skateSince: selectedDate,
+      location,
       skills,
     })
       .then((res) => {
         console.log("signup" + res.data);
+        setJwt()
+        history.push("/userdashboard");
       })
       .catch((err) => {
         return err;
       });
   };
 
-  const onChangeUser = (e) => {
-    let value = e.target.value;
+  // const onChangeUser = (e) => {
+  //   let value = e.target.value;
 
-    if (e.target.name === "username") {
-      setUsername(value);
-    } else if (e.target.name === "password") {
-      setPassword(value);
-    } else if (e.target.name === "email") {
-      setEmail(value);
-    }
-  };
+  //   if (e.target.name === "username") {
+  //     setUsername(value);
+  //   } else if (e.target.name === "password") {
+  //     setPassword(value);
+  //   } else if (e.target.name === "email") {
+  //     setEmail(value);
+  //   } else if(e.target.name === "location"){
+  //     set
+  //   }
 
   return (
     <>
@@ -102,19 +111,32 @@ function Signup() {
               label="Enter a new username"
               name="username"
               value={username}
-              onChange={onChangeUser}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
             />
             <TextInput
+              label="Enter a new email"
+              name="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <TextInput
+              type="password"
               label="Enter a new password"
               name="password"
               value={password}
-              onChange={onChangeUser}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <br />
-            <label for="skateDate">When did you start skating?</label>
+            <label htmlFor="skateDate">When did you start skating?</label>
             <DatePicker
               label="When did you start skating?"
-              name="skateDate"
+              name="skateSince"
               handleDateChange={handleDateChange}
               selectedDate={selectedDate}
             />
@@ -129,7 +151,9 @@ function Signup() {
               label="Your Location"
               name="location"
               value={location}
-              onChange={onChangeUser}
+              onChange={(e) => {
+                setLocation(e.target.value);
+              }}
             />
             <br />
             <Button type="submit" size="large" variant="contained">
