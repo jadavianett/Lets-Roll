@@ -12,10 +12,23 @@ import ViewMyPlaces from "./pages/ViewMyPlaces";
 import AppBar from "./components/AppBar";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
-import { useState } from "react";
+import { useState,useContext, useEffect } from "react";
 
 function App() {
   const [jwt, setJwt] = useState("");
+  
+  useEffect(()=>{
+    const sessionJwt = sessionStorage.getItem("jwt");
+    if(sessionJwt)
+    {
+      setJwt(sessionJwt);
+      
+    }
+    
+
+  },[]);
+
+  
 
   return (
     <AuthContext.Provider value={{ jwt, setJwt }}>

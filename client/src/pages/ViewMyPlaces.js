@@ -7,30 +7,40 @@ import API from "../Utils/API";
 
 function ViewMyPlaces() {
   const [user, setUser] = useState({});
+  const [userId, setUserId] = useState("");
+
   const [places, setPlaces] = useState([]);
   const { jwt } = useContext(AuthContext);
 
   useEffect(() => {
-    if (jwt) {
-      var decoded = jwt_decode(jwt);
-      console.log(decoded);
-      setUser(decoded);
-      console.log(decoded.username);
+    async function functionName() {
+      console.log("jwt " + jwt);
+      if (jwt) {
+        var decoded = await jwt_decode(jwt);
+        console.log(decoded);
+        setUser(decoded);
+        setUserId(decoded._id);
+        //console.log(decoded.username);
+
+        //get all the places from the DB
+        API.getPlaces()
+          .then((res) => {
+            console.log(res.data);
+            console.log("user id " + userId + user._id);
+            var placesWithId = res.data.filter(
+              (x) => x.creatorId === decoded._id
+            );
+            console.log(placesWithId);
+            setPlaces(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     }
 
-    //get all the places from the DB
-    API.getPlaces()
-      .then((res) => {
-        console.log(res.data);
-        console.log("user id" + user._id);
-        var placesWithId = res.data.filter((x) => x.creatorId === user._id);
-        console.log(placesWithId);
-        setPlaces(res.data);
-      })
-      .catch((err) => {
-        throw err;
-      });
-  }, []);
+    functionName();
+  }, [jwt]);
 
   return (
     <>

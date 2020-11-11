@@ -70,6 +70,7 @@ function Login() {
       .then((response) => {
         console.log(response.data.data);
         setJwt(response.data.data);
+        sessionStorage.setItem("jwt", response.data.data);
         history.push("/userdashboard");
       })
       .catch((err) => {
