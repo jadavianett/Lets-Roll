@@ -113,6 +113,7 @@ let simpleSeeds = [
     location:
       "East Decatur Greenway Trailhead, 890 S Columbia Dr, Decatur, GA 30030",
     type: "Greenway",
+    notes: [""]
   },
   {
     name: "LaGrange Thread",
