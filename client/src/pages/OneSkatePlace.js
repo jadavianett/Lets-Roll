@@ -1,7 +1,6 @@
 import "./OneSkatePlace.css";
 import Paper from "../components/Paper";
 import Button from "@material-ui/core/Button";
-import Container from "@material-ui/core/Container";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import API from "../Utils/API";
@@ -15,6 +14,7 @@ function OneSkatePlace() {
       .then((res) => {
         console.log("one skate place" + res.data);
         setPlace(res.data);
+        console.log(res);
       })
       .catch((err) => {
         throw err;
@@ -26,6 +26,7 @@ function OneSkatePlace() {
       <div className="page-wrapper-with-nav">
         <div id="one-place-wrapper">
           <h1>{place.name}</h1>
+          <h2>{place.location}</h2>
           <br />
           <br />
           <img
@@ -37,9 +38,7 @@ function OneSkatePlace() {
           <h3>See what others have said about this place!</h3>
           <br />
           <br />
-          <Paper />
-          <Paper />
-          <Paper />
+          {place.notes && place.notes.map((note) => <Paper notes={note} />)}
           <p>
             <br />
             <br />
