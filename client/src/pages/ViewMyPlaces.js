@@ -10,6 +10,7 @@ function ViewMyPlaces() {
   const [userId, setUserId] = useState("");
 
   const [places, setPlaces] = useState([]);
+  const [myPlaces, setMyPlaces] = useState([]);
   const { jwt } = useContext(AuthContext);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function ViewMyPlaces() {
             var placesWithId = res.data.filter(
               (x) => x.creatorId === decoded._id
             );
+            setMyPlaces(placesWithId);
             console.log(placesWithId);
             setPlaces(res.data);
           })
