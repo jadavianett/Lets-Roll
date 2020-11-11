@@ -54,6 +54,7 @@ function AllPlaces() {
             placesPerPage={placesPerPage}
             totalPlaces={places.length}
             paginate={paginate}
+            currentPage={currentPage}
           />
         </div>
       </div>
