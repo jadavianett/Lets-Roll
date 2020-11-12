@@ -8,7 +8,7 @@ import OneSkatePlace from "./pages/OneSkatePlace";
 import Signup from "./pages/Signup";
 import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
-import ViewMyPlaces from "./pages/ViewMyPlaces";
+import MyPlaces from "./pages/MyPlaces";
 import Logout from "./pages/Logout";
 import AppBarDisplay from "./components/AppBarDisplay";
 import UserAppBar from "./components/UserAppBar";
@@ -50,7 +50,7 @@ function App() {
             path="/userdashboard"
             component={UserDashboard}
           />
-          <ProtectedRoute exact path="/myplaces" component={ViewMyPlaces} />
+          <ProtectedRoute exact path="/myplaces" component={MyPlaces} />
           <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
         </div>
       </Router>

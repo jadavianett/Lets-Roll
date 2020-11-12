@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-import AddTwoToneIcon from '@material-ui/icons/AddTwoTone';
-import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
-import ExploreIcon from '@material-ui/icons/Explore';
-import ListIcon from '@material-ui/icons/List';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AddTwoToneIcon from "@material-ui/icons/AddTwoTone";
+import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
+import ExploreIcon from "@material-ui/icons/Explore";
+import ListIcon from "@material-ui/icons/List";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function UserDashboard() {
   const [user, setUser] = useState({});
@@ -36,26 +36,26 @@ function UserDashboard() {
             <p class="btm-margin">
               <Link to="/allplaces">
                 <Button variant="contained" className="full-width">
-                  VIEW ALL SKATE PLACES <ExploreIcon/>
+                  VIEW ALL SKATE PLACES <ExploreIcon />
                 </Button>
               </Link>
             </p>
             <p class="btm-margin">
               <Link to="/tutorials">
                 <Button variant="contained" className="full-width">
-                  VIEW TUTORIALS <VideoLibraryIcon/>
+                  VIEW TUTORIALS <VideoLibraryIcon />
                 </Button>
               </Link>
             </p>
             <p class="btm-margin">
               <Link to="/addnewplace">
                 <Button variant="contained" className="full-width">
-                  ADD NEW SKATE PLACE <AddTwoToneIcon/>
+                  ADD NEW SKATE PLACE <AddTwoToneIcon />
                 </Button>
               </Link>
             </p>{" "}
             <p class="btm-margin">
-              <Link to="/viewmyplaces">
+              <Link to="/myplaces">
                 <Button variant="contained" className="full-width">
                   VIEW MY SKATE PLACES <ListIcon />
                 </Button>
@@ -64,7 +64,7 @@ function UserDashboard() {
             <p>
               <Link to="/logout">
                 <Button variant="contained" className="full-width">
-                  LOG OUT <ExitToAppIcon/>
+                  LOG OUT <ExitToAppIcon />
                 </Button>
               </Link>
             </p>

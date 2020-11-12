@@ -85,7 +85,7 @@ function UserAppBar(props) {
                   <MenuItem onClick={() => handleClose("/tutorials")}>
                     Tutorials
                   </MenuItem>
-                  <MenuItem onClick={() => handleClose("/viewmyplaces")}>
+                  <MenuItem onClick={() => handleClose("/myplaces")}>
                     My Places
                   </MenuItem>
                   <MenuItem onClick={() => handleClose("/addnewplace")}>
