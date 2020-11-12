@@ -1,19 +1,21 @@
 import UserAppBar from "./UserAppBar";
 import GuestAppBar from "./GuestAppBar";
+import AuthContext from "../context/AuthContext";
 
 import { useState, useContext, useEffect } from "react";
 
-function AppBarDisplay(props) {
-  if (props.isLoggedIn) {
+function AppBarDisplay() {
+  const { jwt } = useContext(AuthContext);
+  if (jwt) {
     return (
       <>
-        <UserAppBar props={props} />
+        <UserAppBar />
       </>
     );
   } else {
     return (
       <>
-        <GuestAppBar props={props} />
+        <GuestAppBar />
       </>
     );
   }

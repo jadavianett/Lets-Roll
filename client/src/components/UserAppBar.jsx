@@ -42,12 +42,6 @@ function UserAppBar(props) {
     setAnchorEl(null);
   };
 
-  if (props.isLoggedIn) {
-    console.log("UserAppBar says: logged in");
-  } else {
-    console.log("UserAppBar says: NOT logged in");
-  }
-
   return (
     <div className={classes.root}>
       <AppBar position="static" id="nav-color">

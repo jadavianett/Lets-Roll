@@ -19,21 +19,11 @@ import { useState, useContext, useEffect } from "react";
 
 function App() {
   const [jwt, setJwt] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // if (jwt != "") {
-  //   isLoggedIn = true;
-  // } else {
-  //   isLoggedIn = false;
-  // }
-
-  // console.log(isLoggedIn);
 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
     if (sessionJwt) {
       setJwt(sessionJwt);
-      setIsLoggedIn(true);
     }
   }, []);
 
@@ -41,7 +31,7 @@ function App() {
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          <AppBarDisplay isLoggedIn={isLoggedIn} />
+          <AppBarDisplay />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/logout" component={Logout} />
