@@ -101,19 +101,19 @@ function GuestAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/allplaces" className="no-link-style">
                       All Skate Places
                     </Link>
                   </Button>
 
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/tutorials" className="no-link-style">
                       Tutorials
                     </Link>
                   </Button>
 
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/login" className="no-link-style">
                       Log In
                     </Link>
