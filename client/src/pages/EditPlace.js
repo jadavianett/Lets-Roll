@@ -101,7 +101,7 @@ function EditPlace() {
           <br />
           <br />
 
-          <Link to="/viewmyplaces">
+          <Link to="/viewmyplaces" className="no-link-style">
             <Button
               type="submit"
               size="large"
@@ -115,12 +115,13 @@ function EditPlace() {
           <br />
 
           <Button
+            id="delete-place"
             size="large"
             variant="contained"
             color="secondary"
             onClick={handleDelete}
           >
-            DELETE PLACE
+            DELETE THIS PLACE
           </Button>
         </div>
       </div>
