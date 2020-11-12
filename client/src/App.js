@@ -15,6 +15,7 @@ import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { setAxiosDefaults } from "./Utils/axiosDefaults";
 
 function App() {
   const [jwt, setJwt] = useState("");
@@ -25,6 +26,13 @@ function App() {
       setJwt(sessionJwt);
     }
   }, []);
+
+  useEffect(() => {
+    if (jwt) {
+      setAxiosDefaults(jwt);
+      localStorage.setItem("jwt", jwt);
+    }
+  }, [jwt]);
 
   return (
     <AuthContext.Provider value={{ jwt, setJwt }}>
