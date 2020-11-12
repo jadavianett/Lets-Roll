@@ -56,7 +56,7 @@ function Login() {
       axios
         .post("/api/login", { emailAddress, password })
         .then((response) => {
-          console.log(response.data.data);
+          // console.log(response.data.data);
 
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);

@@ -43,9 +43,9 @@ function GuestAppBar(props) {
   };
 
   if (props.isLoggedIn) {
-    console.log("lOGGED IN true");
+    console.log("GuestAppBar says: logged in.");
   } else {
-    console.log("NOT logged in");
+    console.log("GuestAppBar says: NOT logged in");
   }
 
   return (

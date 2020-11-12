@@ -19,13 +19,13 @@ import { useState, useContext, useEffect } from "react";
 
 function App() {
   const [jwt, setJwt] = useState("");
-  let isLoggedIn;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  if (jwt != "") {
-    isLoggedIn = true;
-  } else {
-    isLoggedIn = false;
-  }
+  // if (jwt != "") {
+  //   isLoggedIn = true;
+  // } else {
+  //   isLoggedIn = false;
+  // }
 
   // console.log(isLoggedIn);
 
@@ -33,6 +33,7 @@ function App() {
     const sessionJwt = sessionStorage.getItem("jwt");
     if (sessionJwt) {
       setJwt(sessionJwt);
+      setIsLoggedIn(true);
     }
   }, []);
 

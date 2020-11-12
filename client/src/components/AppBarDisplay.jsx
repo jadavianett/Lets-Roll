@@ -3,17 +3,17 @@ import GuestAppBar from "./GuestAppBar";
 
 import { useState, useContext, useEffect } from "react";
 
-function AppBarDisplay({ isLoggedIn }) {
-  if (isLoggedIn) {
+function AppBarDisplay(props) {
+  if (props.isLoggedIn) {
     return (
       <>
-        <UserAppBar />
+        <UserAppBar props={props} />
       </>
     );
   } else {
     return (
       <>
-        <GuestAppBar />
+        <GuestAppBar props={props} />
       </>
     );
   }

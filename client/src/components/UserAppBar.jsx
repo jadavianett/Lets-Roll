@@ -43,9 +43,9 @@ function UserAppBar(props) {
   };
 
   if (props.isLoggedIn) {
-    console.log("lOGGED IN true");
+    console.log("UserAppBar says: logged in");
   } else {
-    console.log("NOT logged in");
+    console.log("UserAppBar says: NOT logged in");
   }
 
   return (
