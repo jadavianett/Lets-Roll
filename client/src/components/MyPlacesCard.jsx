@@ -26,7 +26,9 @@ export default function MediaCard(props) {
       <CardActionArea>
         <img
           className="card-media"
-          src="https://via.placeholder.com/300x200.png"
+          src="https://images.pexels.com/photos/2005992/pexels-photo-2005992.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          width="400px"
+          height="300px"
         ></img>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

@@ -54,7 +54,7 @@ function ViewMyPlaces() {
           {myPlaces.map((place) => (
             <div className="card-div-3">
               <MyPlacesCard
-                image="https://via.placeholder.com/345x140.png"
+                image="https://images.pexels.com/photos/2005992/pexels-photo-2005992.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                 name={place.name}
                 location={place.location}
                 notes={place.notes}
