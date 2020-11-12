@@ -43,7 +43,7 @@ function EditPlace() {
     })
       .then((res) => {
         console.log(res.data);
-        history.push("/viewmyplaces");
+        history.push("/myplaces");
       })
       .catch((err) => {
         throw err;
@@ -55,7 +55,7 @@ function EditPlace() {
     API.deletePlace(id)
       .then((res) => {
         console.log(res.data);
-        history.push("/viewmyplaces");
+        history.push("/myplaces");
       })
       .catch((err) => {
         throw err;
