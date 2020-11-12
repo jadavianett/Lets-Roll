@@ -111,6 +111,7 @@ function Signup() {
         .then((res) => {
           console.log("signup" + res.data);
           setJwt(res.data.data);
+          sessionStorage.setItem("jwt", res.data.data);
           history.push("/userdashboard");
         })
         .catch((err) => {
