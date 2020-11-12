@@ -30,8 +30,10 @@ function OneSkatePlace() {
           <br />
           <br />
           <img
-            src="https://via.placeholder.com/300x300.png"
-            alt="placeholder"
+            src={place.image}
+            alt={place.name}
+            width="600px"
+            height="400px"
           ></img>
           <br />
           <br /> <br /> <br />
