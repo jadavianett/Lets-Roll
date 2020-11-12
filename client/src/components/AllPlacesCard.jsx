@@ -32,7 +32,9 @@ export default function MediaCard(props) {
         {/* <div > */}
         <img
           className="card-img"
-          src="https://via.placeholder.com/300x200.png"
+          src={props.image}
+          width="400"
+          height="300"
         ></img>
         {/* </div> */}
         <CardContent className="margin-auto">
