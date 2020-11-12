@@ -56,7 +56,7 @@ function Login() {
       axios
         .post("/api/login", { emailAddress, password })
         .then((response) => {
-          console.log(response.data.data);
+          // console.log(response.data.data);
 
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);
@@ -81,7 +81,7 @@ function Login() {
         <div className="content-wrapper">
           <h1>Log In and Let's Roll!</h1>
           <br />
-          <FormGroup>
+          <div className="login-form" onSubmit={handleLogin}>
             <TextInput
               label="Email"
               name="email"
@@ -107,11 +107,11 @@ function Login() {
             />
             <br />
             <div>
-              <Button variant="contained" type="submit" onClick={handleLogin}>
+              <Button variant="contained" type="button" onClick={handleLogin}>
                 LOG IN
               </Button>
             </div>
-          </FormGroup>
+          </div>
           <br />
           <br />
           <hr />
