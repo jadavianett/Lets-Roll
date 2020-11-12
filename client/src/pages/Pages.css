@@ -104,16 +104,20 @@
 }
 
 .MuiPickersToolbar-toolbar {
-  
-  background-color:#4dd0e1!important;
+  background-color: #4dd0e1 !important;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: #4dd0e1 !important;
+  color: white !important;
 }
 .MuiPickersDay-daySelected:hover {
-  background-color: #4dd0e1!important;
-  color: black!important;
+  background-color: #4dd0e1 !important;
+  color: white !important;
 }
 .MuiPickersDay-current {
-  color: #4dd0e1!important;
-  font-weight: 600;
+  /* color: black !important; */
+  border: 1px solid #ccc !important;
 }
 
 /* .MuiPickersDay-daySelected {
