@@ -85,8 +85,9 @@
 
 /* EDIT PLACE */
 /* ================================================================ */
-#delete-place {
-  background-color: rgb(190, 20, 46) !important;
+.delete-btn {
+  /* background-color: rgb(190, 20, 46) !important; */
+  background-color: rgb(95, 30, 23) !important;
 }
 /* ================================================================ */
 
