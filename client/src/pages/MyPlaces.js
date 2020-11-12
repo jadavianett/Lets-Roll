@@ -6,7 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import API from "../Utils/API";
 
-function ViewMyPlaces() {
+function MyPlaces() {
   const [user, setUser] = useState({});
   const [userId, setUserId] = useState("");
 
@@ -69,4 +69,4 @@ function ViewMyPlaces() {
   );
 }
 
-export default ViewMyPlaces;
+export default MyPlaces;
