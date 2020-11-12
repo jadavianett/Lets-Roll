@@ -34,37 +34,37 @@ function UserDashboard() {
           <br />
           <div id="dash-links">
             <p class="btm-margin">
-              <Link to="/allplaces">
-                <Button variant="contained" className="full-width">
-                  VIEW ALL SKATE PLACES <ExploreIcon/>
+              <Link to="/allplaces" className="no-link-style">
+                <Button variant="contained" className="full-width no-link-style">
+                <ExploreIcon/> &nbsp; VIEW ALL SKATE PLACES 
                 </Button>
               </Link>
             </p>
             <p class="btm-margin">
-              <Link to="/tutorials">
-                <Button variant="contained" className="full-width">
-                  VIEW TUTORIALS <VideoLibraryIcon/>
+              <Link to="/tutorials" className="no-link-style">
+                <Button variant="contained" className="full-width no-link-style">
+                <VideoLibraryIcon/> &nbsp; VIEW TUTORIALS 
                 </Button>
               </Link>
             </p>
             <p class="btm-margin">
-              <Link to="/addnewplace">
+              <Link to="/addnewplace" className="no-link-style">
                 <Button variant="contained" className="full-width">
-                  ADD NEW SKATE PLACE <AddTwoToneIcon/>
+                <AddTwoToneIcon/> &nbsp; ADD NEW SKATE PLACE 
                 </Button>
               </Link>
             </p>{" "}
             <p class="btm-margin">
-              <Link to="/viewmyplaces">
+              <Link to="/viewmyplaces" className="no-link-style">
                 <Button variant="contained" className="full-width">
-                  VIEW MY SKATE PLACES <ListIcon />
+                <ListIcon /> &nbsp; VIEW MY SKATE PLACES 
                 </Button>
               </Link>
             </p>
             <p>
-              <Link to="/logout">
+              <Link to="/logout" className="no-link-style">
                 <Button variant="contained" className="full-width">
-                  LOG OUT <ExitToAppIcon/>
+                <ExitToAppIcon/> &nbsp; LOG OUT 
                 </Button>
               </Link>
             </p>
