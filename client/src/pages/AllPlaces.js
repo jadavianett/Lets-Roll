@@ -47,7 +47,7 @@ function AllPlaces() {
             {currentPlaces.map((place) => (
               // <div className="wide-card">
               <AllPlacesCard
-                image="https://via.placeholder.com/345x300.png"
+                image={place.image}
                 name={place.name}
                 location={place.location}
                 type={place.type}
