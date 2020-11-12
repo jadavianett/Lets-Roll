@@ -80,19 +80,19 @@ function UserAppBar(props) {
                   onClose={() => setAnchorEl(null)}
                 >
                   <MenuItem onClick={() => handleClose("/allplaces")}>
-                    All Skate Places
+                    ALL SKATE PLACES
                   </MenuItem>{" "}
                   <MenuItem onClick={() => handleClose("/tutorials")}>
-                    Tutorials
+                    TUTORIALS
                   </MenuItem>
                   <MenuItem onClick={() => handleClose("/myplaces")}>
-                    My Places
+                    MY PLACES
                   </MenuItem>
                   <MenuItem onClick={() => handleClose("/addnewplace")}>
-                    Add a Skate Place
+                    ADD A SKATE PLACE
                   </MenuItem>
                   <MenuItem onClick={() => handleClose("/logout")}>
-                    Log Out
+                    LOG OUT
                   </MenuItem>
                 </Menu>
               </>
