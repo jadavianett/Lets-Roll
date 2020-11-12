@@ -15,8 +15,9 @@ export default function BasicTextFields(props) {
   const classes = useStyles();
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form noValidate autoComplete="off">
       <TextField
+        className="new-place-input"
         type={props.type}
         id="outlined-basic"
         label={props.label}
