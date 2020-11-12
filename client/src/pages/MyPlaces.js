@@ -75,8 +75,13 @@ function MyPlaces() {
             <p>You have not yet created any skate places.</p>
 
             <br />
-            <Link to="/addnewplace">
-              <Button type="submit" size="large" variant="contained">
+            <Link to="/addnewplace" className="no-link-style">
+              <Button
+                className="no-link-style"
+                type="submit"
+                size="large"
+                variant="contained"
+              >
                 Add New Skate Place
               </Button>
             </Link>
