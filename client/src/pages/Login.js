@@ -95,6 +95,7 @@ function Login() {
               open={open}
               message={message}
               value={buttonVal}
+              
             />
             <TextInput
               type="password"
@@ -111,6 +112,7 @@ function Login() {
                 LOG IN
               </Button>
             </div>
+          
           </FormGroup>
           <br />
           <br />
