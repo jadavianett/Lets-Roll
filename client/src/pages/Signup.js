@@ -141,68 +141,71 @@ function Signup() {
           <br />
           <br />
           <br />
-          <FormGroup>
-            <form onSubmit={handleSubmit}>
-              <TextInput
-                label="Enter a new username"
-                name="username"
-                value={username}
-                onChange={(e) => {
-                  setUsername(e.target.value);
-                }}
-              />
-              <TextInput
-                label="Enter a new email"
-                name="email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <TextInput
-                type="password"
-                label="Enter a new password"
-                name="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <br />
-              <label htmlFor="skateDate">When did you start skating?</label>
-              <DatePicker
-                label="When did you start skating?"
-                name="skateSince"
-                handleDateChange={handleDateChange}
-                selectedDate={selectedDate}
-              />
-              <br />
-              <br />
-              <p>Your skills:</p>
-              <br />
-              <CheckboxesGroup name={skills} handleChange={handleChange} />
+          <div className="signup-form" onSubmit={handleSubmit}>
+            <TextInput
+              label="Enter a new username"
+              name="username"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <TextInput
+              label="Enter a new email"
+              name="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <TextInput
+              type="password"
+              label="Enter a new password"
+              name="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <br />
+            <label htmlFor="skateDate">When did you start skating?</label>
+            <DatePicker
+              label="When did you start skating?"
+              name="skateSince"
+              handleDateChange={handleDateChange}
+              selectedDate={selectedDate}
+            />
+            <br />
+            <br />
+            <p>Your skills:</p>
+            <br />
+            <CheckboxesGroup name={skills} handleChange={handleChange} />
 
-              <p>Where do you skate?</p>
-              <TextInput
-                label="Your Location"
-                name="location"
-                value={location}
-                onChange={(e) => {
-                  setLocation(e.target.value);
-                }}
-              />
-              <Snackbar
-                onClose={handleClose}
-                open={open}
-                message={message}
-                value={buttonVal}
-              />
-              <br />
-              <Button type="submit" size="large" variant="contained">
-                Sign Up
-              </Button>
-            </form>
-          </FormGroup>
+            <p>Where do you skate?</p>
+            <TextInput
+              label="Your Location"
+              name="location"
+              value={location}
+              onChange={(e) => {
+                setLocation(e.target.value);
+              }}
+            />
+            <Snackbar
+              onClose={handleClose}
+              open={open}
+              message={message}
+              value={buttonVal}
+            />
+            <br />
+            <Button
+              type="button"
+              size="large"
+              variant="contained"
+              onClick={handleSubmit}
+            >
+              Sign Up
+            </Button>
+          </div>
         </div>
       </div>
     </>

@@ -19,15 +19,6 @@ import { useState, useContext, useEffect } from "react";
 
 function App() {
   const [jwt, setJwt] = useState("");
-  let isLoggedIn;
-
-  if (jwt != "") {
-    isLoggedIn = true;
-  } else {
-    isLoggedIn = false;
-  }
-
-  // console.log(isLoggedIn);
 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
@@ -40,7 +31,7 @@ function App() {
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          <AppBarDisplay isLoggedIn={isLoggedIn} />
+          <AppBarDisplay />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/logout" component={Logout} />
