@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddNewPlace from "./pages/AddNewPlace";
 import AllPlaces from "./pages/AllPlaces";
 import Login from "./pages/Login";
@@ -31,26 +31,28 @@ function App() {
       <Router>
         <div className="App">
           <AppBarDisplay />
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />
-          <ProtectedRoute exact path="/addnewplace" component={AddNewPlace} />
-          <Route exact path="/allplaces" component={AllPlaces} />
-          <ProtectedRoute
-            exact
-            path="/oneskateplace/:id"
-            component={OneSkatePlace}
-          />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/tutorials" component={Tutorials} />
-          <ProtectedRoute
-            exact
-            path="/userdashboard"
-            component={UserDashboard}
-          />
-          <ProtectedRoute exact path="/myplaces" component={MyPlaces} />
-          <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
-          <Route path="*" component={PageNotFound} />
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/logout" component={Logout} />
+            <ProtectedRoute exact path="/addnewplace" component={AddNewPlace} />
+            <Route exact path="/allplaces" component={AllPlaces} />
+            <ProtectedRoute
+              exact
+              path="/oneskateplace/:id"
+              component={OneSkatePlace}
+            />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/tutorials" component={Tutorials} />
+            <ProtectedRoute
+              exact
+              path="/userdashboard"
+              component={UserDashboard}
+            />
+            <ProtectedRoute exact path="/myplaces" component={MyPlaces} />
+            <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
+            <Route path="/*" component={PageNotFound} />
+          </Switch>
         </div>
       </Router>
     </AuthContext.Provider>
