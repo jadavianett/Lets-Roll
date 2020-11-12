@@ -11,6 +11,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {
 let simpleSeeds = [
   {
     name: "Historic Fourth Ward Skate Park",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROgW8orvhtgaYhF_OdZx4ouIYIy8f878n6ZA&usqp=CAU",
     location: "830 Willoughby Way NE, Atlanta, GA 30312",
     type: "Skate Park",
     notes: ["Located right on the Beltline.", "Usually full of skaters but is empty later in the night.", "Has floodlights that come on when the sun sets!"]
@@ -113,44 +114,50 @@ let simpleSeeds = [
     location:
       "East Decatur Greenway Trailhead, 890 S Columbia Dr, Decatur, GA 30030",
     type: "Greenway",
-    notes: [""]
+    notes: ["Good for beginners!", "Hilly in some spots."]
   },
   {
     name: "LaGrange Thread",
     location: "Eastside Park, LaGrange, GA 30241",
     type: "Trail",
+    notes: ["Some wooden bridges and street crossings."]
   },
   {
     name: "Nancy Creek Trail",
     location:
       "Murphey Candler Park, 1551 W Nancy Creek Dr NE, Atlanta, GA 30319",
     type: "Trail",
+    notes: ["5.4 mile out and back trail.", "Almost the entire trail is in full sunlight and there is little elevation change!", "Crosses Nancy Creek once, on a bridge between Murphy Candler Park and Blackburn Park."]
   },
   {
     name: "Newnan LINC, Phase 1",
     location:
-      "Intersection of Summerlin Blvd & Newnan Crossing Blvd, Newnan, GA 30265",
+      "1515 Lower Fayetteville Rd, Newnan, GA 30265",
     type: "Trail",
+    notes: ["Lovely trailhead with benches, a dog station, bike repair station, trash receptacles, and signage.", "Additional parking closer to Newnan Crossing Elementary School on Summerlin Road.", "Phase 1 is completed and features woods, bridges, a mural, and a big hill."]
   },
   {
     name: "Olde Town Trail",
     location: "Johnson Park, 1781 Ebenezer Rd SW, Conyers, GA 30094",
     type: "Trail",
+    notes: ["Crosses over streets multiple times.", "May not be suitable for beginners."]
   },
   {
     name: "Proctor Creek Greenway",
     location:
       "Near intersection of Drew Dr & Sanford Dr, Atlanta, GA 30318 (Head south on Sanford)",
     type: "Greenway",
+    notes: ["Scenic route that winds through a lot of abandoned industrial buildings.", "Not safe to visit by yourself!"]
   },
   {
     name: "South River Trail",
     location:
       "Atlanta Radio Control Club, 1600 Constitution Rd SE, Atlanta, GA 30316;",
     type: "Trail",
+    notes: ["Peaceful, sparsely populated trail.", "Offers a wooded route along its namesake river!"]
   },
   {
-    name: "Legion Field - Covington Fairgroundsk",
+    name: "Legion Field - Covington Fairgrounds",
     location: "3173 Mill St NE, Covington, GA 30014",
     type: "Park",
   },
@@ -158,12 +165,14 @@ let simpleSeeds = [
     name: "Coan Park",
     location: "1530 Woodbine Ave SE, Atlanta, GA 30317",
     type: "Park",
+    notes: ["Two basketball courts and four tennis courts are located here!", "There is a covered, paved, basketball pad attached to the Sammye E. Coan building that's perfect for skating!"]
   },
   {
     name: "Freedom Park",
     location:
       "Intersection of Moreland Ave NE & North Avenue NE, Atlanta, GA 30308",
     type: "Park",
+    notes: ["A bit hilly.", "A shady trail that extends nineteen miles from Downtown to Stone Mountain!"]
   },
 ];
 
