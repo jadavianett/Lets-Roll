@@ -20,7 +20,7 @@ function OneSkatePlace() {
       .catch((err) => {
         throw err;
       });
-  }, [id]);
+  }, []);
 
   return (
     <>

@@ -45,7 +45,7 @@ function App() {
             <Route exact path="/logout" component={Logout} />
             <ProtectedRoute exact path="/addnewplace" component={AddNewPlace} />
             <Route exact path="/allplaces" component={AllPlaces} />
-            <ProtectedRoute
+            <Route
               exact
               path="/oneskateplace/:id"
               component={OneSkatePlace}
