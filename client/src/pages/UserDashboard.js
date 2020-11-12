@@ -25,7 +25,7 @@ function UserDashboard() {
           <h1>Welcome {user.username}!</h1>
           <br />
           <br />
-          <p> What would you like to do?</p>
+          {/* <p> What would you like to do?</p> */}
           <br />
           <div id="dash-links">
             <p class="btm-margin">

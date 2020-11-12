@@ -138,6 +138,8 @@ function Signup() {
         <div id="signup-wrapper">
           <h1>Sign up below to get rollin'.</h1>
           <br />
+          <br />
+          <br />
           <FormGroup>
             <form onSubmit={handleSubmit}>
               <TextInput

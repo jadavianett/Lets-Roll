@@ -5,7 +5,7 @@
   padding: 50px;
   /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
   box-shadow: 5px 5px 15px 5px #a0a0a0; */
-  border: 1px solid #cccccc;
+  /* border: 1px solid #cccccc; */
   border-radius: 10px;
   min-width: 50vw;
 }
@@ -47,17 +47,29 @@
 
 /* ================================================================ */
 
+/* ONE SKATE PLACE */
+/* ================================================================ */
+.wide-paper {
+  /* dashed red; */
+  min-height: 80px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ================================================================ */
+
 /* SIGNUP */
 /* ================================================================ */
-#signup-wrapper {
+#signup-wrapp {
   text-align: center;
   /* border: 1px dashed hotpink; */
   padding: 50px;
   /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
   box-shadow: 5px 5px 15px 5px #a0a0a0; */
-  border: 1px solid #cccccc;
+  /* border: 1px solid #cccccc; */
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
