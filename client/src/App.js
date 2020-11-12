@@ -18,7 +18,6 @@ import AuthContext from "./context/AuthContext";
 import { useState, useContext, useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-
 function App() {
   const [jwt, setJwt] = useState("");
 
@@ -36,14 +35,22 @@ function App() {
           <AppBarDisplay />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />          
-          <ProtectedRoute exact path="/addnewplace" component={AddNewPlace}/>
+          <Route exact path="/logout" component={Logout} />
+          <ProtectedRoute exact path="/addnewplace" component={AddNewPlace} />
           <Route exact path="/allplaces" component={AllPlaces} />
-          <ProtectedRoute exact path="/oneskateplace/:id" component={OneSkatePlace} />
+          <ProtectedRoute
+            exact
+            path="/oneskateplace/:id"
+            component={OneSkatePlace}
+          />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/tutorials" component={Tutorials} />
-          <ProtectedRoute exact path="/userdashboard" component={UserDashboard} />
-          <ProtectedRoute exact path="/viewmyplaces" component={ViewMyPlaces} />
+          <ProtectedRoute
+            exact
+            path="/userdashboard"
+            component={UserDashboard}
+          />
+          <ProtectedRoute exact path="/myplaces" component={ViewMyPlaces} />
           <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
         </div>
       </Router>
