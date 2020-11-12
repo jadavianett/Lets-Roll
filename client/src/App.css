@@ -15,7 +15,7 @@
   /* background-color: yellow; 217 214 213*/
 
   background-color: rgb(245, 245, 245);
-  background-repeat: repeat-y;
+  /* background-repeat: repeat-y; */
   display: flex;
   flex-direction: column;
   align-items: center;

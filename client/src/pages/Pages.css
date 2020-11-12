@@ -52,6 +52,9 @@
   border-radius: 10px;
   margin-top: 50px;
   min-width: 50vw;
+  margin-bottom: 50px;
+  height: 100%;
+  /* max-height: 80vh; */
 }
 
 .card-div-1 {
