@@ -88,6 +88,25 @@
   /* align-items: center; */
   padding-left: 28px;
 }
+
+.MuiPickersToolbar-toolbar {
+  
+  background-color:#4dd0e1!important;
+}
+.MuiPickersDay-daySelected:hover {
+  background-color: #4dd0e1!important;
+  color: black!important;
+}
+.MuiPickersDay-current {
+  color: #4dd0e1!important;
+  font-weight: 600;
+}
+
+/* .MuiPickersDay-daySelected {
+  color: #fff;
+  font-weight: 500;
+  background-color: #4dd0e1!important;
+} */
 /* ================================================================ */
 
 /* TUTORIALS*/
