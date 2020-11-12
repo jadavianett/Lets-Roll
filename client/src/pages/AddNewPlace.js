@@ -45,7 +45,7 @@ function AddNewPlace() {
     )
       .then((res) => {
         console.log(res.data);
-        history.push("/viewmyplaces");
+        history.push("/myplaces");
       })
       .catch((err) => {
         throw err;

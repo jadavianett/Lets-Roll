@@ -110,7 +110,7 @@ function UserAppBar(props) {
                     </Link>
                   </Button>
                   <Button variant="contained" className="nav-button">
-                    <Link to="/viewmyplaces" className="no-link-style">
+                    <Link to="/myplaces" className="no-link-style">
                       My Places
                     </Link>
                   </Button>
