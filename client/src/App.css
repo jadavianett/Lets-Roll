@@ -16,8 +16,12 @@
 
   background-color: rgb(226, 226, 226);
   background-repeat: repeat-y;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* display: grid;
+  place-items: center; */
   min-height: calc(100vh - 64px);
 }
 

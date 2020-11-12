@@ -47,7 +47,7 @@ function UserAppBar(props) {
       <AppBar position="static" id="nav-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/" id="logo-link">
+            <Link to="/allplaces" id="logo-link">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
@@ -85,7 +85,7 @@ function UserAppBar(props) {
                   <MenuItem onClick={() => handleClose("/tutorials")}>
                     Tutorials
                   </MenuItem>
-                  <MenuItem onClick={() => handleClose("/viewmyplaces")}>
+                  <MenuItem onClick={() => handleClose("/myplaces")}>
                     My Places
                   </MenuItem>
                   <MenuItem onClick={() => handleClose("/addnewplace")}>
