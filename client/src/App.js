@@ -1,5 +1,4 @@
 import "./App.css";
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AddNewPlace from "./pages/AddNewPlace";
 import AllPlaces from "./pages/AllPlaces";
@@ -9,13 +8,12 @@ import Signup from "./pages/Signup";
 import Tutorials from "./pages/Tutorials";
 import UserDashboard from "./pages/UserDashboard";
 import MyPlaces from "./pages/MyPlaces";
+import PageNotFound from "./pages/PageNotFound";
 import Logout from "./pages/Logout";
 import AppBarDisplay from "./components/AppBarDisplay";
-import UserAppBar from "./components/UserAppBar";
-import GuestAppBar from "./components/GuestAppBar";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -52,6 +50,7 @@ function App() {
           />
           <ProtectedRoute exact path="/myplaces" component={MyPlaces} />
           <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
+          <Route path="*" component={PageNotFound} />
         </div>
       </Router>
     </AuthContext.Provider>
