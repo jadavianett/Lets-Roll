@@ -1,5 +1,5 @@
-import "./AllPlaces.css";
-import AllPlacesCard from "../components/Places/AllPlacesCard";
+import "./Pages.css";
+import AllPlacesCard from "../components/AllPlacesCard";
 import Pagination from "../components/Pagination";
 import { useEffect, useState } from "react";
 import API from "../Utils/API";
@@ -30,8 +30,8 @@ function AllPlaces() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="all-places-wrapper">
+      <div className="body-wrapper">
+        <div className="places-wrapper">
           <h1>All Skate Places</h1>
           <br />
           <br />
@@ -43,7 +43,7 @@ function AllPlaces() {
             paginate={paginate}
             currentPage={currentPage}
           />
-          <div className="centerMe">
+          <div className="margin-auto">
             {currentPlaces.map((place) => (
               // <div className="wide-card">
               <AllPlacesCard
@@ -63,6 +63,8 @@ function AllPlaces() {
             paginate={paginate}
             currentPage={currentPage}
           />
+          <br />
+          <br />
         </div>
       </div>
     </>

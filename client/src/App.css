@@ -11,7 +11,7 @@
   font-family: "Archivo", sans-serif;
 }
 
-.page-wrapper-with-nav {
+.body-wrapper {
   /* background-color: yellow; 217 214 213*/
 
   background-color: white;
@@ -23,4 +23,8 @@
 
 .no-link-style {
   text-decoration: none;
+}
+
+.margin-auto {
+  margin: auto;
 }

@@ -1,8 +1,8 @@
-import "./Signup.css";
+import "./Pages.css";
 import DatePicker from "../components/DatePicker";
 import TextInput from "../components/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup";
-import {Button, FormGroup} from "@material-ui/core";
+import { Button, FormGroup } from "@material-ui/core";
 import Snackbar from "../components/SnackBar";
 import { React, useState, useContext } from "react";
 import API from "../Utils/API";
@@ -18,7 +18,6 @@ function Signup() {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [buttonVal, setButtonVal] = useState("");
-
 
   const [location, setLocation] = useState("");
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -36,12 +35,11 @@ function Signup() {
   });
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
 
     setOpen(false);
-    
   };
   const handleChange = (event) => {
     setSkills({ ...skills, [event.target.name]: event.target.checked });
@@ -81,28 +79,26 @@ function Signup() {
     e.preventDefault();
     // console.log("Here");
     // console.log("selectedDate", selectedDate)
-    if(username === "") {
+    if (username === "") {
       // console.log("inside loop username")
       setOpen(true);
-      setMessage('Invalid Username.')
-      setButtonVal('Try Again')
-
-    } else if (email === ""){
+      setMessage("Invalid Username.");
+      setButtonVal("Try Again");
+    } else if (email === "") {
       // console.log("inside loop email")
       setOpen(true);
-      setMessage('Invalid Email.')
-      setButtonVal('Try Again')
-
-    } else if(password === ""){
+      setMessage("Invalid Email.");
+      setButtonVal("Try Again");
+    } else if (password === "") {
       // console.log("inside loop password")
       setOpen(true);
-      setMessage('Invalid Password.')
-      setButtonVal('Try Again')
+      setMessage("Invalid Password.");
+      setButtonVal("Try Again");
     } else {
       // console.log("inside loop good to go")
-      setOpen(true); 
-      setMessage('Login successful');
-      setButtonVal('woo');
+      setOpen(true);
+      setMessage("Login successful");
+      setButtonVal("woo");
 
       API.signupUser({
         username,
@@ -114,15 +110,13 @@ function Signup() {
       })
         .then((res) => {
           console.log("signup" + res.data);
-          setJwt(res.data.data)
+          setJwt(res.data.data);
           history.push("/userdashboard");
         })
         .catch((err) => {
           return err;
         });
-
     }
-    
   };
 
   // const onChangeUser = (e) => {
@@ -140,72 +134,72 @@ function Signup() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
+      <div className="body-wrapper">
         <div id="signup-wrapper">
           <h1>Sign up below to get rollin'.</h1>
           <br />
           <FormGroup>
-          <form onSubmit={handleSubmit}>
-            <TextInput
-              label="Enter a new username"
-              name="username"
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-            />
-            <TextInput
-              label="Enter a new email"
-              name="email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <TextInput
-              type="password"
-              label="Enter a new password"
-              name="password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-            <br />
-            <label htmlFor="skateDate">When did you start skating?</label>
-            <DatePicker
-              label="When did you start skating?"
-              name="skateSince"
-              handleDateChange={handleDateChange}
-              selectedDate={selectedDate}
-            />
-            <br />
-            <br />
-            <p>Your skills:</p>
-            <br />
-            <CheckboxesGroup name={skills} handleChange={handleChange} />
+            <form onSubmit={handleSubmit}>
+              <TextInput
+                label="Enter a new username"
+                name="username"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+              <TextInput
+                label="Enter a new email"
+                name="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <TextInput
+                type="password"
+                label="Enter a new password"
+                name="password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <br />
+              <label htmlFor="skateDate">When did you start skating?</label>
+              <DatePicker
+                label="When did you start skating?"
+                name="skateSince"
+                handleDateChange={handleDateChange}
+                selectedDate={selectedDate}
+              />
+              <br />
+              <br />
+              <p>Your skills:</p>
+              <br />
+              <CheckboxesGroup name={skills} handleChange={handleChange} />
 
-            <p>Where do you skate?</p>
-            <TextInput
-              label="Your Location"
-              name="location"
-              value={location}
-              onChange={(e) => {
-                setLocation(e.target.value);
-              }}
-            />
-            <Snackbar 
-          onClose={handleClose}
-          open={open}
-          message={message}
-          value={buttonVal}
-          />
-            <br />
-            <Button type="submit" size="large" variant="contained">
-              Sign Up
-            </Button>
-          </form>
-          </FormGroup> 
+              <p>Where do you skate?</p>
+              <TextInput
+                label="Your Location"
+                name="location"
+                value={location}
+                onChange={(e) => {
+                  setLocation(e.target.value);
+                }}
+              />
+              <Snackbar
+                onClose={handleClose}
+                open={open}
+                message={message}
+                value={buttonVal}
+              />
+              <br />
+              <Button type="submit" size="large" variant="contained">
+                Sign Up
+              </Button>
+            </form>
+          </FormGroup>
         </div>
       </div>
     </>

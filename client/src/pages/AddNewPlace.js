@@ -1,4 +1,4 @@
-import "./AddNewPlace.css";
+import "./Pages.css";
 import TextInput from "../components/TextInput";
 import Select from "../components/Select";
 import Button from "@material-ui/core/Button";
@@ -59,8 +59,8 @@ function AddNewPlace() {
       setName(value);
     } else if (e.target.name === "location") {
       setLocation(value);
-      } else if (e.target.name === "notes") {
-        setNotes(value);
+    } else if (e.target.name === "notes") {
+      setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
       //   console.log("State changed: place type");
@@ -69,8 +69,8 @@ function AddNewPlace() {
 
   return (
     <>
-      <div className="page-wrapper-with-nav">
-        <div id="add-place-wrapper">
+      <div className="body-wrapper">
+        <div className="content-wrapper">
           <h1>Add a New Skate Place</h1>
           <br />
           <br />
@@ -80,13 +80,16 @@ function AddNewPlace() {
             placeholder="Location"
             onChange={onChangeInfo}
           />
-          <textarea name="notes" placeholder="Helpful tips on this place?" onChange={onChangeInfo} />
+          <textarea
+            name="notes"
+            placeholder="Helpful tips on this place?"
+            onChange={onChangeInfo}
+          />
 
-        
           <Select name="type" onChange={onChangeInfo} value={type} />
           <br />
           <br />
-         
+
           <Button
             type="submit"
             size="large"
@@ -95,7 +98,6 @@ function AddNewPlace() {
           >
             Save Place
           </Button>
-          
         </div>
       </div>
     </>
