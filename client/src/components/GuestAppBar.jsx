@@ -42,12 +42,6 @@ function GuestAppBar(props) {
     setAnchorEl(null);
   };
 
-  if (props.isLoggedIn) {
-    console.log("lOGGED IN true");
-  } else {
-    console.log("NOT logged in");
-  }
-
   return (
     <div className={classes.root}>
       <AppBar position="static" id="nav-color">

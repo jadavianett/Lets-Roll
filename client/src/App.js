@@ -16,18 +16,11 @@ import GuestAppBar from "./components/GuestAppBar";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useContext, useEffect } from "react";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 
 function App() {
   const [jwt, setJwt] = useState("");
-  let isLoggedIn;
-
-  if (jwt != "") {
-    isLoggedIn = true;
-  } else {
-    isLoggedIn = false;
-  }
-
-  // console.log(isLoggedIn);
 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
@@ -40,18 +33,18 @@ function App() {
     <AuthContext.Provider value={{ jwt, setJwt }}>
       <Router>
         <div className="App">
-          <AppBarDisplay isLoggedIn={isLoggedIn} />
+          <AppBarDisplay />
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />
-          <Route exact path="/addnewplace" component={AddNewPlace} />
+          <Route exact path="/logout" component={Logout} />          
+          <ProtectedRoute exact path="/addnewplace" component={AddNewPlace}/>
           <Route exact path="/allplaces" component={AllPlaces} />
-          <Route exact path="/oneskateplace/:id" component={OneSkatePlace} />
+          <ProtectedRoute exact path="/oneskateplace/:id" component={OneSkatePlace} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/tutorials" component={Tutorials} />
-          <Route exact path="/userdashboard" component={UserDashboard} />
-          <Route exact path="/viewmyplaces" component={ViewMyPlaces} />
-          <Route exact path="/editplace/:id" component={EditPlace} />
+          <ProtectedRoute exact path="/userdashboard" component={UserDashboard} />
+          <ProtectedRoute exact path="/viewmyplaces" component={ViewMyPlaces} />
+          <ProtectedRoute exact path="/editplace/:id" component={EditPlace} />
         </div>
       </Router>
     </AuthContext.Provider>
