@@ -25,7 +25,12 @@
 }
 
 .nav-button {
-  color: white!important;
-  background-color: transparent!important;
-  margin: 10px
+  color: white !important;
+  background-color: transparent !important;
+  margin: 10px;
+}
+
+.MuiList-root {
+  background-color: #4dd0e1 !important;
+  color: white !important;
 }
