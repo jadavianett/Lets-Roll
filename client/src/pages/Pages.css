@@ -3,8 +3,9 @@
   box-sizing: border-box;
   text-align: center;
   padding: 50px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border: 1px solid #cccccc;
   border-radius: 10px;
   min-width: 50vw;
 }
@@ -52,8 +53,9 @@
   text-align: center;
   /* border: 1px dashed hotpink; */
   padding: 50px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border: 1px solid #cccccc;
   border-radius: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -97,8 +99,9 @@ iframe {
   margin: 20px;
   /* min-width: 560px; */
   min-height: 315px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border: 1px solid #cccccc;
   border-radius: 10px;
   /* margin-bottom: 30px; */
   /* border: 1px dashed blue; */
