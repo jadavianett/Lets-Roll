@@ -17,9 +17,9 @@ function UserDashboard() {
   useEffect(() => {
     if (jwt) {
       var decoded = jwt_decode(jwt);
-      console.log(decoded);
+      //console.log(decoded);
       setUser(decoded);
-      console.log(decoded.username);
+      //console.log(decoded.username);
     }
   }, [jwt]);
 
