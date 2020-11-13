@@ -20,7 +20,7 @@ export default function NativeSelects(props) {
   return (
     <div>
       <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel htmlFor="outlined-age-native-simple">Type</InputLabel>
+        <InputLabel htmlFor="outlined-age-native-simple">{props.label}</InputLabel>
         <Select
           native
           value={props.value}
@@ -31,14 +31,14 @@ export default function NativeSelects(props) {
             id: "outlined-age-native-simple",
           }}
         >
-          <option aria-label="None" value="" />
-          <option value={"Skate Park"}>Skate Park</option>
-          <option value={"Outdoor Rink"}>Outdoor Rink</option>
-          <option value={"Beltline"}>Beltline</option>
-          <option value={"Trail"}>Trail</option>
-          <option value={"Greenway"}>Greenway</option>
-          <option value={"Park"}>Park</option>
-          <option value={"Other"}>Other</option>
+          <option aria-label="None"/> 
+          <option value="Skate Park">Skate Park</option>
+          <option value="Outdoor Rink">Outdoor Rink</option>
+          <option value="Beltline">Beltline</option>
+          <option value="Trail">Trail</option>
+          <option value="Greenway">Greenway</option>
+          <option value="Park">Park</option>
+          <option value="Other">Other</option>
         </Select>
       </FormControl>
     </div>
