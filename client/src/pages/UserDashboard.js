@@ -27,11 +27,12 @@ function UserDashboard() {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1 className="animated-title">Welcome {user.username}!</h1>
+          <h1 className="animated-title">User Dashboard</h1>
+          <br />
+          <h2>You are logged in as {user.username}</h2>
           <br />
           <br />
-          {/* <p> What would you like to do?</p> */}
-          <br />
+
           <div id="dash-links">
             <p class="btm-margin">
               <Link to="/allplaces" className="no-link-style">
