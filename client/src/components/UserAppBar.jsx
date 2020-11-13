@@ -47,7 +47,7 @@ function UserAppBar(props) {
       <AppBar position="static" id="nav-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/allplaces" id="logo-link">
+            <Link to="/userdashboard" id="logo-link">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
