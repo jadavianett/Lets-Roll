@@ -12,8 +12,7 @@ function AllPlaces() {
   const [filteredPlaces, setFilteredPlaces] = useState();
   const [currentPlaces, setCurrentPlaces] = useState();
   const [type, setType] =useState();
-  const indexOfLastPlace = currentPage * placesPerPage;
-  const indexOfFirstPlace = indexOfLastPlace - placesPerPage;
+
 
   useEffect(() => {
     API.getPlaces()
@@ -29,12 +28,15 @@ function AllPlaces() {
 
   useEffect(()=> {
     if(filteredPlaces){
+      const indexOfLastPlace = currentPage * placesPerPage;
+      const indexOfFirstPlace = indexOfLastPlace - placesPerPage;
       const newCurrentPlaces = filteredPlaces.slice(indexOfFirstPlace, indexOfLastPlace)
-      console.log('newcurrent places', newCurrentPlaces)
+      
+
     setCurrentPlaces(newCurrentPlaces)
     }
 
-  }, [filteredPlaces]);
+  }, [filteredPlaces,currentPage]);
 
  
   const paginate = (pageNumber) => {
@@ -86,7 +88,7 @@ function AllPlaces() {
           <br />
           <Pagination
             placesPerPage={placesPerPage}
-            totalPlaces={places.length}
+            totalPlaces={filteredPlaces && filteredPlaces.length}
             paginate={paginate}
             currentPage={currentPage}
           />
@@ -108,7 +110,7 @@ function AllPlaces() {
           </div>
           <Pagination
             placesPerPage={placesPerPage}
-            totalPlaces={places.length}
+            totalPlaces={filteredPlaces && filteredPlaces.length}
             paginate={paginate}
             currentPage={currentPage}
           />
