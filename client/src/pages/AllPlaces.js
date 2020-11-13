@@ -97,7 +97,7 @@ function AllPlaces() {
               // <div className="wide-card">
               
               <AllPlacesCard
-                image={place.image}
+                image={place.image ? (place.image):("https://images.pexels.com/photos/2005992/pexels-photo-2005992.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")}
                 name={place.name}
                 location={place.location}
                 type={place.type}
