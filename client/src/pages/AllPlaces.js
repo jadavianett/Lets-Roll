@@ -11,7 +11,6 @@ function AllPlaces() {
   const [placesPerPage, setPlacesPerPage] = useState(5);
   const [filteredPlaces, setFilteredPlaces] = useState();
   const [currentPlaces, setCurrentPlaces] = useState();
-
   const [type, setType] =useState();
   const indexOfLastPlace = currentPage * placesPerPage;
   const indexOfFirstPlace = indexOfLastPlace - placesPerPage;
