@@ -29,7 +29,9 @@ function AllPlaces() {
 
   useEffect(()=> {
     if(filteredPlaces){
-    setCurrentPlaces(filteredPlaces.slice(indexOfFirstPlace, indexOfLastPlace))
+      const newCurrentPlaces = filteredPlaces.slice(indexOfFirstPlace, indexOfLastPlace)
+      console.log('newcurrent places', newCurrentPlaces)
+    setCurrentPlaces(newCurrentPlaces)
     }
 
   }, [filteredPlaces]);
@@ -44,19 +46,31 @@ function AllPlaces() {
 
   
     let value = e.target.value
+    // console.log(value)
     setType(value);
+    setFilteredPlaces(places)
+    
     // let filteredList = places
     // console.log(value)
-    let filteredList = await places.filter((place)=> {
+    // console.log("before",filteredPlaces)
+    if (value === "All"){
+      setFilteredPlaces(places)
+
+    }else {
+        // console.log("places", places)
+      let filteredList = await [...places].filter((place)=> {
         if(value){
-          return place.type.indexOf(value) > -1
+          return place.type === value
         }
         return true
     })
-    console.log("filterd list", filteredList);
+    // console.log("filterd list", filteredList);
+  
      setFilteredPlaces(filteredList)
+    }
+    
  
-     console.log("after",currentPlaces)
+    //  console.log("after",currentPlaces)
   };
 
   return (
@@ -66,24 +80,9 @@ function AllPlaces() {
           <h1>All Skate Places</h1>
           <br />
           <br />
-          <p>(Search filters to go here)</p>
-          <Select name="type" onChange={onChange}  label="Filter by Type" />
-          {/* <label >Choose a Type:</label>
-          <select name="type">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-          </select> */}
-          {/* <input
-                            // value={search}
-                            onChange={onChange}
-                            name='search'
-                            type='text'
-                            className='form-control'
-                            placeholder='Search'
-                            id='search'
-          /> */}
+          
+          <Select name="type" onChange={onChange}  label="Filter by Type" text="All" />
+     
           <br />
           <Pagination
             placesPerPage={placesPerPage}

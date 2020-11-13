@@ -31,7 +31,7 @@ export default function NativeSelects(props) {
             id: "outlined-age-native-simple",
           }}
         >
-          <option aria-label="None"/> 
+          <option aria-label="None"> {props.text} </option>
           <option value="Skate Park">Skate Park</option>
           <option value="Outdoor Rink">Outdoor Rink</option>
           <option value="Beltline">Beltline</option>
