@@ -33,8 +33,8 @@ function OneSkatePlace() {
           <img
             src={place.image}
             alt={place.name}
-            width="600px"
-            height="400px"
+            width="100%"
+            
           ></img>
           <br />
           <br /> <br /> <br />
