@@ -1,0 +1,248 @@
+/* ALL PAGES */
+.content-wrapper {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 50px;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  /* border: 1px solid #cccccc; */
+  border-radius: 10px;
+  min-width: 50vw;
+}
+
+.animated-title {
+  
+  animation: heartBeat;
+  animation-duration: 5s;
+
+}
+
+h1 {
+  font-family: "Big Shoulders Inline Display", cursive;
+}
+
+h2,
+h3 {
+  font-family: "Saira Extra Condensed", sans-serif !important;
+}
+
+#create-a-place {
+  animation: heartBeat;
+  animation-duration: 5s;
+}
+/*ADD NEW PLACE*/
+/* ================================================================ */
+
+
+
+.new-place-input {
+  width: 100%;
+  margin: 10px 0px !important;
+}
+
+.text-area {
+  margin: 10px 0px !important;
+  box-sizing: border-box;
+  font: inherit;
+  color: currentColor;
+  height: 130px;
+  width: 100%;
+  padding-top: 18px;
+  padding-left: 13px;
+  border-radius: 5px;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  border: 1px solid #bbb;
+}
+
+#new-place-type-select {
+  width: 100% !important;
+  margin: 10px 0px !important;
+  /* border: 2px solid orange !important; */
+}
+
+#save-place-btn {
+  font-size: 14pt;
+}
+/* ================================================================ */
+
+/*ALL PLACES AND MY PLACES*/
+/* ================================================================ */
+.places-wrapper {
+  margin: auto;
+  text-align: center;
+  /* border: 1px dashed hotpink; */
+  border-radius: 10px;
+  margin-top: 50px;
+  min-width: 50vw;
+  margin-bottom: 50px;
+  height: 100%;
+  /* max-height: 80vh; */
+}
+
+.card-div-1 {
+  /* border: 2px solid hotpink; */
+  width: 80vw !important;
+  /* max-width: 70vw;
+  min-width: 50vw; */
+  padding: 30px 0px;
+  margin: 30px auto;
+
+  text-align: center;
+}
+
+.view-more-info {
+  color: white;
+  text-decoration: none;
+}
+
+.card-padding {
+  /* border: 2px solid yellow; */
+  padding: 30px 0px;
+}
+
+/* ================================================================ */
+
+/*LOG IN PAGE*/
+/* ================================================================ */
+#log-in-button {
+  animation: shakeY;
+  animation-duration: 5s;
+}
+/* ================================================================ */
+
+/* EDIT PLACE */
+/* ================================================================ */
+.delete-btn {
+  /* background-color: rgb(190, 20, 46) !important; */
+  background-color: rgb(95, 30, 23) !important;
+}
+/* ================================================================ */
+
+/* ONE SKATE PLACE */
+/* ================================================================ */
+.wide-paper {
+  /* dashed red; */
+  min-height: 80px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ================================================================ */
+
+/* SIGNUP */
+/* ================================================================ */
+#signup-wrapper {
+  text-align: center;
+  max-width: 500px;
+  /* border: 1px dashed hotpink; */
+  padding: 50px;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  /* border: 1px solid #cccccc; */
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#checkbox-div-1 {
+  /* background-color: gray; */
+  width: 100%;
+}
+
+#checkbox-div-2 {
+  /* background-color: black; */
+  margin: auto;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+#current-target {
+  border: 2px dashed hotpink;
+}
+
+.MuiPickersToolbar-toolbar {
+  background-color: #4dd0e1 !important;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: #4dd0e1 !important;
+  color: white !important;
+}
+.MuiPickersDay-daySelected:hover {
+  background-color: #4dd0e1 !important;
+  color: white !important;
+}
+.MuiPickersDay-current {
+  /* color: black !important; */
+  border: 1px solid #ccc !important;
+}
+
+#skill-column {
+  /* border: 1px solid pink; */
+  width: 100%;
+  margin: auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.skill-checkbox {
+  margin: auto;
+  border-radius: 5px;
+  width: 175px;
+  margin: 0px !important;
+}
+
+.skill-checkbox:hover {
+  background-color: #eee;
+}
+
+/* ================================================================ */
+
+/* TUTORIALS*/
+/* ================================================================ */
+iframe {
+  padding: 20px;
+  margin: 20px;
+  /* min-width: 560px; */
+  min-height: 315px;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  /* margin-bottom: 30px; */
+  /* border: 1px dashed blue; */
+}
+
+#videos-div {
+  text-align: center;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: column;
+}
+
+#tutorials-wrapper {
+  /* border: 2px dashed green; */
+  text-align: center;
+  padding: 50px;
+}
+
+/* ================================================================ */
+
+/* USER DASHBOARD */
+/* ================================================================ */
+.full-width {
+  width: 70%;
+  /* margin-bottom: 100px; */
+}
+
+.btm-margin {
+  /* border: 1px dashed red; */
+  margin-bottom: 20px;
+}
+/* ================================================================ */
