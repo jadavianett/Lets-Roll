@@ -34,13 +34,10 @@ router.post("/api/signup", (req, res) => {
                 username:username, 
                 location: location, 
                 skills: skills, 
-                skateSince: skateSince
+                skateSince: skateSince                             
                 
-                
-                // firstName: newUser.firstName,
-                // lastName: newUser.lastName,
               },
-              "seleniumisawesome"
+              "secret"
             );
             res.json({
               error: false,
@@ -121,6 +118,13 @@ router.post("/api/login", (req, res) => {
               message: "Failed to sign in.",
             });
           });
+      } else {
+        res.status(401).json({
+          error: true,
+          data: null,
+          message: "Failed to sign in.",
+        })
+
       }
     })
     .catch((err) => {

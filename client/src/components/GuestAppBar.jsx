@@ -42,18 +42,12 @@ function GuestAppBar(props) {
     setAnchorEl(null);
   };
 
-  if (props.isLoggedIn) {
-    console.log("lOGGED IN true");
-  } else {
-    console.log("NOT logged in");
-  }
-
   return (
     <div className={classes.root}>
       <AppBar position="static" id="nav-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/" id="logo-link">
+            <Link to="/allplaces" id="logo-link">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
@@ -101,19 +95,19 @@ function GuestAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/allplaces" className="no-link-style">
                       All Skate Places
                     </Link>
                   </Button>
 
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/tutorials" className="no-link-style">
                       Tutorials
                     </Link>
                   </Button>
 
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/login" className="no-link-style">
                       Log In
                     </Link>

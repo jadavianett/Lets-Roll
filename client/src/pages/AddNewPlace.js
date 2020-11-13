@@ -45,7 +45,7 @@ function AddNewPlace() {
     )
       .then((res) => {
         console.log(res.data);
-        history.push("/viewmyplaces");
+        history.push("/myplaces");
       })
       .catch((err) => {
         throw err;
@@ -81,6 +81,7 @@ function AddNewPlace() {
             onChange={onChangeInfo}
           />
           <textarea
+            className="text-area"
             name="notes"
             placeholder="Helpful tips on this place?"
             onChange={onChangeInfo}
@@ -95,6 +96,7 @@ function AddNewPlace() {
             size="large"
             variant="contained"
             onClick={handleSave}
+            id="save-place-btn"
           >
             Save Place
           </Button>

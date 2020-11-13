@@ -18,10 +18,12 @@ export default function SimplePaper(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <>
+      {/* <div className={classes.root}> */}
       <Paper className="wide-paper" elevation={5}>
         {props.notes}
       </Paper>
-    </div>
+      {/* </div> */}
+    </>
   );
 }

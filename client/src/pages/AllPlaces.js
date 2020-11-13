@@ -95,11 +95,13 @@ function AllPlaces() {
           <div className="margin-auto">
             {currentPlaces && currentPlaces.map((place) => (
               // <div className="wide-card">
+              
               <AllPlacesCard
                 image={place.image}
                 name={place.name}
                 location={place.location}
                 type={place.type}
+                key={place._id}
                 id={place._id}
                 notes={place.notes}
               />

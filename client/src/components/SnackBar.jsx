@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import './Snackbar.css';
 
 export default function SimpleSnackbar(props) {
 //   const [open, setOpen] = React.useState(false);
@@ -25,7 +26,7 @@ export default function SimpleSnackbar(props) {
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left',
+          horizontal: 'center',
         }}
         open={props.open}
         autoHideDuration={6000}

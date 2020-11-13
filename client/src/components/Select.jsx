@@ -19,7 +19,7 @@ export default function NativeSelects(props) {
 
   return (
     <div>
-      <FormControl variant="outlined" className={classes.formControl}>
+      <FormControl variant="outlined" id="new-place-type-select">
         <InputLabel htmlFor="outlined-age-native-simple">{props.label}</InputLabel>
         <Select
           native

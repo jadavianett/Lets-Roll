@@ -3,11 +3,45 @@
   box-sizing: border-box;
   text-align: center;
   padding: 50px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  /* border: 1px solid #cccccc; */
   border-radius: 10px;
   min-width: 50vw;
 }
+/*ADD NEW PLACE*/
+/* ================================================================ */
+
+.new-place-input {
+  width: 100%;
+}
+
+.text-area {
+  box-sizing: border-box;
+  font: inherit;
+  color: currentColor;
+  height: 130px;
+  width: 100%;
+  padding-top: 18px;
+  padding-left: 13px;
+  border-radius: 5px;
+  animation-name: mui-auto-fill-cancel;
+  letter-spacing: inherit;
+  animation-duration: 10ms;
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  border: 1px solid #bbb;
+}
+
+#new-place-type-select {
+  width: 100% !important;
+  /* border: 2px solid orange !important; */
+}
+
+#save-place-btn {
+  font-size: 14pt;
+}
+/* ================================================================ */
 
 /*ALL PLACES AND MY PLACES*/
 /* ================================================================ */
@@ -18,19 +52,19 @@
   border-radius: 10px;
   margin-top: 50px;
   min-width: 50vw;
+  margin-bottom: 50px;
+  height: 100%;
+  /* max-height: 80vh; */
 }
 
 .card-div-1 {
   /* border: 2px solid hotpink; */
-  max-width: 70vw;
+  width: 80vw !important;
+  /* max-width: 70vw;
+  min-width: 50vw; */
+  padding: 30px 0px;
   margin: 30px auto;
-  padding: 30px 0px;
-  text-align: center;
-}
-.card-div-3 {
-  max-width: 70vw;
-  /* border: 2px solid hotpink; */
-  padding: 30px 0px;
+
   text-align: center;
 }
 
@@ -46,16 +80,29 @@
 
 /* ================================================================ */
 
+/* ONE SKATE PLACE */
+/* ================================================================ */
+.wide-paper {
+  /* dashed red; */
+  min-height: 80px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ================================================================ */
+
 /* SIGNUP */
 /* ================================================================ */
 #signup-wrapper {
   text-align: center;
   /* border: 1px dashed hotpink; */
   padding: 50px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  /* border: 1px solid #cccccc; */
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -88,6 +135,29 @@
   /* align-items: center; */
   padding-left: 28px;
 }
+
+.MuiPickersToolbar-toolbar {
+  background-color: #4dd0e1 !important;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: #4dd0e1 !important;
+  color: white !important;
+}
+.MuiPickersDay-daySelected:hover {
+  background-color: #4dd0e1 !important;
+  color: white !important;
+}
+.MuiPickersDay-current {
+  /* color: black !important; */
+  border: 1px solid #ccc !important;
+}
+
+/* .MuiPickersDay-daySelected {
+  color: #fff;
+  font-weight: 500;
+  background-color: #4dd0e1!important;
+} */
 /* ================================================================ */
 
 /* TUTORIALS*/
@@ -97,8 +167,9 @@ iframe {
   margin: 20px;
   /* min-width: 560px; */
   min-height: 315px;
-  -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0;
+  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
+  box-shadow: 5px 5px 15px 5px #a0a0a0; */
+  border: 1px solid #cccccc;
   border-radius: 10px;
   /* margin-bottom: 30px; */
   /* border: 1px dashed blue; */

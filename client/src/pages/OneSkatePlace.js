@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import API from "../Utils/API";
+import ExploreIcon from '@material-ui/icons/Explore';
 
 function OneSkatePlace() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function OneSkatePlace() {
       .catch((err) => {
         throw err;
       });
-  }, [id]);
+  }, []);
 
   return (
     <>
@@ -37,15 +38,14 @@ function OneSkatePlace() {
           ></img>
           <br />
           <br /> <br /> <br />
-          <h3>See what others have said about this place!</h3>
-          <br />
+          <h3>Here's what other Rollers have to say about this location:</h3>
           <br />
           {place.notes && place.notes.map((note) => <Paper notes={note} />)}
           <p>
             <br />
             <br />
-            <Link to="/allplaces">
-              <Button variant="contained">VIEW ALL SKATE PLACES</Button>
+            <Link to="/allplaces" className="no-link-style">
+              <Button variant="contained"> <ExploreIcon/> &nbsp; BACK TO ALL SKATE PLACES</Button>
             </Link>
           </p>
         </div>
