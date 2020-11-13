@@ -31,23 +31,11 @@ function Login() {
     e.preventDefault();
     console.log("Login clicked");
 
-    //  let name = e.target.name
-    //  console.log(name.val,"name")
-    //  let  value= e.target.value
-
     if (emailAddress === "") {
-      console.log("here");
+      
       setOpen(true);
       setMessage("Invalid Email.");
       setButtonVal("Try Again");
-
-      //    if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/.test(value) || value === "")
-      //     {
-      //       console.log("true")
-      //       return (true)
-      //     }
-      //       alert("You have entered an invalid email address!")
-      //       return (false)
     } else if (password === "") {
       setOpen(true);
       setMessage("Invalid Password.");
@@ -57,7 +45,6 @@ function Login() {
         .post("/api/login", { emailAddress, password })
         .then((response) => {
           // console.log(response.data.data);
-
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);
           setOpen(true);
@@ -107,7 +94,12 @@ function Login() {
             />
             <br />
             <div>
-              <Button variant="contained" type="button" onClick={handleLogin} id="log-in-button">
+              <Button
+                variant="contained"
+                type="button"
+                onClick={handleLogin}
+                id="log-in-button"
+              >
                 LOG IN
               </Button>
             </div>

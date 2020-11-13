@@ -15,10 +15,10 @@ function MyPlaces() {
 
   useEffect(() => {
     async function functionName() {
-      console.log("jwt " + jwt);
+      
       if (jwt) {
         var decoded = await jwt_decode(jwt);
-        console.log(decoded);
+        //console.log(decoded);
 
         //get all the places from the DB
         API.getPlaces()
