@@ -18,11 +18,12 @@
 }
 
 h1 {
-  font-family: 'Big Shoulders Inline Display', cursive;
+  font-family: "Big Shoulders Inline Display", cursive;
 }
 
-h2, h3 {
-  font-family: 'Saira Extra Condensed', sans-serif!important;
+h2,
+h3 {
+  font-family: "Saira Extra Condensed", sans-serif !important;
 }
 
 #create-a-place {
@@ -137,6 +138,7 @@ h2, h3 {
 /* ================================================================ */
 #signup-wrapper {
   text-align: center;
+  max-width: 500px;
   /* border: 1px dashed hotpink; */
   padding: 50px;
   /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
@@ -159,22 +161,8 @@ h2, h3 {
   padding-bottom: 30px;
 }
 
-#skill-columns {
-  /* border: 1px solid pink; */
-  width: 100%;
-  margin: auto;
-  /* display: flex; */
-}
-
-.skill-column {
-  box-sizing: border-box;
-  /* border: 2px dashed blue; */
-  display: inline-flex;
-  flex-direction: column;
-  margin: auto;
-  width: 50%;
-  /* align-items: center; */
-  padding-left: 28px;
+#current-target {
+  border: 2px dashed hotpink;
 }
 
 .MuiPickersToolbar-toolbar {
@@ -194,11 +182,26 @@ h2, h3 {
   border: 1px solid #ccc !important;
 }
 
-/* .MuiPickersDay-daySelected {
-  color: #fff;
-  font-weight: 500;
-  background-color: #4dd0e1!important;
-} */
+#skill-column {
+  /* border: 1px solid pink; */
+  width: 100%;
+  margin: auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.skill-checkbox {
+  margin: auto;
+  border-radius: 5px;
+  width: 175px;
+  margin: 0px !important;
+}
+
+.skill-checkbox:hover {
+  background-color: #eee;
+}
+
 /* ================================================================ */
 
 /* TUTORIALS*/
