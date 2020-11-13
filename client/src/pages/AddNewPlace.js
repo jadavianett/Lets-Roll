@@ -87,7 +87,7 @@ function AddNewPlace() {
             onChange={onChangeInfo}
           />
 
-          <Select name="type" onChange={onChangeInfo} value={type} />
+          <Select name="type" onChange={onChangeInfo} value={type} label="Type" />
           <br />
           <br />
 
