@@ -23,7 +23,7 @@ const Logout = () => {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1>You have successfully logged out!</h1>
+          <h1 className="animated-title">You have successfully logged out!</h1>
           <br />
           <p>You may still:</p>
           <br />

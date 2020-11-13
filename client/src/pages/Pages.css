@@ -10,6 +10,13 @@
   min-width: 50vw;
 }
 
+.animated-title {
+  
+  animation: heartBeat;
+  animation-duration: 5s;
+
+}
+
 h1 {
   font-family: 'Big Shoulders Inline Display', cursive;
 }
@@ -17,8 +24,15 @@ h1 {
 h2, h3 {
   font-family: 'Saira Extra Condensed', sans-serif!important;
 }
+
+#create-a-place {
+  animation: heartBeat;
+  animation-duration: 5s;
+}
 /*ADD NEW PLACE*/
 /* ================================================================ */
+
+
 
 .new-place-input {
   width: 100%;
@@ -89,6 +103,14 @@ h2, h3 {
   padding: 30px 0px;
 }
 
+/* ================================================================ */
+
+/*LOG IN PAGE*/
+/* ================================================================ */
+#log-in-button {
+  animation: shakeY;
+  animation-duration: 5s;
+}
 /* ================================================================ */
 
 /* EDIT PLACE */
