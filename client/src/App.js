@@ -10,7 +10,7 @@ import UserDashboard from "./pages/UserDashboard";
 import MyPlaces from "./pages/MyPlaces";
 import PageNotFound from "./pages/PageNotFound";
 import Logout from "./pages/Logout";
-import AppBarDisplay from "./components/AppBarDisplay";
+import AppBarDisplay from "./components/AppBar/AppBarDisplay";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useEffect } from "react";
