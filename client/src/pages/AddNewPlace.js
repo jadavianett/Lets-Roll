@@ -1,14 +1,12 @@
 import "./Pages.css";
-import TextInput from "../components/TextInput";
-import Select from "../components/Select";
+import TextInput from "../components/InputFields/TextInput";
+import Select from "../components/InputFields/Select";
 import Button from "@material-ui/core/Button";
 import { React, useContext, useState, useEffect } from "react";
-
 import { useHistory } from "react-router-dom";
 import API from "../Utils/API";
 import AuthContext from "../context/AuthContext";
 import jwt_decode from "jwt-decode";
-
 function AddNewPlace() {
   const history = useHistory();
   const [name, setName] = useState("");
@@ -17,9 +15,7 @@ function AddNewPlace() {
   const [notes, setNotes] = useState([]);
   // logged-in user
   const [user, setUser] = useState({});
-
   const { jwt } = useContext(AuthContext);
-
   useEffect(() => {
     if (jwt) {
       var decoded = jwt_decode(jwt);
@@ -28,11 +24,9 @@ function AddNewPlace() {
       console.log(decoded.username);
     }
   }, [jwt]);
-
   const handleSave = (e) => {
     e.preventDefault();
     console.log("clicked");
-
     API.createPlace(
       {
         name: name,
@@ -51,10 +45,8 @@ function AddNewPlace() {
         throw err;
       });
   };
-
   const onChangeInfo = (e) => {
     let value = e.target.value;
-
     if (e.target.name === "name") {
       setName(value);
     } else if (e.target.name === "location") {
@@ -66,7 +58,6 @@ function AddNewPlace() {
       //   console.log("State changed: place type");
     }
   };
-
   return (
     <>
       <div className="body-wrapper">
@@ -86,11 +77,9 @@ function AddNewPlace() {
             placeholder="Helpful tips on this place?"
             onChange={onChangeInfo}
           />
-
           <Select name="type" onChange={onChangeInfo} value={type} label="Type" />
           <br />
           <br />
-
           <Button
             type="submit"
             size="large"
@@ -105,5 +94,4 @@ function AddNewPlace() {
     </>
   );
 }
-
 export default AddNewPlace;

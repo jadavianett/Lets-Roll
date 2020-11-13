@@ -1,9 +1,9 @@
 import "./Pages.css";
 import AuthContext from "../context/AuthContext";
-import TextInput from "../components/TextInput";
+import TextInput from "../components/InputFields/TextInput";
 import { Button, FormGroup } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-import Snackbar from "../components/SnackBar";
+import Snackbar from "../components/SnackBar/SnackBar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { React, useState, useContext } from "react";
@@ -79,7 +79,7 @@ function Login() {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1>Log In and Let's Roll!</h1>
+          <h1 className="animated-title">Log In and Let's Roll!</h1>
           <br />
           <div className="login-form" onSubmit={handleLogin}>
             <TextInput
@@ -107,7 +107,7 @@ function Login() {
             />
             <br />
             <div>
-              <Button variant="contained" type="button" onClick={handleLogin}>
+              <Button variant="contained" type="button" onClick={handleLogin} id="log-in-button">
                 LOG IN
               </Button>
             </div>
