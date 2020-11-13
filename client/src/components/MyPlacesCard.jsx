@@ -45,8 +45,8 @@ export default function MediaCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <Link to={`/editplace/${props.id}`}>
-        <Button size="small" color="primary">
+      <Link to={`/editplace/${props.id}`} className="no-link-style">
+        <Button size="large" variant="contained">
           Edit Place
         </Button>
       </Link>

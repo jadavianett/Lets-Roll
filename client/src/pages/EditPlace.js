@@ -13,6 +13,7 @@ function EditPlace() {
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [notes, setNotes] = useState([]);
+  const [deletePlace, setDeletePlace] = useState(false);
   //   const [notes, setNotes] = useState("");
   const { id } = useParams();
 
@@ -100,8 +101,7 @@ function EditPlace() {
           <Select name="type" onChange={onChangeInfo} value={type} />
           <br />
           <br />
-
-          <Link to="/viewmyplaces">
+          <Link to="/viewmyplaces" className="no-link-style">
             <Button
               type="submit"
               size="large"
@@ -113,15 +113,32 @@ function EditPlace() {
           </Link>
           <br />
           <br />
-
-          <Button
-            size="large"
-            variant="contained"
-            color="secondary"
-            onClick={handleDelete}
-          >
-            DELETE PLACE
-          </Button>
+          {deletePlace ? (
+            <Button
+              className="delete-btn"
+              size="large"
+              variant="contained"
+              onClick={() => {
+                // console.log("clicked second del button");
+                setDeletePlace(false);
+                handleDelete();
+              }}
+            >
+              CLICK AGAIN TO CONFIRM
+            </Button>
+          ) : (
+            <Button
+              className="delete-btn"
+              size="large"
+              variant="contained"
+              onClick={() => {
+                // console.log("clicked first del button");
+                setDeletePlace(true);
+              }}
+            >
+              DELETE THIS PLACE
+            </Button>
+          )}
         </div>
       </div>
     </>
