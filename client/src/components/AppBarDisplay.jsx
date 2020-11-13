@@ -6,6 +6,7 @@ import { useState, useContext, useEffect } from "react";
 
 function AppBarDisplay() {
   const { jwt } = useContext(AuthContext);
+  
   if (jwt) {
     return (
       <>
