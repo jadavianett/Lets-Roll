@@ -86,7 +86,9 @@ function GuestAppBar(props) {
                   <MenuItem onClick={() => handleClose("/tutorials")}>
                     TUTORIALS
                   </MenuItem>
-
+                  <MenuItem onClick={() => handleClose("/signup")}>
+                    SIGN UP
+                  </MenuItem>
                   <MenuItem onClick={() => handleClose("/login")}>
                     LOG IN
                   </MenuItem>
@@ -106,7 +108,11 @@ function GuestAppBar(props) {
                       TUTORIALS
                     </Link>
                   </Button>
-
+                  <Button variant="contained" className="nav-button">
+                    <Link to="/signup" className="no-link-style">
+                      SIGN UP
+                    </Link>
+                  </Button>
                   <Button variant="contained" className="nav-button">
                     <Link to="/login" className="no-link-style">
                       LOG IN
