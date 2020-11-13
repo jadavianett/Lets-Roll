@@ -20,7 +20,7 @@ const Pagination = ({ placesPerPage, totalPlaces, paginate, currentPage }) => {
                 ? "page-number current-page"
                 : "page-number"
             }
-            onClick={() => paginate(number)}
+            onClick={() => paginate(number) }
           >
             <span
               className={number === currentPage ? "current-page" : "other-page"}
