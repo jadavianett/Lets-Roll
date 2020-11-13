@@ -50,6 +50,7 @@ function AllPlaces() {
 
     if (value === "All") {
       setFilteredPlaces(places);
+      setCurrentPage(1);
     } else {
       let filteredList = await [...places].filter((place) => {
         if (value) {
@@ -57,11 +58,9 @@ function AllPlaces() {
         }
         return true;
       });
-
       setFilteredPlaces(filteredList);
+      setCurrentPage(1);
     }
-
-    //  console.log("after",currentPlaces)
   };
 
   return (
