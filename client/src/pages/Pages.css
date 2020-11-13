@@ -9,6 +9,14 @@
   border-radius: 10px;
   min-width: 50vw;
 }
+
+h1 {
+  font-family: 'Big Shoulders Inline Display', cursive;
+}
+
+h2, h3 {
+  font-family: 'Saira Extra Condensed', sans-serif!important;
+}
 /*ADD NEW PLACE*/
 /* ================================================================ */
 
