@@ -79,7 +79,7 @@ function Login() {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1>Log In and Let's Roll!</h1>
+          <h1 className="animated-title">Log In and Let's Roll!</h1>
           <br />
           <div className="login-form" onSubmit={handleLogin}>
             <TextInput
@@ -107,7 +107,7 @@ function Login() {
             />
             <br />
             <div>
-              <Button variant="contained" type="button" onClick={handleLogin}>
+              <Button variant="contained" type="button" onClick={handleLogin} id="log-in-button">
                 LOG IN
               </Button>
             </div>
