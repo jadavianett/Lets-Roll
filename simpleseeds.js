@@ -32,7 +32,7 @@ let simpleSeeds = [
   },
   {
     name: "Brook Run Skate Park",
-    image: "https://lh3.googleusercontent.com/proxy/QfFkocAc5-xjQ2ImoaNF7VXkL6Gt_gWtpAQqzxldD9yv0GpEun-N8ueFvMtMwKvASK2MtNRF2qJenLCHpHYyCnxCuTdzoxHPaXTPffu8Kq3ou3nLpOzf7kDZks-nXbKS2S_xf-nFyhXPiRCtIb8wuv4Kf6zWNi0GGcifTLd4bLRU8Seq",
+    image: "https://silvermancpm.com/wp-content/gallery/brook-run/brook-run-gallery2.jpg",
     location: "4770 N Peachtree Rd, Dunwoody, GA 30338",
     type: "Skate Park",
     notes: ["Huge skate park with multiple bowls.", "Can be intimidating for beginners!", "Floodlights come on when the sun goes down so its safe to skate after dark."]
