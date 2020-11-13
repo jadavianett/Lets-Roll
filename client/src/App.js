@@ -10,7 +10,7 @@ import UserDashboard from "./pages/UserDashboard";
 import MyPlaces from "./pages/MyPlaces";
 import PageNotFound from "./pages/PageNotFound";
 import Logout from "./pages/Logout";
-import AppBarDisplay from "./components/AppBarDisplay";
+import AppBarDisplay from "./components/AppBar/AppBarDisplay";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useEffect } from "react";
@@ -18,16 +18,16 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { setAxiosDefaults } from "./Utils/axiosDefaults";
 
 function App() {
-  const [jwt, setJwt] = useState("");
+  const [jwt, setJwt] = useState(sessionStorage.getItem("jwt")|| "");
 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
     if (sessionJwt) {
-      setJwt(sessionJwt);
+      setJwt(sessionJwt);      
     }
   }, []);
 
-  useEffect(() => {
+  useEffect(() => {    
     if (jwt) {
       setAxiosDefaults(jwt);
       localStorage.setItem("jwt", jwt);
@@ -35,8 +35,9 @@ function App() {
   }, [jwt]);
 
   return (
-    <AuthContext.Provider value={{ jwt, setJwt }}>
+    
       <Router>
+        <AuthContext.Provider value={{ jwt, setJwt }}>
         <div className="App">
           <AppBarDisplay />
           <Switch>
@@ -45,11 +46,7 @@ function App() {
             <Route exact path="/logout" component={Logout} />
             <ProtectedRoute exact path="/addnewplace" component={AddNewPlace} />
             <Route exact path="/allplaces" component={AllPlaces} />
-            <Route
-              exact
-              path="/oneskateplace/:id"
-              component={OneSkatePlace}
-            />
+            <Route exact path="/oneskateplace/:id" component={OneSkatePlace} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/tutorials" component={Tutorials} />
             <ProtectedRoute
@@ -62,8 +59,9 @@ function App() {
             <Route path="/*" component={PageNotFound} />
           </Switch>
         </div>
+        </AuthContext.Provider>
       </Router>
-    </AuthContext.Provider>
+    
   );
 }
 
