@@ -81,6 +81,7 @@ function MyPlaces() {
                 type="submit"
                 size="large"
                 variant="contained"
+                id="create-a-place"
               >
                 Add New Skate Place
               </Button>

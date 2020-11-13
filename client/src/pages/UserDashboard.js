@@ -27,7 +27,7 @@ function UserDashboard() {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1>Welcome {user.username}!</h1>
+          <h1 className="animated-title">Welcome {user.username}!</h1>
           <br />
           <br />
           {/* <p> What would you like to do?</p> */}
