@@ -1,7 +1,7 @@
 import "./Pages.css";
-import AllPlacesCard from "../components/AllPlacesCard";
-import Pagination from "../components/Pagination";
-import Select from "../components/Select";
+import AllPlacesCard from "../components/Cards/AllPlacesCard";
+import Pagination from "../components/Pagination/Pagination";
+import Select from "../components/InputFields/Select";
 import { useEffect, useState } from "react";
 import API from "../Utils/API";
 

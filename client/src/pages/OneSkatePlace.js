@@ -1,5 +1,5 @@
 import "./Pages.css";
-import Paper from "../components/Paper";
+import Paper from "../components/Paper/Paper";
 import Button from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
