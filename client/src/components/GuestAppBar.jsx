@@ -80,15 +80,15 @@ function GuestAppBar(props) {
                   onClose={() => setAnchorEl(null)}
                 >
                   <MenuItem onClick={() => handleClose("/allplaces")}>
-                    All Skate Places
+                    ALL SKATE PLACES
                   </MenuItem>
 
                   <MenuItem onClick={() => handleClose("/tutorials")}>
-                    Tutorials
+                    TUTORIALS
                   </MenuItem>
 
                   <MenuItem onClick={() => handleClose("/login")}>
-                    Log In
+                    LOG IN
                   </MenuItem>
                 </Menu>
               </>
@@ -97,19 +97,19 @@ function GuestAppBar(props) {
                 <ButtonGroup>
                   <Button variant="contained" className="nav-button">
                     <Link to="/allplaces" className="no-link-style">
-                      All Skate Places
+                      ALL SKATE PLACES
                     </Link>
                   </Button>
 
                   <Button variant="contained" className="nav-button">
                     <Link to="/tutorials" className="no-link-style">
-                      Tutorials
+                      TUTORIALS
                     </Link>
                   </Button>
 
                   <Button variant="contained" className="nav-button">
                     <Link to="/login" className="no-link-style">
-                      Log In
+                      LOG IN
                     </Link>
                   </Button>
                 </ButtonGroup>
