@@ -1,6 +1,6 @@
 import "./Pages.css";
-import TextInput from "../components/TextInput";
-import Select from "../components/Select";
+import TextInput from "../components/InputFields/TextInput";
+import Select from "../components/InputFields/Select";
 import Button from "@material-ui/core/Button";
 import { React, useContext, useState, useEffect } from "react";
 

@@ -1,9 +1,9 @@
 import "./Pages.css";
-import DatePicker from "../components/DatePicker";
-import TextInput from "../components/TextInput";
-import CheckboxesGroup from "../components/CheckboxesGroup";
+import DatePicker from "../components/DatePicker/DatePicker";
+import TextInput from "../components/InputFields/TextInput";
+import CheckboxesGroup from "../components/CheckboxesGroup/CheckboxesGroup";
 import { Button, FormGroup } from "@material-ui/core";
-import Snackbar from "../components/SnackBar";
+import Snackbar from "../components/SnackBar/SnackBar";
 import { React, useState, useContext } from "react";
 import API from "../Utils/API";
 import { useHistory } from "react-router-dom";

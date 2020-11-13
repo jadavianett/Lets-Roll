@@ -1,6 +1,6 @@
 // import "./ViewMyPlaces.css";
 import "./Pages.css";
-import MyPlacesCard from "../components/MyPlacesCard";
+import MyPlacesCard from "../components/Cards/MyPlacesCard";
 import AuthContext from "../context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";

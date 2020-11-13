@@ -1,9 +1,9 @@
 import "./Pages.css";
 import AuthContext from "../context/AuthContext";
-import TextInput from "../components/TextInput";
+import TextInput from "../components/InputFields/TextInput";
 import { Button, FormGroup } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
-import Snackbar from "../components/SnackBar";
+import Snackbar from "../components/SnackBar/SnackBar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { React, useState, useContext } from "react";

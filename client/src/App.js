@@ -14,7 +14,7 @@ import AppBarDisplay from "./components/AppBarDisplay";
 import EditPlace from "./pages/EditPlace";
 import AuthContext from "./context/AuthContext";
 import { useState, useEffect } from "react";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { setAxiosDefaults } from "./Utils/axiosDefaults";
 
 function App() {
