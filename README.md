@@ -6,6 +6,7 @@
    * [Technologies Used](#technologies%20used)
   * [License](#license)
   * [The Team](#the%20team)
+  * [Acknowledgments](#acknowledgments)
   * [Questions](#questions)
   
 ## Description 
@@ -52,6 +53,9 @@ Back End - Database, Models, Controllers, User Authentication/ Authorization <br
  * [Navdeep Puri](https://github.com/jadavianet) <br>
 
  * [Ashley Brown](https://github.com/afbrown1216)
+
+ ## Acknowledgments
+ We would like to thank the Peach Skate FB group for providing us with seed data for these awesome skate places! The instructional staff at our Georgia Tech Bootcamp was also extremely helpful throughout this entire process - they were there to help us squash all the bugs and think through creative solutions to problems! 
 
 ## Questions
 
