@@ -20,11 +20,32 @@ Visit https://gt-lets-roll.herokuapp.com/ on your mobile phone to get started! W
 
 You will be prompted to log in if you have an account, or create an account if you do not have one. If you are not logged in you can still view all skate places and tutorials!
 
+![Signup](readmeImages/signup.GIF)
+<br>
+<hr>
+<br>
+
+
 The All Skate Places page will display all places. Use the filter to filter by type!
+
+![ViewAll](readmeImages/viewall.GIF)
+<br>
+<hr>
+<br>
 
 Add new skate places of your own by filling out the form - these places will be added to the All Skate Places for everyone to view. You can edit and delete your skate places.
 
+![EditPlace](readmeImages/editplace.GIF)
+<br>
+<hr>
+<br>
+
 Visit the tutorials page for some skating pointers!
+![Tutorials](readmeImages/alltutorials.GIF)
+
+<br>
+
+<br>
 
 When you are finished with your session, log out.
 
