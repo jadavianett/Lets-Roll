@@ -44,10 +44,10 @@ function GuestAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" id="nav-color">
+      <AppBar position="static" id="navbar-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/allplaces" id="logo-link">
+            <Link to="/allplaces" className="no-link-style">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
@@ -97,23 +97,23 @@ function GuestAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/allplaces" className="no-link-style">
                       ALL SKATE PLACES
                     </Link>
                   </Button>
 
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/tutorials" className="no-link-style">
                       TUTORIALS
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/signup" className="no-link-style">
                       SIGN UP
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/login" className="no-link-style">
                       LOG IN
                     </Link>

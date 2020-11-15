@@ -44,7 +44,7 @@ function UserAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" id="nav-color">
+      <AppBar position="static" id="navbar-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link to="/userdashboard" id="logo-link">
@@ -99,27 +99,27 @@ function UserAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/allplaces" className="no-link-style">
                       All Skate Places
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/tutorials" className="no-link-style">
                       Tutorials
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/myplaces" className="no-link-style">
                       My Places
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/addnewplace" className="no-link-style">
                       Add new skate place
                     </Link>
                   </Button>
-                  <Button variant="contained" className="nav-button">
+                  <Button variant="contained">
                     <Link to="/logout" className="no-link-style">
                       Log Out
                     </Link>

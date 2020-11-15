@@ -3,34 +3,22 @@
 }
 
 #lets-roll-logo {
-  /* border: 2px solid red; */
   font-family: "Monoton", cursive;
-  /* color: #ddd9db; */
   color: white;
   text-decoration: none;
   font-size: 30pt;
-}
-
-#logo-link {
-  text-decoration: none;
 }
 
 .no-link-style {
   text-decoration: none;
 }
 
-#nav-color {
+#navbar-color {
   background-color: #4dd0e1;
-  /* background-color: rgb(111, 195, 243); */
-}
-
-.nav-button {
-  color: white !important;
-  background-color: transparent !important;
-  margin: 10px;
 }
 
 .MuiList-root {
   background-color: #4dd0e1 !important;
   color: white !important;
+  margin: 10px;
 }
