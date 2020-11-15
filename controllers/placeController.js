@@ -3,31 +3,8 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const db = require("../models");
 
-router.get("/", (req, res) => {
-  // Check for user-provided token.
-  // If token, decode it.
-  // If valid token, find places.
-  // Else 401
-  //   console.log(req.headers);
-  //   if (!req.headers.authorization) {
-  //     return res.status(401).json({
-  //       error: true,
-  //       data: null,
-  //       message: "Unauthorized.",
-  //     });
-  //   }
-  //   jwt.verify(req.headers.authorization, process.env.SECRET, (err, decoded) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.status(401).json({
-  //         error: true,
-  //         data: null,
-  //         message: "Invalid token.",
-  //       });
-  //     } else {
-  //   console.log(decoded);
-
-  db.Place.find({})    
+router.get("/", (res) => {
+  db.Place.find({})
     .then((foundPlaces) => {
       res.json(foundPlaces);
     })
@@ -39,8 +16,6 @@ router.get("/", (req, res) => {
         message: "Failed to retrieve all places.",
       });
     });
-  // }
-  //   });
 });
 
 router.get("/:id", (req, res) => {
@@ -50,8 +25,6 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log("create new place");
-  //console.log(req.headers);
   if (!req.headers.authorization) {
     return res.status(401).json({
       error: true,
@@ -113,12 +86,9 @@ router.put("/:id", (req, res) => {
         notes: req.body.notes,
       };
       // Restrict updates where the creatorId is equal to the user-provided token _id.
-      db.Place.findOneAndUpdate(
-        // { _id: req.params.id, creatorId: decoded._id },
-        { _id: req.params.id },
-        updatedPlace,
-        { new: true }
-      )
+      db.Place.findOneAndUpdate({ _id: req.params.id }, updatedPlace, {
+        new: true,
+      })
         .then((updatedPlace) => {
           if (!updatedPlace) {
             res.status(404).json({
@@ -138,7 +108,7 @@ router.put("/:id", (req, res) => {
           res.status(500).json({
             error: true,
             data: null,
-            message: "An error occurred updating your place.",
+            message: err,
           });
         });
     }

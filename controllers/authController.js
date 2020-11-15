@@ -5,12 +5,12 @@ const jwt = require("jsonwebtoken");
 
 const db = require("../models");
 
-// Sign UP
+// Signup
 
 router.post("/api/signup", (req, res) => {
   const { email, password, username, location, skills, skateSince } = req.body;
-     console.log(email);
-     console.log(password);
+  console.log(email);
+  console.log(password);
   if (!email.trim() || !password.trim()) {
     res.status(400);
   } else {
@@ -22,20 +22,19 @@ router.post("/api/signup", (req, res) => {
           email: email,
           username: username,
           password: hashedPassword,
-          location: location, 
-          skills: skills, 
-          skateSince: skateSince
+          location: location,
+          skills: skills,
+          skateSince: skateSince,
         })
           .then((newUser) => {
             const token = jwt.sign(
               {
                 _id: newUser._id,
                 email: newUser.email,
-                username:username, 
-                location: location, 
-                skills: skills, 
-                skateSince: skateSince                             
-                
+                username: username,
+                location: location,
+                skills: skills,
+                skateSince: skateSince,
               },
               "secret"
             );
@@ -76,23 +75,20 @@ router.post("/api/login", (req, res) => {
         console.log("Plain text password from user", password);
         // If there is a matching user, compare the plaintext password with the stored, hashed password.
         bcrypt
-          .compare( password,foundUser.password)
+          .compare(password, foundUser.password)
           .then(function (result) {
-            // result == true
-            console.log("The passwords match: ", result);
             if (result) {
               console.log("Result true: password matches");
               // If the passwords match, send back success.
-              // TODO: send a jwt back as data instead. DONE
               // TODO: lock down the token with a time frame
               const token = jwt.sign(
                 {
                   _id: foundUser._id,
                   email: foundUser.email,
-                  username: foundUser.username, 
-                  skills: foundUser.skills, 
-                  location: foundUser.location, 
-                  skateSince: foundUser.skateSince
+                  username: foundUser.username,
+                  skills: foundUser.skills,
+                  location: foundUser.location,
+                  skateSince: foundUser.skateSince,
                 },
                 "secret"
               );
@@ -123,8 +119,7 @@ router.post("/api/login", (req, res) => {
           error: true,
           data: null,
           message: "Failed to sign in.",
-        })
-
+        });
       }
     })
     .catch((err) => {
