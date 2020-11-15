@@ -14,24 +14,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NativeSelects(props) {
+export default function NativeSelects({ label, value, onChange, text }) {
   const classes = useStyles();
 
   return (
     <div>
       <FormControl variant="outlined" id="new-place-type-select">
-        <InputLabel htmlFor="outlined-age-native-simple">{props.label}</InputLabel>
+        <InputLabel htmlFor="outlined-age-native-simple">{label}</InputLabel>
         <Select
           native
-          value={props.value}
-          onChange={props.onChange}
+          value={value}
+          onChange={onChange}
           label="Type"
           inputProps={{
             name: "type",
             id: "outlined-age-native-simple",
           }}
         >
-          <option aria-label="None"> {props.text} </option>
+          <option aria-label="None"> {text} </option>
           <option value="Skate Park">Skate Park</option>
           <option value="Outdoor Rink">Outdoor Rink</option>
           <option value="Beltline">Beltline</option>

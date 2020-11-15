@@ -4,6 +4,7 @@ import { Redirect, Route } from "react-router-dom";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const { jwt } = useContext(AuthContext);
+
   return (
     <Route
       {...rest}

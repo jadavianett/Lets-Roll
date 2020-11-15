@@ -202,6 +202,13 @@ let simpleSeeds = [
     type: "Park",
     notes: ["A bit hilly.", "A shady trail that extends nineteen miles from Downtown to Stone Mountain!"]
   },
+  {
+    name: "Walker Park Soccer Pad",
+    image: "https://images.pexels.com/photos/2005992/pexels-photo-2005992.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    location: "200 Memorial Terrace SE, Atlanta, GA 30316",
+    type: "Other",
+    notes: ["A small paved soccer pad that's doubles as a great place to skate.", "There are some minor cracks in the pavement so be careful!", "This skate place is most easily accessed by parking at the end of East Side Ave."]
+  }
 ];
 
 // dropping the db first then inserting the simple seeds into the database

@@ -1,24 +1,20 @@
 /* ALL PAGES */
 .content-wrapper {
   box-sizing: border-box;
-  text-align: center;
-  padding: 50px;
-  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0; */
-  /* border: 1px solid #cccccc; */
-  border-radius: 10px;
   min-width: 50vw;
+  padding: 50px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .animated-title {
-  
   animation: heartBeat;
   animation-duration: 5s;
-
 }
 
 h1 {
   font-family: "Big Shoulders Inline Display", cursive;
+  font-size: 35pt;
 }
 
 h2,
@@ -30,10 +26,9 @@ h3 {
   animation: heartBeat;
   animation-duration: 5s;
 }
+
 /*ADD NEW PLACE*/
 /* ================================================================ */
-
-
 
 .new-place-input {
   width: 100%;
@@ -61,7 +56,6 @@ h3 {
 #new-place-type-select {
   width: 100% !important;
   margin: 10px 0px !important;
-  /* border: 2px solid orange !important; */
 }
 
 #save-place-btn {
@@ -72,25 +66,19 @@ h3 {
 /*ALL PLACES AND MY PLACES*/
 /* ================================================================ */
 .places-wrapper {
-  margin: auto;
   text-align: center;
-  /* border: 1px dashed hotpink; */
   border-radius: 10px;
+  padding: 0 10vw;
+  max-width: 600px;
+  margin: auto;
   margin-top: 50px;
-  min-width: 50vw;
   margin-bottom: 50px;
   height: 100%;
-  /* max-height: 80vh; */
 }
 
 .card-div-1 {
-  /* border: 2px solid hotpink; */
-  width: 80vw !important;
-  /* max-width: 70vw;
-  min-width: 50vw; */
   padding: 30px 0px;
   margin: 30px auto;
-
   text-align: center;
 }
 
@@ -100,7 +88,6 @@ h3 {
 }
 
 .card-padding {
-  /* border: 2px solid yellow; */
   padding: 30px 0px;
 }
 
@@ -117,7 +104,6 @@ h3 {
 /* EDIT PLACE */
 /* ================================================================ */
 .delete-btn {
-  /* background-color: rgb(190, 20, 46) !important; */
   background-color: rgb(95, 30, 23) !important;
 }
 /* ================================================================ */
@@ -125,7 +111,6 @@ h3 {
 /* ONE SKATE PLACE */
 /* ================================================================ */
 .wide-paper {
-  /* dashed red; */
   min-height: 80px;
   margin: 10px 0px;
   display: flex;
@@ -139,32 +124,12 @@ h3 {
 #signup-wrapper {
   text-align: center;
   max-width: 500px;
-  /* border: 1px dashed hotpink; */
-  padding: 50px;
-  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0; */
-  /* border: 1px solid #cccccc; */
   border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 50px;
 }
 
-#checkbox-div-1 {
-  /* background-color: gray; */
-  width: 100%;
-}
-
-#checkbox-div-2 {
-  /* background-color: black; */
-  margin: auto;
-  width: 100%;
-  padding-bottom: 30px;
-}
-
-#current-target {
-  border: 2px dashed hotpink;
-}
-
+/* DATE PICKER */
 .MuiPickersToolbar-toolbar {
   background-color: #4dd0e1 !important;
 }
@@ -178,17 +143,24 @@ h3 {
   color: white !important;
 }
 .MuiPickersDay-current {
-  /* color: black !important; */
   border: 1px solid #ccc !important;
 }
 
+/* CHECKBOXES */
+
+#checkbox-div-1 {
+  width: 100%;
+}
+
+#checkbox-div-2 {
+  margin: auto;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
 #skill-column {
-  /* border: 1px solid pink; */
   width: 100%;
   margin: auto;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
 .skill-checkbox {
@@ -209,25 +181,18 @@ h3 {
 iframe {
   padding: 20px;
   margin: 20px;
-  /* min-width: 560px; */
   min-height: 315px;
-  /* -webkit-box-shadow: 5px 5px 15px 5px #a0a0a0;
-  box-shadow: 5px 5px 15px 5px #a0a0a0; */
   border: 1px solid #cccccc;
   border-radius: 10px;
-  /* margin-bottom: 30px; */
-  /* border: 1px dashed blue; */
 }
 
 #videos-div {
   text-align: center;
-  /* border: 2px dashed red; */
   display: flex;
   flex-direction: column;
 }
 
 #tutorials-wrapper {
-  /* border: 2px dashed green; */
   text-align: center;
   padding: 50px;
 }
@@ -236,13 +201,14 @@ iframe {
 
 /* USER DASHBOARD */
 /* ================================================================ */
-.full-width {
-  width: 70%;
-  /* margin-bottom: 100px; */
+#dash-links {
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.btm-margin {
-  /* border: 1px dashed red; */
-  margin-bottom: 20px;
+.set-width {
+  width: 50%;
 }
 /* ================================================================ */

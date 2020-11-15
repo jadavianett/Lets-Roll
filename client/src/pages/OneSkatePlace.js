@@ -25,7 +25,8 @@ function OneSkatePlace() {
   return (
     <>
       <div className="body-wrapper">
-        <div className="content-wrapper">
+        <div className="places-wrapper">
+          <h3>Currently viewing information for:</h3>
           <h1>{place.name}</h1>
           <h2>{place.location}</h2>
           <br />

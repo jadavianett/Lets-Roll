@@ -6,24 +6,16 @@ import { React, useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../Utils/API";
 import AuthContext from "../context/AuthContext";
-import jwt_decode from "jwt-decode";
+
 function AddNewPlace() {
   const history = useHistory();
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [notes, setNotes] = useState([]);
-  // logged-in user
-  const [user, setUser] = useState({});
+
   const { jwt } = useContext(AuthContext);
-  useEffect(() => {
-    if (jwt) {
-      var decoded = jwt_decode(jwt);
-      console.log(decoded);
-      setUser(decoded);
-      console.log(decoded.username);
-    }
-  }, [jwt]);
+
   const handleSave = (e) => {
     e.preventDefault();
     console.log("clicked");
@@ -33,12 +25,10 @@ function AddNewPlace() {
         location: location,
         notes: notes,
         type: type,
-        //creatorId: user._id
       },
       jwt
     )
       .then((res) => {
-        console.log(res.data);
         history.push("/myplaces");
       })
       .catch((err) => {
@@ -55,7 +45,6 @@ function AddNewPlace() {
       setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
-      //   console.log("State changed: place type");
     }
   };
   return (
@@ -77,7 +66,12 @@ function AddNewPlace() {
             placeholder="Helpful tips on this place?"
             onChange={onChangeInfo}
           />
-          <Select name="type" onChange={onChangeInfo} value={type} label="Type" />
+          <Select
+            name="type"
+            onChange={onChangeInfo}
+            value={type}
+            label="Type"
+          />
           <br />
           <br />
           <Button

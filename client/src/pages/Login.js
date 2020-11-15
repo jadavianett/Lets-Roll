@@ -1,8 +1,7 @@
 import "./Pages.css";
 import AuthContext from "../context/AuthContext";
 import TextInput from "../components/InputFields/TextInput";
-import { Button, FormGroup } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 import Snackbar from "../components/SnackBar/SnackBar";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,14 +11,14 @@ import { useHistory } from "react-router-dom";
 function Login() {
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { jwt, setJwt } = useContext(AuthContext);
+  const { setJwt } = useContext(AuthContext);
   const history = useHistory();
 
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [buttonVal, setButtonVal] = useState("");
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -29,25 +28,11 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Login clicked");
-
-    //  let name = e.target.name
-    //  console.log(name.val,"name")
-    //  let  value= e.target.value
 
     if (emailAddress === "") {
-      console.log("here");
       setOpen(true);
       setMessage("Invalid Email.");
       setButtonVal("Try Again");
-
-      //    if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/.test(value) || value === "")
-      //     {
-      //       console.log("true")
-      //       return (true)
-      //     }
-      //       alert("You have entered an invalid email address!")
-      //       return (false)
     } else if (password === "") {
       setOpen(true);
       setMessage("Invalid Password.");
@@ -56,8 +41,6 @@ function Login() {
       axios
         .post("/api/login", { emailAddress, password })
         .then((response) => {
-          // console.log(response.data.data);
-
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);
           setOpen(true);
@@ -75,7 +58,6 @@ function Login() {
   };
 
   return (
-    // <Container>
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
@@ -107,7 +89,12 @@ function Login() {
             />
             <br />
             <div>
-              <Button variant="contained" type="button" onClick={handleLogin} id="log-in-button">
+              <Button
+                variant="contained"
+                type="button"
+                onClick={handleLogin}
+                id="log-in-button"
+              >
                 LOG IN
               </Button>
             </div>
@@ -134,7 +121,6 @@ function Login() {
           </p>
         </div>
       </div>
-      {/* </Container>  */}
     </>
   );
 }

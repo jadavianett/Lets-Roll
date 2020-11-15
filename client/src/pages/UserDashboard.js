@@ -17,9 +17,7 @@ function UserDashboard() {
   useEffect(() => {
     if (jwt) {
       var decoded = jwt_decode(jwt);
-      console.log(decoded);
       setUser(decoded);
-      console.log(decoded.username);
     }
   }, [jwt]);
 
@@ -27,53 +25,42 @@ function UserDashboard() {
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
-          <h1 className="animated-title">Welcome {user.username}!</h1>
+          <h1 className="animated-title">User Dashboard</h1>
+          <br />
+          <h2>You are logged in as {user.username}</h2>
           <br />
           <br />
-          {/* <p> What would you like to do?</p> */}
-          <br />
+
           <div id="dash-links">
-            <p class="btm-margin">
-              <Link to="/allplaces" className="no-link-style">
-                <Button
-                  variant="contained"
-                  className="full-width no-link-style"
-                >
-                  <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
-                </Button>
-              </Link>
-            </p>
-            <p class="btm-margin">
-              <Link to="/tutorials" className="no-link-style">
-                <Button
-                  variant="contained"
-                  className="full-width no-link-style"
-                >
-                  <VideoLibraryIcon /> &nbsp; VIEW TUTORIALS
-                </Button>
-              </Link>
-            </p>
-            <p class="btm-margin">
-              <Link to="/addnewplace" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <AddTwoToneIcon /> &nbsp; ADD NEW SKATE PLACE
-                </Button>
-              </Link>
-            </p>{" "}
-            <p class="btm-margin">
-              <Link to="/myplaces" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <ListIcon /> &nbsp; VIEW MY SKATE PLACES
-                </Button>
-              </Link>
-            </p>
-            <p>
-              <Link to="/logout" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <ExitToAppIcon /> &nbsp; LOG OUT
-                </Button>
-              </Link>
-            </p>
+            <Link to="/allplaces" className="no-link-style">
+              <Button variant="contained" className="set-width no-link-style">
+                <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
+              </Button>
+            </Link>
+
+            <Link to="/tutorials" className="no-link-style">
+              <Button variant="contained" className="set-width no-link-style">
+                <VideoLibraryIcon /> &nbsp; VIEW TUTORIALS
+              </Button>
+            </Link>
+
+            <Link to="/addnewplace" className="no-link-style">
+              <Button variant="contained" className="set-width">
+                <AddTwoToneIcon /> &nbsp; ADD NEW SKATE PLACE
+              </Button>
+            </Link>
+
+            <Link to="/myplaces" className="no-link-style">
+              <Button variant="contained" className="set-width">
+                <ListIcon /> &nbsp; VIEW MY SKATE PLACES
+              </Button>
+            </Link>
+
+            <Link to="/logout" className="no-link-style">
+              <Button variant="contained" className="set-width">
+                <ExitToAppIcon /> &nbsp; LOG OUT
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
