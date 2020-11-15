@@ -1,15 +1,17 @@
 # Let's Roll
 
 ## Table of Contents
-  * [Description](#Description)
-  * [Usage](#usage)
-   * [Technologies Used](#technologies%20used)
-  * [License](#license)
-  * [The Team](#the%20team)
-  * [Acknowledgments](#acknowledgments)
-  * [Questions](#questions)
-  
-## Description 
+
+- [Description](#Description)
+- [Usage](#usage)
+- [Technologies Used](#technologies%20used)
+- [License](#license)
+- [The Team](#the%20team)
+- [Acknowledgments](#acknowledgments)
+- [Questions](#questions)
+
+## Description
+
 Just picked up roller skating as your new quarantine hobby but can't find any safe places to skate outdoors? Let's Roll is the perfect companion for quad skaters! This mobile-first, Progressive Web Application provides quad skaters with information on the best places to skate outdoors in their area.
 
 Visit Let's Roll to view all kinds of skate places: parks, outdoor rinks, trails, and more! If you stumble upon a place isn't listed, create an account to log-in and add your own skate place. With Let's Roll you can spend less time researching and more time rolling with the homies!
@@ -22,14 +24,15 @@ You will be prompted to log in if you have an account, or create an account if y
 
 ![Signup](readmeImages/signup.GIF)
 <br>
+
 <hr>
 <br>
-
 
 The All Skate Places page will display all places. Use the filter to filter by type!
 
 ![ViewAll](readmeImages/viewall.GIF)
 <br>
+
 <hr>
 <br>
 
@@ -37,10 +40,12 @@ Add new skate places of your own by filling out the form - these places will be 
 
 ![EditPlace](readmeImages/editplace.GIF)
 <br>
+
 <hr>
 <br>
 
 Visit the tutorials page for some skating pointers!
+
 ![Tutorials](readmeImages/alltutorials.GIF)
 
 <br>
@@ -58,32 +63,30 @@ This is a MERN application that was built using React and Material UI for the fr
 This project is licensed by: <br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## The Team 
+## The Team
 
 All contributors were absolutely essential to building this web application. We all brought something extremely valuable to the table and learned something new from each other each day. We all floated between front and back end but the team breakdown is roughly as follows:
 <br>
 
 Front End - UI/UX, Styling, Forms, Wireframes, Mobile Responsiveness <br>
- * [Jada Arnett](https://github.com/jadavianet) <br>
 
- * [Jude Clark](https://github.com/judeclark19) 
- <br>
+- [Jada Arnett](https://github.com/jadavianet) <br>
+
+- [Jude Clark](https://github.com/judeclark19)
+  <br>
 
 Back End - Database, Models, Controllers, User Authentication/ Authorization <br>
 
- * [Navdeep Puri](https://github.com/jadavianet) <br>
+- [Navdeep Puri](https://github.com/jadavianet) <br>
 
- * [Ashley Brown](https://github.com/afbrown1216)
+- [Ashley Brown](https://github.com/afbrown1216)
 
- ## Acknowledgments
- We would like to thank the Peach Skate FB group for providing us with seed data for these awesome skate places! The instructional staff at our Georgia Tech Bootcamp was also extremely helpful throughout this entire process - they were there to help us squash all the bugs and think through creative solutions to problems! 
+## Acknowledgments
+
+We would like to thank the Peach Skate FB group for providing us with seed data for these awesome skate places! The instructional staff at our Georgia Tech Bootcamp was also extremely helpful throughout this entire process - they were there to help us squash all the bugs and think through creative solutions to problems!
 
 ## Questions
 
-If you have any questions or would like to contribute, contact any one of the team members via the contact information on their Github profile linked above. 
-
-
+If you have any questions or would like to contribute, contact any one of the team members via the contact information on their Github profile linked above.
 
 Copyright 2020 Jada Arnett, Jude Clark, Navdeep Puri, Ashley Brown
-
-
