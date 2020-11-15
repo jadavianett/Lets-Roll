@@ -1,6 +1,8 @@
+//importing required package and models 
 let mongoose = require("mongoose");
 let db = require("./models");
 
+// connection to the mongoose database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -8,6 +10,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {
   useFindAndModify: false,
 });
 
+// declaring the simple seed array for basic skate places available to all 
 let simpleSeeds = [
   {
     name: "Historic Fourth Ward Skate Park",
@@ -201,6 +204,7 @@ let simpleSeeds = [
   },
 ];
 
+// dropping the db first then inserting the simple seeds into the database
 db.Place.deleteMany({})
   .then(() => db.Place.collection.insertMany(simpleSeeds))
   .then((data) => {
