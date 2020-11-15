@@ -8,15 +8,14 @@ import API from "../Utils/API";
 function AllPlaces() {
   const [places, setPlaces] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [placesPerPage, setPlacesPerPage] = useState(5);
+  const [placesPerPage] = useState(5);
   const [filteredPlaces, setFilteredPlaces] = useState();
   const [currentPlaces, setCurrentPlaces] = useState();
-  const [type, setType] = useState();
+  const [setType] = useState();
 
   useEffect(() => {
     API.getPlaces()
       .then((res) => {
-        // console.log(res.data);
         setPlaces(res.data);
         setFilteredPlaces(res.data);
       })
@@ -88,8 +87,6 @@ function AllPlaces() {
           <div className="margin-auto">
             {currentPlaces &&
               currentPlaces.map((place) => (
-                // <div className="wide-card">
-
                 <AllPlacesCard
                   image={
                     place.image
@@ -103,7 +100,6 @@ function AllPlaces() {
                   id={place._id}
                   notes={place.notes}
                 />
-                // </div>
               ))}
           </div>
           <Pagination

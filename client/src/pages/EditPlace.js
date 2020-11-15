@@ -14,14 +14,11 @@ function EditPlace() {
   const [type, setType] = useState("");
   const [notes, setNotes] = useState([]);
   const [deletePlace, setDeletePlace] = useState(false);
-  //   const [notes, setNotes] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
-    //code Here
     API.getPlace(id)
       .then((res) => {
-        console.log(res);
         setName(res.data.name);
         setLocation(res.data.location);
         setType(res.data.type);
@@ -34,8 +31,7 @@ function EditPlace() {
 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log("clicked save");
-    //API call to "put" a place, updatePlace
+
     API.updatePlace(id, {
       name: name,
       location: location,
@@ -74,7 +70,6 @@ function EditPlace() {
       setNotes(value);
     } else if (e.target.name === "type") {
       setType(value);
-      //   console.log("State changed: place type");
     }
   };
 
@@ -119,7 +114,6 @@ function EditPlace() {
               size="large"
               variant="contained"
               onClick={() => {
-                // console.log("clicked second del button");
                 setDeletePlace(false);
                 handleDelete();
               }}
@@ -132,7 +126,6 @@ function EditPlace() {
               size="large"
               variant="contained"
               onClick={() => {
-                // console.log("clicked first del button");
                 setDeletePlace(true);
               }}
             >

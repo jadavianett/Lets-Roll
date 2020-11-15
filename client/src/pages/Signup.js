@@ -13,7 +13,7 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const { jwt, setJwt } = useContext(AuthContext);
+  const { setJwt } = useContext(AuthContext);
   const history = useHistory();
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
@@ -34,7 +34,7 @@ function Signup() {
     spinJump: false,
   });
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -77,28 +77,23 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Here");
-    // console.log("selectedDate", selectedDate)
+
     if (username === "") {
-      // console.log("inside loop username")
       setOpen(true);
       setMessage("Invalid Username.");
       setButtonVal("Try Again");
     } else if (email === "") {
-      // console.log("inside loop email")
       setOpen(true);
       setMessage("Invalid Email.");
       setButtonVal("Try Again");
     } else if (password === "") {
-      // console.log("inside loop password")
       setOpen(true);
       setMessage("Invalid Password.");
       setButtonVal("Try Again");
     } else {
-      // console.log("inside loop good to go")
       setOpen(true);
       setMessage("Login successful");
-      setButtonVal("woo");
+      setButtonVal("OK");
 
       API.signupUser({
         username,
@@ -119,19 +114,6 @@ function Signup() {
         });
     }
   };
-
-  // const onChangeUser = (e) => {
-  //   let value = e.target.value;
-
-  //   if (e.target.name === "username") {
-  //     setUsername(value);
-  //   } else if (e.target.name === "password") {
-  //     setPassword(value);
-  //   } else if (e.target.name === "email") {
-  //     setEmail(value);
-  //   } else if(e.target.name === "location"){
-  //     set
-  //   }
 
   return (
     <>
