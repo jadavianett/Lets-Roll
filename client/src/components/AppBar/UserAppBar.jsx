@@ -47,7 +47,7 @@ function UserAppBar(props) {
       <AppBar position="static" id="navbar-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/userdashboard" id="logo-link">
+            <Link to="/userdashboard" className="no-link-style">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
@@ -57,7 +57,6 @@ function UserAppBar(props) {
               <>
                 <IconButton
                   edge="start"
-                  // className={classes.menuButton}
                   color="inherit"
                   aria-label="menu"
                   onClick={handleMenu}
@@ -99,27 +98,27 @@ function UserAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/allplaces" className="no-link-style">
                       All Skate Places
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/tutorials" className="no-link-style">
                       Tutorials
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/myplaces" className="no-link-style">
                       My Places
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/addnewplace" className="no-link-style">
                       Add new skate place
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/logout" className="no-link-style">
                       Log Out
                     </Link>

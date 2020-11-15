@@ -57,7 +57,6 @@ function GuestAppBar(props) {
               <>
                 <IconButton
                   edge="start"
-                  // className={classes.menuButton}
                   color="inherit"
                   aria-label="menu"
                   onClick={handleMenu}
@@ -97,23 +96,23 @@ function GuestAppBar(props) {
             ) : (
               <>
                 <ButtonGroup>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/allplaces" className="no-link-style">
                       ALL SKATE PLACES
                     </Link>
                   </Button>
 
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/tutorials" className="no-link-style">
                       TUTORIALS
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/signup" className="no-link-style">
                       SIGN UP
                     </Link>
                   </Button>
-                  <Button variant="contained">
+                  <Button variant="contained" className="nav-button">
                     <Link to="/login" className="no-link-style">
                       LOG IN
                     </Link>
