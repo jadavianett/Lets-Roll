@@ -17,8 +17,6 @@ function Tutorials() {
           <br />
           <div id="videos-div">
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/sLP7XbGZ1-I"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,8 +24,6 @@ function Tutorials() {
               title="HOW TO DANCE ON ROLLER SKATES FOR BEGINNERS! - Ep. 16 Planet Roller Skate"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/KBMcCGsVbls"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -35,8 +31,6 @@ function Tutorials() {
               title="HOW TO SPIN IN ROLLER SKATES WITH CANDICE HEIDEN! - Ep. 7 Planet Roller Skate"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/6aAUZk1B7w0"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -44,8 +38,6 @@ function Tutorials() {
               title="ROLLER SKATE BACKWARDS WITH @GYPSETCITY! - Ep. 9 Planet Roller Skate"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/OcOe-R5Upew"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -53,8 +45,6 @@ function Tutorials() {
               title="HOW TO FALL SAFELY ON SKATES | Planet Roller Skate"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/FhDm056yGqU"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -62,8 +52,6 @@ function Tutorials() {
               title="How to Rollerskate for Beginners"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/kf16cuQ37uo"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -71,8 +59,6 @@ function Tutorials() {
               title="How to Turn on Roller Skates - Transitions"
             ></iframe>
             <iframe
-              // width="560"
-              // height="315"
               src="https://www.youtube.com/embed/9A-aMfCzd-0"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

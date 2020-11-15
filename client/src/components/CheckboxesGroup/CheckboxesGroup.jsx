@@ -1,32 +1,33 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
-  formControl: {
-    margin: theme.spacing(3),
-  },
-}));
-
-export default function CheckboxesGroup(props) {
+export default function CheckboxesGroup({
+  handleChange,
+  crossover,
+  crazyLegs,
+  dribbling,
+  transitions,
+  grapevine,
+  shootTheDuck,
+  waltzJump,
+  mohawkTurn,
+  heelToeSpins,
+  spinJump,
+}) {
   return (
     <>
       <FormControl component="fieldset" id="checkbox-div-1">
         <FormGroup id="checkbox-div-2">
           <div id="skill-column">
-            {/* <div className="skill-column"> */}
             <FormControlLabel
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.crossover}
-                  onChange={props.handleChange}
+                  checked={crossover}
+                  onChange={handleChange}
                   name="crossover"
                 />
               }
@@ -36,8 +37,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.crazyLegs}
-                  onChange={props.handleChange}
+                  checked={crazyLegs}
+                  onChange={handleChange}
                   name="crazyLegs"
                 />
               }
@@ -47,8 +48,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.dribbling}
-                  onChange={props.handleChange}
+                  checked={dribbling}
+                  onChange={handleChange}
                   name="dribbling"
                 />
               }
@@ -58,8 +59,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.transitions}
-                  onChange={props.handleChange}
+                  checked={transitions}
+                  onChange={handleChange}
                   name="transitions"
                 />
               }
@@ -69,22 +70,19 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.grapevine}
-                  onChange={props.handleChange}
+                  checked={grapevine}
+                  onChange={handleChange}
                   name="grapevine"
                 />
               }
               label="Grapevine"
             />
-            {/* </div> */}
-            {/* end column 1 */}
-            {/* <div className="skill-column"> */}
             <FormControlLabel
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.shootTheDuck}
-                  onChange={props.handleChange}
+                  checked={shootTheDuck}
+                  onChange={handleChange}
                   name="shootTheDuck"
                 />
               }
@@ -94,8 +92,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.waltzJump}
-                  onChange={props.handleChange}
+                  checked={waltzJump}
+                  onChange={handleChange}
                   name="waltzJump"
                 />
               }
@@ -105,8 +103,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.mohawkTurn}
-                  onChange={props.handleChange}
+                  checked={mohawkTurn}
+                  onChange={handleChange}
                   name="mohawkTurn"
                 />
               }
@@ -116,8 +114,8 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.heelToeSpins}
-                  onChange={props.handleChange}
+                  checked={heelToeSpins}
+                  onChange={handleChange}
                   name="heelToeSpins"
                 />
               }
@@ -127,14 +125,13 @@ export default function CheckboxesGroup(props) {
               className="skill-checkbox"
               control={
                 <Checkbox
-                  checked={props.spinJump}
-                  onChange={props.handleChange}
+                  checked={spinJump}
+                  onChange={handleChange}
                   name="spinJump"
                 />
               }
               label="360 Jumps"
             />
-            {/* </div> */}
           </div>
         </FormGroup>
       </FormControl>

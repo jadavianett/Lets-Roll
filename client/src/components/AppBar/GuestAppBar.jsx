@@ -44,10 +44,10 @@ function GuestAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" id="nav-color">
+      <AppBar position="static" id="navbar-color">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/allplaces" id="logo-link">
+            <Link to="/allplaces" className="no-link-style">
               <span id="lets-roll-logo">LET'S ROLL</span>
             </Link>
           </Typography>
@@ -57,7 +57,6 @@ function GuestAppBar(props) {
               <>
                 <IconButton
                   edge="start"
-                  // className={classes.menuButton}
                   color="inherit"
                   aria-label="menu"
                   onClick={handleMenu}

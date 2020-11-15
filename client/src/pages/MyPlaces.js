@@ -9,29 +9,20 @@ import Button from "@material-ui/core/Button";
 import API from "../Utils/API";
 
 function MyPlaces() {
-  //for display
   const [myPlaces, setMyPlaces] = useState([]);
   const { jwt } = useContext(AuthContext);
 
   useEffect(() => {
     async function functionName() {
-      
       if (jwt) {
         var decoded = await jwt_decode(jwt);
-        //console.log(decoded);
 
-        //get all the places from the DB
         API.getPlaces()
           .then((res) => {
-            // display all places
-            // console.log(res.data);
-
             var placesWithId = res.data.filter(
               (x) => x.creatorId === decoded._id
             );
             setMyPlaces(placesWithId);
-            // display filtered places
-            //console.log(placesWithId);
           })
           .catch((err) => {
             console.log(err);
@@ -56,7 +47,6 @@ function MyPlaces() {
                 notes={place.notes}
                 type={place.type}
                 id={place._id}
-                
               />
             </div>
           ))

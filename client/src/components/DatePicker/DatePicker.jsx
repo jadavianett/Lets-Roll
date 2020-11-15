@@ -7,9 +7,7 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
-export default function MaterialUIPickers(props) {
-  // The first commit of Material-UI
-
+export default function MaterialUIPickers({ selectedDate, handleDateChange }) {
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Grid container justify="space-around">
@@ -18,8 +16,8 @@ export default function MaterialUIPickers(props) {
           id="date-picker-dialog"
           label="Date picker"
           format="MM/dd/yyyy"
-          value={props.selectedDate}
-          onChange={props.handleDateChange}
+          value={selectedDate}
+          onChange={handleDateChange}
           KeyboardButtonProps={{
             "aria-label": "change date",
           }}

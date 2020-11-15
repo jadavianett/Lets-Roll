@@ -3,13 +3,13 @@ import "./Pages.css";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExploreIcon from "@material-ui/icons/Explore";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 const Logout = () => {
-  const { jwt, setJwt } = useContext(AuthContext);
+  const { setJwt } = useContext(AuthContext);
 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");

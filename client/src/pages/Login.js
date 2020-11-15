@@ -1,8 +1,7 @@
 import "./Pages.css";
 import AuthContext from "../context/AuthContext";
 import TextInput from "../components/InputFields/TextInput";
-import { Button, FormGroup } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 import Snackbar from "../components/SnackBar/SnackBar";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,14 +11,14 @@ import { useHistory } from "react-router-dom";
 function Login() {
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { jwt, setJwt } = useContext(AuthContext);
+  const { setJwt } = useContext(AuthContext);
   const history = useHistory();
 
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [buttonVal, setButtonVal] = useState("");
 
-  const handleClose = (event, reason) => {
+  const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -29,10 +28,8 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Login clicked");
 
     if (emailAddress === "") {
-      
       setOpen(true);
       setMessage("Invalid Email.");
       setButtonVal("Try Again");
@@ -44,7 +41,6 @@ function Login() {
       axios
         .post("/api/login", { emailAddress, password })
         .then((response) => {
-          // console.log(response.data.data);
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);
           setOpen(true);
@@ -62,7 +58,6 @@ function Login() {
   };
 
   return (
-    // <Container>
     <>
       <div className="body-wrapper">
         <div className="content-wrapper">
@@ -126,7 +121,6 @@ function Login() {
           </p>
         </div>
       </div>
-      {/* </Container>  */}
     </>
   );
 }
