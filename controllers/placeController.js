@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const db = require("../models");
 
-router.get("/", (res) => {
+router.get("/", (req, res) => {
   db.Place.find({})
     .then((foundPlaces) => {
       res.json(foundPlaces);
@@ -108,7 +108,7 @@ router.put("/:id", (req, res) => {
           res.status(500).json({
             error: true,
             data: null,
-            message: err,
+            message: "An error occurred updating your place.",
           });
         });
     }
