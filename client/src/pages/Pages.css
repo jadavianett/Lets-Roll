@@ -113,6 +113,7 @@ h3 {
 .wide-paper {
   min-height: 80px;
   margin: 10px 0px;
+  padding: 0px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
