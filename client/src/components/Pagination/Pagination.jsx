@@ -10,7 +10,6 @@ const Pagination = ({ placesPerPage, totalPlaces, paginate, currentPage }) => {
 
   return (
     <div>
-      {/* <p>the current page is {currentPage}</p> */}
       <ul className="pagination">
         {pageNumbers.map((number) => (
           <li
@@ -20,7 +19,7 @@ const Pagination = ({ placesPerPage, totalPlaces, paginate, currentPage }) => {
                 ? "page-number current-page"
                 : "page-number"
             }
-            onClick={() => paginate(number) }
+            onClick={() => paginate(number)}
           >
             <span
               className={number === currentPage ? "current-page" : "other-page"}

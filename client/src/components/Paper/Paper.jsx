@@ -14,16 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimplePaper(props) {
-  const classes = useStyles();
-
+export default function SimplePaper({ notes }) {
   return (
     <>
-      {/* <div className={classes.root}> */}
       <Paper className="wide-paper" elevation={5}>
-        {props.notes}
+        {notes}
       </Paper>
-      {/* </div> */}
     </>
   );
 }
