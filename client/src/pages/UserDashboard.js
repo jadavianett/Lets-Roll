@@ -37,7 +37,7 @@ function UserDashboard() {
           <br />
           <br />
 
-          <div id="dash-links">
+          <div className="dash-links">
             <Link to="/allplaces" className="no-link-style">
               <Button variant="contained" className="set-width no-link-style">
                 <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
