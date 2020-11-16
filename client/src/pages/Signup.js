@@ -2,14 +2,18 @@ import "./Pages.css";
 import DatePicker from "../components/DatePicker/DatePicker";
 import TextInput from "../components/InputFields/TextInput";
 import CheckboxesGroup from "../components/CheckboxesGroup/CheckboxesGroup";
-import { Button, FormGroup } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import Snackbar from "../components/SnackBar/SnackBar";
-import { React, useState, useContext } from "react";
 import API from "../Utils/API";
-import { useHistory } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import { React, useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 
+
+
+// Creates a new user 
 function Signup() {
+  // declared states 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -34,50 +38,35 @@ function Signup() {
     spinJump: false,
   });
 
+  // function to close snackbar 
   const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }
-
+    // toggles Open state 
     setOpen(false);
   };
+
+  // function to handles changes in the check box 
   const handleChange = (event) => {
+    //sets skills state  on change 
     setSkills({ ...skills, [event.target.name]: event.target.checked });
   };
-  const {
-    crossover,
-    crazyLegs,
-    dribbling,
-    transitions,
-    grapevine,
-    shootTheDuck,
-    waltzJump,
-    mohawkTurn,
-    heelToeSpins,
-    spinJump,
-  } = skills;
-  const error =
-    [
-      crossover,
-      crazyLegs,
-      dribbling,
-      transitions,
-      grapevine,
-      shootTheDuck,
-      waltzJump,
-      mohawkTurn,
-      heelToeSpins,
-      spinJump,
-    ].filter((v) => v).length !== 2;
 
+ 
+
+  // handles changes in the datePicker component 
   const handleDateChange = (date) => {
+    //sets selectedDate state on change 
     setSelectedDate(date);
-    console.log(date, "Date");
+  
   };
 
+  // On submit of the signup button, creates user and input validation 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //sets state for username, email, password, uservalidation triggers snackbar 
     if (username === "") {
       setOpen(true);
       setMessage("Invalid Username.");
@@ -94,7 +83,8 @@ function Signup() {
       setOpen(true);
       setMessage("Login successful");
       setButtonVal("OK");
-
+    
+      //api call to create a new user 
       API.signupUser({
         username,
         email,
@@ -104,9 +94,11 @@ function Signup() {
         skills,
       })
         .then((res) => {
-          console.log("signup" + res.data);
+        
           setJwt(res.data.data);
+          //sets session storage with newly created jwt 
           sessionStorage.setItem("jwt", res.data.data);
+          //sends new User to dashboard 
           history.push("/userdashboard");
         })
         .catch((err) => {

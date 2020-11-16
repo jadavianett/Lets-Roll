@@ -1,4 +1,3 @@
-// import "./EditPlace.css";
 import "./Pages.css";
 import TextInput from "../components/InputFields/TextInput";
 import Select from "../components/InputFields/Select";
@@ -7,15 +6,20 @@ import { React, useState, useEffect } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import API from "../Utils/API";
 
+// Page shows a form to edit a specific place 
 function EditPlace() {
+  //declares useHistory hook 
   const history = useHistory();
+  // declares states useState hook 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [notes, setNotes] = useState([]);
   const [deletePlace, setDeletePlace] = useState(false);
+  //declares useParams hook 
   const { id } = useParams();
 
+  // on load gets the id for the specified place and returns placeholder info Name, Location, Type, Notes to be edited
   useEffect(() => {
     API.getPlace(id)
       .then((res) => {
@@ -29,9 +33,11 @@ function EditPlace() {
       });
   }, [id]);
 
+  // onClick of save button updates place info
   const handleSave = (e) => {
     e.preventDefault();
 
+    //api call to update place information 
     API.updatePlace(id, {
       name: name,
       location: location,
@@ -39,7 +45,7 @@ function EditPlace() {
       notes: notes,
     })
       .then((res) => {
-        console.log(res.data);
+        // sends to myplaces page 
         history.push("/myplaces");
       })
       .catch((err) => {
@@ -47,11 +53,11 @@ function EditPlace() {
       });
   };
 
+  // onClick of Delete button. Deletes place from db 
   const handleDelete = (e) => {
-    console.log("clicked delete");
+    //api call to delete place by id 
     API.deletePlace(id)
       .then((res) => {
-        console.log(res.data);
         history.push("/myplaces");
       })
       .catch((err) => {
@@ -59,6 +65,7 @@ function EditPlace() {
       });
   };
 
+  // on change of input fields sets Place info values Name, Location,Notes, type 
   const onChangeInfo = (e) => {
     let value = e.target.value;
 

@@ -8,9 +8,12 @@ import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExploreIcon from "@material-ui/icons/Explore";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
+//Log out page displays naviagation to available pages and clears jwt for session
 const Logout = () => {
+  // grabbing setJwt function from context
   const { setJwt } = useContext(AuthContext);
 
+  // on load gets jwt from session storage to setJwt as nothing for logged out user
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
     if (sessionJwt) {

@@ -8,27 +8,36 @@ import { Link } from "react-router-dom";
 import { React, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 
+// Display Login form and navigation to pages avialable to not logged In users 
 function Login() {
+  //Declare state 
   const [emailAddress, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setJwt } = useContext(AuthContext);
-  const history = useHistory();
-
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [buttonVal, setButtonVal] = useState("");
 
+  //Grabs setJwt function from Context 
+  const { setJwt } = useContext(AuthContext);
+  
+  //declares useHistory 
+  const history = useHistory();
+
+
+  // closes snackbar 
   const handleClose = (reason) => {
     if (reason === "clickaway") {
       return;
     }
-
+    //toggles snackbar state 
     setOpen(false);
   };
 
+  //handles login submit 
   const handleLogin = (e) => {
     e.preventDefault();
 
+    // input validation, toggles snackbar state 
     if (emailAddress === "") {
       setOpen(true);
       setMessage("Invalid Email.");
@@ -38,18 +47,23 @@ function Login() {
       setMessage("Invalid Password.");
       setButtonVal("Try Again");
     } else {
+      // if user login inout is true  get call for specific user.
       axios
+      //user authorization creates jwt Token to be passed through 
         .post("/api/login", { emailAddress, password })
         .then((response) => {
+          // sets JWT state and locat storage 
           setJwt(response.data.data);
           sessionStorage.setItem("jwt", response.data.data);
+          //toggles snackbar 
           setOpen(true);
           setMessage("Login successful");
           setButtonVal("woo");
+          //sends user to dashboard 
           history.push("/userdashboard");
         })
         .catch((err) => {
-          console.log(err);
+          // toggles snackbar if user is not found
           setOpen(true);
           setMessage("Invalid User");
           setButtonVal("Try Again");
