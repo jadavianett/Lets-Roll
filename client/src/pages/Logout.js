@@ -9,8 +9,10 @@ import ExploreIcon from "@material-ui/icons/Explore";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 const Logout = () => {
+  // grabbing setJwt function from context 
   const { setJwt } = useContext(AuthContext);
 
+  // on load gets jwt from session storage to setJwt as nothing for logged out user 
   useEffect(() => {
     const sessionJwt = sessionStorage.getItem("jwt");
     if (sessionJwt) {
@@ -28,7 +30,7 @@ const Logout = () => {
           <p>You may still:</p>
           <br />
           <div id="dash-links">
-            <p class="btm-margin">
+            <p className="btm-margin">
               <Link to="/allplaces" className="no-link-style">
                 <Button variant="contained" className="full-width">
                   <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
@@ -36,7 +38,7 @@ const Logout = () => {
               </Link>
             </p>
 
-            <p class="btm-margin">
+            <p className="btm-margin">
               <Link to="/tutorials" className="no-link-style">
                 <Button variant="contained" className="full-width">
                   <VideoLibraryIcon />
