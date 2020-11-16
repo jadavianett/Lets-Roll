@@ -65,10 +65,13 @@ h3 {
 /*ALL PLACES AND MY PLACES*/
 /* ================================================================ */
 .places-wrapper {
+  /* border: 2px dashed green; */
   text-align: center;
   border-radius: 10px;
-  padding: 0 10vw;
-  max-width: 600px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  /* padding: 0 10vw; */
+  /* max-width: 600px; */
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -76,9 +79,15 @@ h3 {
 }
 
 .card-div-1 {
+  /* border: 1px dashed hotpink; */
+
   padding: 30px 0px;
   margin: 30px auto;
   text-align: center;
+}
+.card-div-2 img {
+  /* border: 2px dashed blue; */
+  width: 100%;
 }
 
 .view-more-info {
@@ -97,6 +106,17 @@ h3 {
 #log-in-button {
   animation: shakeY;
   animation-duration: 5s;
+}
+/* ================================================================ */
+
+/*LOG OUT PAGE*/
+/* ================================================================ */
+#logout-links {
+  height: 200px;
+  /* border: 2px dashed red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 /* ================================================================ */
 
@@ -125,8 +145,9 @@ h3 {
 /* SIGNUP */
 /* ================================================================ */
 #signup-wrapper {
+  /* border: 1px dashed red; */
   text-align: center;
-  max-width: 500px;
+  width: 80vw;
   border-radius: 10px;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -204,7 +225,7 @@ iframe {
 
 /* USER DASHBOARD */
 /* ================================================================ */
-#dash-links {
+.dash-links {
   height: 270px;
   display: flex;
   flex-direction: column;

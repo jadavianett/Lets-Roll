@@ -27,31 +27,25 @@ const Logout = () => {
           <br />
           <p>You may still:</p>
           <br />
-          <div id="dash-links">
-            <p class="btm-margin">
-              <Link to="/allplaces" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
-                </Button>
-              </Link>
-            </p>
+          <div id="logout-links">
+            <Link to="/allplaces" className="no-link-style">
+              <Button variant="contained" className="full-width">
+                <ExploreIcon /> &nbsp; VIEW ALL SKATE PLACES
+              </Button>
+            </Link>
 
-            <p class="btm-margin">
-              <Link to="/tutorials" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <VideoLibraryIcon />
-                  &nbsp; VIEW TUTORIALS
-                </Button>
-              </Link>
-            </p>
+            <Link to="/tutorials" className="no-link-style">
+              <Button variant="contained" className="full-width">
+                <VideoLibraryIcon />
+                &nbsp; VIEW TUTORIALS
+              </Button>
+            </Link>
 
-            <p>
-              <Link to="/login" className="no-link-style">
-                <Button variant="contained" className="full-width">
-                  <VpnKeyIcon /> &nbsp; LOG BACK IN
-                </Button>
-              </Link>
-            </p>
+            <Link to="/login" className="no-link-style">
+              <Button variant="contained" className="full-width">
+                <VpnKeyIcon /> &nbsp; LOG BACK IN
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
