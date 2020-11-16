@@ -11,11 +11,16 @@ import ListIcon from "@material-ui/icons/List";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 function UserDashboard() {
+  //User state 
   const [user, setUser] = useState({});
 
+  // declares jwt from Auth Context
   const { jwt } = useContext(AuthContext);
+
+  // grabs User jwt on load of page and sets it for the user information 
   useEffect(() => {
     if (jwt) {
+      //decodes user information 
       var decoded = jwt_decode(jwt);
       setUser(decoded);
     }
