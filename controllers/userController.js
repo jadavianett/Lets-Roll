@@ -2,23 +2,26 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 
-// TODO: Build an authentication/authorization controller.
+// User Controller conatins routes to find,create and update user information 
 
+//get all users 
 router.get("/", (req, res) => {
-    // TODO: Restrict which fields are returned. NO PASSWORD!
+  
   db.User.find({})    
     .then((foundUsers) => {
       res.json(foundUsers);
     });
 });
 
+// get a user by id 
 router.get("/:id", (req, res) => {
-    // TODO: Restrict which fields are returned. NO PASSWORD!
+
   db.User.find({ _id: req.params.id }).then((foundUser) => {
     res.json(foundUser);
   });
 });
 
+//Create a new User reciver user information
 router.post("/", (req, res) => {
   
   console.log(req.body,"reqbody ")
@@ -28,20 +31,7 @@ router.post("/", (req, res) => {
   });
 });
 
-router.put("/:id", (req, res) => {
-    // TODO: Restrict which fields are editable
-  db.User.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
-    (updatedUser) => {
-      res.json(updatedUser);
-    }
-  );
-});
 
-router.delete("/:id", (req, res) => {
-    // TODO: Figure out how to restrict account deletion.
-  db.User.findByIdAndDelete(req.params.id).then((result) => {
-    res.json(result);
-  });
-});
+
 
 module.exports = router;
