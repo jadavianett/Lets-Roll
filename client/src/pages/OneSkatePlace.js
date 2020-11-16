@@ -13,9 +13,9 @@ function OneSkatePlace() {
   useEffect(() => {
     API.getPlace(id)
       .then((res) => {
-        console.log("one skate place" + res.data);
+        
         setPlace(res.data);
-        console.log(res);
+
       })
       .catch((err) => {
         throw err;

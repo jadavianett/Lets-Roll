@@ -10,12 +10,18 @@ import ExploreIcon from "@material-ui/icons/Explore";
 import ListIcon from "@material-ui/icons/List";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
+// Displays Welcome for logged in user and navigation to other pages 
 function UserDashboard() {
+  //User state 
   const [user, setUser] = useState({});
 
+  // declares jwt from Auth Context
   const { jwt } = useContext(AuthContext);
+
+  // grabs User jwt on load of page and sets it for the user information 
   useEffect(() => {
     if (jwt) {
+      //decodes user information 
       var decoded = jwt_decode(jwt);
       setUser(decoded);
     }

@@ -10,14 +10,11 @@ export default {
   createUser: function (userData) {
     return axios.post("/api/user", userData);
   },
+  // Sign up user goes through authorization route on backend 
   signupUser: function (userData) {
     return axios.post("/api/signup", userData);
   },
 
-
-  updateUser: function (id) {
-    return axios.put("/api/user/" + id);
-  },
 
   //PLACES CALLS
 
@@ -48,14 +45,7 @@ export default {
   //Delete Place
   deletePlace: function (id) {
     return axios.delete("/api/places/" + id);
-  },
+  }
 
-  // // Deletes the post with the given id
-  // deletePost: function(id) {
-  //   return axios.delete("/api/posts/" + id);
-  // },
-  // // Saves a post to the database
-  // savePost: function(postData) {
-  //   return axios.post("/api/posts", postData);
-  // }
+
 };

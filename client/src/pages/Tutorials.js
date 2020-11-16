@@ -1,5 +1,6 @@
 import "./Pages.css";
 
+// displays skate tutorials by embedding youtube link via iframe
 function Tutorials() {
   return (
     <>

@@ -1,6 +1,7 @@
 import "./Pages.css";
 import { Link } from "react-router-dom";
 
+//default page for invalid URL directs user to All Places page
 function PageNotFound() {
   return (
     <>
