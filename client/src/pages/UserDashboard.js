@@ -10,6 +10,7 @@ import ExploreIcon from "@material-ui/icons/Explore";
 import ListIcon from "@material-ui/icons/List";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
+// Displays Welcome for logged in user and navigation to other pages 
 function UserDashboard() {
   //User state 
   const [user, setUser] = useState({});

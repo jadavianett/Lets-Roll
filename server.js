@@ -6,6 +6,11 @@ const path = require("path");
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
+// requiring controllers and defining them 
+const UserController = require("./controllers/userController");
+const PlaceController = require("./controllers/placeController");
+const AuthController = require("./controllers/authController");
+
 
 //connecting to our Port 
 const PORT = process.env.PORT || 3001;
@@ -19,10 +24,7 @@ app.use(express.json());
 app.use(express.static("client/build"));
 app.use(bodyParser.json());
 
-// requiring controllers and defining them 
-const UserController = require("./controllers/userController");
-const PlaceController = require("./controllers/placeController");
-const AuthController = require("./controllers/authController");
+
 
 //connection to Mongo DB 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my-mern", {

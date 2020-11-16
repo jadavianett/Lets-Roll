@@ -17,7 +17,7 @@ router.post("/api/signup", (req, res) => {
     bcrypt
       .hash(password, 10)
       .then((hashedPassword) => {
-        console.log(hashedPassword);
+
         db.User.create({
           email: email,
           username: username,

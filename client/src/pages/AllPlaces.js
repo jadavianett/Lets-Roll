@@ -19,7 +19,6 @@ function AllPlaces() {
   useEffect(() => {
     API.getPlaces()
       .then((res) => {
-        // console.log(res.data);
         setPlaces(res.data);
         setFilteredPlaces(res.data);
       })
@@ -103,7 +102,7 @@ function AllPlaces() {
           <div className="margin-auto">
             {currentPlaces &&
               currentPlaces.map((place) => (
-                // <div className="wide-card">
+          
 
                 <AllPlacesCard
                   image={
@@ -118,7 +117,7 @@ function AllPlaces() {
                   id={place._id}
                   notes={place.notes}
                 />
-                // </div>
+
               ))}
           </div>
           <Pagination
