@@ -5,7 +5,9 @@ import Select from "../components/InputFields/Select";
 import { useEffect, useState } from "react";
 import API from "../Utils/API";
 
+//Displays all skate placed from simple seeds and created by all users. Can be sorted 
 function AllPlaces() {
+  //declares state 
   const [places, setPlaces] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [placesPerPage, setPlacesPerPage] = useState(5);
@@ -13,6 +15,7 @@ function AllPlaces() {
   const [currentPlaces, setCurrentPlaces] = useState();
   const [type, setType] = useState();
 
+  //api call to db to find all places on load
   useEffect(() => {
     API.getPlaces()
       .then((res) => {
@@ -25,6 +28,7 @@ function AllPlaces() {
       });
   }, []);
 
+  // on load and on change of filtered places and currentPage, sets currentPlaces for pagination component
   useEffect(() => {
     if (filteredPlaces) {
       const indexOfLastPlace = currentPage * placesPerPage;
@@ -38,27 +42,38 @@ function AllPlaces() {
     }
   }, [filteredPlaces, currentPage]);
 
+  //paginate creates page number to setCurrentPage 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  // onchange of filter dropdown 
   const onChange = async (e) => {
+    //declares target value from event 
     let value = e.target.value;
 
+    //sets the type from value 
     setType(value);
+    // sets filteredPlaces to places to repopulate full list 
     setFilteredPlaces(places);
 
+    // condtional 
+    //All populates all pages 
     if (value === "All") {
       setFilteredPlaces(places);
+      //defualts current page to first one 
       setCurrentPage(1);
     } else {
+      //filteres the list based off of value because available onchange 
       let filteredList = await [...places].filter((place) => {
         if (value) {
           return place.type === value;
         }
         return true;
       });
+      //set filteredPlaces to new array of filtered places by type 
       setFilteredPlaces(filteredList);
+      //defualts current page to first one 
       setCurrentPage(1);
     }
   };
