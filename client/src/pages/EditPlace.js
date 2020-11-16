@@ -82,56 +82,62 @@ function EditPlace() {
           <h1>{name}</h1>
           <br />
           <br />
-          <label for="name">Name</label>
-          <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
-          <label for="location">Location</label>
-          <TextInput
-            name="location"
-            placeholder={location}
-            onChange={onChangeInfo}
-          />
-          <label for="notes">Notes</label>
-          <TextInput name="notes" placeholder={notes} onChange={onChangeInfo} />
-          <label for="type">Skate Place Type</label>
-          <Select name="type" onChange={onChangeInfo} value={type} />
-          <br />
-          <br />
-          <Link to="/viewmyplaces" className="no-link-style">
-            <Button
-              type="submit"
-              size="large"
-              variant="contained"
-              onClick={handleSave}
-            >
-              Save Changes
-            </Button>
-          </Link>
-          <br />
-          <br />
-          {deletePlace ? (
-            <Button
-              className="delete-btn"
-              size="large"
-              variant="contained"
-              onClick={() => {
-                setDeletePlace(false);
-                handleDelete();
-              }}
-            >
-              CLICK AGAIN TO CONFIRM
-            </Button>
-          ) : (
-            <Button
-              className="delete-btn"
-              size="large"
-              variant="contained"
-              onClick={() => {
-                setDeletePlace(true);
-              }}
-            >
-              DELETE THIS PLACE
-            </Button>
-          )}
+          <div id="edit-form">
+            <label for="name">Name</label>
+            <TextInput name="name" placeholder={name} onChange={onChangeInfo} />
+            <label for="location">Location</label>
+            <TextInput
+              name="location"
+              placeholder={location}
+              onChange={onChangeInfo}
+            />
+            <label for="notes">Notes</label>
+            <TextInput
+              name="notes"
+              placeholder={notes}
+              onChange={onChangeInfo}
+            />
+            <label for="type">Skate Place Type</label>
+            <Select name="type" onChange={onChangeInfo} value={type} />
+            <br />
+            <br />
+            <Link to="/viewmyplaces" className="no-link-style">
+              <Button
+                type="submit"
+                size="large"
+                variant="contained"
+                onClick={handleSave}
+              >
+                Save Changes
+              </Button>
+            </Link>
+            <br />
+            <br />
+            {deletePlace ? (
+              <Button
+                className="delete-btn"
+                size="large"
+                variant="contained"
+                onClick={() => {
+                  setDeletePlace(false);
+                  handleDelete();
+                }}
+              >
+                CLICK AGAIN TO CONFIRM
+              </Button>
+            ) : (
+              <Button
+                className="delete-btn"
+                size="large"
+                variant="contained"
+                onClick={() => {
+                  setDeletePlace(true);
+                }}
+              >
+                DELETE THIS PLACE
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </>
