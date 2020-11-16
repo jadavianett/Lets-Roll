@@ -1,6 +1,8 @@
+//Require and defining the mongoose package to create a model 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//The items needed for the Place Schema 
 const PlaceSchema = new Schema({
   name: {
     type: String,
@@ -26,6 +28,8 @@ const PlaceSchema = new Schema({
   },
 });
 
+//Defining the Place model 
 const Place = mongoose.model("Place", PlaceSchema);
 
+//exporting the Place model for use
 module.exports = Place;
