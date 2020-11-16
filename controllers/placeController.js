@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       res.json(foundPlaces);
     })
     .catch((err) => {
-      console.log(err);
+ 
       res.status(500).json({
         error: true,
         data: null,
@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
   jwt.verify(req.headers.authorization, "secret", (err, decoded) => {
      // If jwt is invalid (for any reason) return 401.
     if (err) {
-      console.log(err);
+
       return res.status(401).json({
         error: true,
         data: null,
@@ -51,7 +51,6 @@ router.post("/", (req, res) => {
       });
     } else {
       //create the place and includes a specific creatorId
-      console.log(decoded);
       const newPlace = {
         name: req.body.name,
         location: req.body.location,
@@ -80,7 +79,6 @@ router.put("/:id", (req, res) => {
   jwt.verify(req.headers.authorization, "secret", (err, decoded) => {
     // If jwt is invalid (for any reason) return 401.
     if (err) {
-      console.log(err);
       return res.status(401).json({
         error: true,
         data: null,
@@ -88,7 +86,6 @@ router.put("/:id", (req, res) => {
       });
     } else {
       // If jwt is valid, pull the allowable fields from the body and update the place.
-      console.log(decoded);
       const updatedPlace = {
         name: req.body.name,
         location: req.body.location,

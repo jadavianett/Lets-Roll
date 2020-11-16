@@ -24,7 +24,7 @@ router.get("/:id", (req, res) => {
 //Create a new User reciver user information
 router.post("/", (req, res) => {
   
-  console.log(req.body,"reqbody ")
+
   db.User.create(req.body).then((newUser) => {
    
     res.json(newUser);
