@@ -7,18 +7,23 @@ import { useHistory } from "react-router-dom";
 import API from "../Utils/API";
 import AuthContext from "../context/AuthContext";
 
+//displays form to Add a new Place 
 function AddNewPlace() {
+  //declares useHistory 
   const history = useHistory();
+  //declares states 
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [type, setType] = useState("");
   const [notes, setNotes] = useState([]);
-
+  
+  //declares ustContext for jwt 
   const { jwt } = useContext(AuthContext);
 
+  //on click of the Save button function 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log("clicked");
+    // creates a new skate Place 
     API.createPlace(
       {
         name: name,
@@ -29,12 +34,15 @@ function AddNewPlace() {
       jwt
     )
       .then((res) => {
+        //if created takes to myplaces page 
         history.push("/myplaces");
       })
       .catch((err) => {
         throw err;
       });
   };
+
+  //onChange function when text is added to inputs it sets the state for each: Name, Location, Notes, and Type
   const onChangeInfo = (e) => {
     let value = e.target.value;
     if (e.target.name === "name") {
